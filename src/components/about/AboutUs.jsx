@@ -10,15 +10,15 @@ export default function AboutUs({ setActiveSection }) {
       name: "Celi Corpuz",
       description: "Celi Corpuz is a University of California, Davis graduate and is a part of NCPASA, Mga Kapatid, and Kabataan Alliance. Celi has been helping us learn new traditional dances and has helped us with numerous fundraisers since 2023.",
       quote: "",
-      photo: "/public/assets/Special/Celi.png", // Replace with actual photo path
-      photo2: "/public/assets/special/CeliGroup.png", // Replace with actual photo path
+      photo: "/assets/Special/Celi.png", // Replace with actual photo path
+      photo2: "/assets/special/CeliGroup.png", // Replace with actual photo path
     },
     {
       name: "Mathew Post",
       description: "Our previous TDC president, August Post, had a grandfather to handmake and donate our Sayaw Sa Bangko performance benches in 2022 to pay tribute to the passion and culture of this club. Mathew Post was a woodcarver for over 60 years and was such a big fan of all the work the club has been doing. He passed away at the beginning of 2025. We thank him for helping the Tinikling Dance Club to continue performing and sharing the culture of Sayaw Sa Bangko after so many years.",
       quote: "to my amazing officers that i've been priveleged to work alongside with, to the members both new and returning that i've been honored to lead, to my second home and found family: thank you. it's been a wonderful four years, and an honor to be your president <3",
-      photo: "/public/assets/special/MATHEW.png", // Replace with actual photo path
-      photo2: "/public/assets/special/MATHEWBUILD.png", // Replace with actual photo path
+      photo: "/assets/special/MATHEW.png", // Replace with actual photo path
+      photo2: "/assets/special/MATHEWBUILD.png", // Replace with actual photo path
     }
   ];
 
