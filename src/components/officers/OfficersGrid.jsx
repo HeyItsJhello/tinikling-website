@@ -56,10 +56,11 @@ export default function OfficersGrid() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "2rem",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 500px), 1fr))",
+          gap: "1.5rem",
           marginTop: "3rem",
-          marginBottom: "3rem"
+          marginBottom: "3rem",
+          gridAutoRows: "1fr"
         }}
       >
         {officers.map((officer, index) => (
@@ -72,10 +73,13 @@ export default function OfficersGrid() {
                 borderRadius: "1rem",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
                 display: "flex",
+                flexDirection: "row",
                 alignItems: "center",
-                padding: "4rem",
-                gap: "2rem",
-                height: "350px"
+                padding: "2rem",
+                gap: "1.5rem",
+                minHeight: "280px",
+                height: "100%",
+                boxSizing: "border-box"
               }}
             >
               {/* Information on the left */}
@@ -85,25 +89,32 @@ export default function OfficersGrid() {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
-                  textAlign: "left"
+                  textAlign: "left",
+                  minWidth: 0,
+                  wordWrap: "break-word",
+                  overflowWrap: "break-word"
                 }}
               >
                 <h2
                   style={{
-                    fontSize: "2rem",
+                    fontSize: "1.5rem",
                     color: "var(--red)",
                     marginBottom: "0.5rem",
-                    fontWeight: "bold"
+                    fontWeight: "bold",
+                    wordWrap: "break-word",
+                    overflowWrap: "break-word"
                   }}
                 >
                   {officer.name}
                 </h2>
                 <h3
                   style={{
-                    fontSize: "1.2rem",
+                    fontSize: "1rem",
                     color: "var(--blue)",
-                    marginBottom: "1rem",
-                    fontWeight: "600"
+                    marginBottom: "0.75rem",
+                    fontWeight: "600",
+                    wordWrap: "break-word",
+                    overflowWrap: "break-word"
                   }}
                 >
                   {officer.role}
@@ -112,23 +123,34 @@ export default function OfficersGrid() {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "0.5rem",
-                    color: "var(--dark)"
+                    gap: "0.4rem",
+                    color: "var(--dark)",
+                    fontSize: "0.9rem"
                   }}
                 >
-                  <p><strong>Grade:</strong> {officer.grade}</p>
-                  <p><strong>Pronouns:</strong> {officer.pronouns}</p>
-                  <p><strong>Hobbies:</strong> {officer.hobbies}</p>
-                  <p><strong>Favorite Dance:</strong> {officer.favoriteDance}</p>
-                  <p><strong>Fun Fact:</strong> {officer.funFact}</p>
+                  <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
+                    <strong>Grade:</strong> {officer.grade}
+                  </p>
+                  <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
+                    <strong>Pronouns:</strong> {officer.pronouns}
+                  </p>
+                  <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
+                    <strong>Hobbies:</strong> {officer.hobbies}
+                  </p>
+                  <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
+                    <strong>Favorite Dance:</strong> {officer.favoriteDance}
+                  </p>
+                  <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
+                    <strong>Fun Fact:</strong> {officer.funFact}
+                  </p>
                 </div>
               </div>
 
               {/* Photo on the right with 1:1 aspect ratio */}
               <div
                 style={{
-                  width: "250px",
-                  height: "250px",
+                  width: "180px",
+                  height: "180px",
                   flexShrink: 0
                 }}
               >
