@@ -1,0 +1,68 @@
+export const officers = [
+    {
+        name: "Kaleb Espinoza",
+        role: "Co-President and Advertising",
+        image: "src/assets/officers/kaleb.png",
+        center_amount: 50,
+        grade: "Senior",
+        pronouns: "He/Him",
+        hobbies: "Photography, gaming, guitar, gardening, cardistry",
+        favoriteDance: "Kini Kini",
+        funFact: "I have a cat named Zachary"
+    },
+    {
+        name: "Gracelynn Ly",
+        role: "Co-President",
+        image: "src/assets/officers/lynn.png",
+        center_amount: 50,
+        grade: "Senior",
+        pronouns: "She/Her",
+        hobbies: "Singing, crocheting, playing guitar, praying",
+        favoriteDance: "Bulaklakan",
+        funFact: "I can do a mouth trumpet"
+    },
+    {
+        name: "Marlee Gerlach",
+        role: "Vice President",
+        image: "src/assets/officers/marlee.png",
+        center_amount: 25,
+        grade: "Senior",
+        pronouns: "She/He/They",
+        hobbies: "Gaming, collecting, sleeping, going to museums",
+        favoriteDance: "Pangalay",
+        funFact: "I love Taco Bell so much I'm known for it"
+    },
+    {
+        name: "Carmelia Hayamizu",
+        role: "Assistant",
+        image: "src/assets/officers/carmelia.png",
+        center_amount: 25,
+        grade: "Junior",
+        pronouns: "She/Her",
+        hobbies: "Cheerleading, community organizing, yarn arts",
+        favoriteDance: "Cariñosa",
+        funFact: "I always get the Wordle in 2!"
+    },
+    {
+        name: "Quinn Manapat",
+        role: "Advertising and Cultural Advisor",
+        image: "src/assets/officers/quinn.png",
+        center_amount: 15,
+        grade: "Senior",
+        pronouns: "They/She/He",
+        hobbies: "Art (fiber, clay, jewelry, etc), gaming, reading",
+        favoriteDance: "Cariñosa and Kapag Apir",
+        funFact: "I love collecting things like plushies, cards, and more"
+    },
+    {
+        name: "Caleb Pascua",
+        role: "Cultural Advisor and Member Outreach",
+        image: "src/assets/officers/caleb2.png",
+        center_amount: 0,
+        grade: "Junior",
+        pronouns: "He/Him",
+        hobbies: "Basketball, games, exercising, dancing, cooking",
+        favoriteDance: "Kini Kini",
+        funFact: "I love the Pokémon Piplup"
+    },
+];
