@@ -75,7 +75,7 @@ export default function MakeAChange({ setActiveSection }) {
           >
             {/* Placeholder - replace with your image */}
             <img
-              src="src/assets/hero.jpeg"
+              src="/assets/hero.jpeg"
               alt="Make A Change Event"
               style={{
                 width: "100%",

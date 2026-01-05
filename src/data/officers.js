@@ -2,7 +2,7 @@ export const officers = [
     {
         name: "Kaleb Espinoza",
         role: "Co-President and Advertising",
-        image: "src/assets/officers/kaleb.png",
+        image: "/assets/officers/kaleb.png",
         center_amount: 50,
         grade: "Senior",
         pronouns: "He/Him",
@@ -13,7 +13,7 @@ export const officers = [
     {
         name: "Gracelynn Ly",
         role: "Co-President",
-        image: "src/assets/officers/lynn.png",
+        image: "/assets/officers/lynn.png",
         center_amount: 50,
         grade: "Senior",
         pronouns: "She/Her",
@@ -24,7 +24,7 @@ export const officers = [
     {
         name: "Marlee Gerlach",
         role: "Vice President",
-        image: "src/assets/officers/marlee.png",
+        image: "/assets/officers/marlee.png",
         center_amount: 25,
         grade: "Senior",
         pronouns: "She/He/They",
@@ -35,7 +35,7 @@ export const officers = [
     {
         name: "Carmelia Hayamizu",
         role: "Assistant",
-        image: "src/assets/officers/carmelia.png",
+        image: "/assets/officers/carmelia.png",
         center_amount: 25,
         grade: "Junior",
         pronouns: "She/Her",
@@ -46,7 +46,7 @@ export const officers = [
     {
         name: "Quinn Manapat",
         role: "Advertising and Cultural Advisor",
-        image: "src/assets/officers/quinn.png",
+        image: "/assets/officers/quinn.png",
         center_amount: 15,
         grade: "Senior",
         pronouns: "They/She/He",
@@ -57,7 +57,7 @@ export const officers = [
     {
         name: "Caleb Pascua",
         role: "Cultural Advisor and Member Outreach",
-        image: "src/assets/officers/caleb2.png",
+        image: "/assets/officers/caleb2.png",
         center_amount: 0,
         grade: "Junior",
         pronouns: "He/Him",

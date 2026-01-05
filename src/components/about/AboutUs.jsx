@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import hero from "../../assets/hero.jpeg";
-import aboutUsHERO from "../../assets/aboutUsHERO.png";
+import aboutUsHERO from "/assets/AboutUsHERO.png";
 import Reveal from "../common/reveal";
 
 export default function AboutUs({ setActiveSection }) {
@@ -11,15 +10,15 @@ export default function AboutUs({ setActiveSection }) {
       name: "Celi Corpuz",
       description: "Celi Corpuz is a University of California, Davis graduate and is a part of NCPASA, Mga Kapatid, and Kabataan Alliance. Celi has been helping us learn new traditional dances and has helped us with numerous fundraisers since 2023.",
       quote: "",
-      photo: "src/assets/special/Celi.png", // Replace with actual photo path
-      photo2: "src/assets/special/CeliGroup.png", // Replace with actual photo path
+      photo: "/public/assets/Special/Celi.png", // Replace with actual photo path
+      photo2: "/public/assets/special/CeliGroup.png", // Replace with actual photo path
     },
     {
       name: "Mathew Post",
       description: "Our previous TDC president, August Post, had a grandfather to handmake and donate our Sayaw Sa Bangko performance benches in 2022 to pay tribute to the passion and culture of this club. Mathew Post was a woodcarver for over 60 years and was such a big fan of all the work the club has been doing. He passed away at the beginning of 2025. We thank him for helping the Tinikling Dance Club to continue performing and sharing the culture of Sayaw Sa Bangko after so many years.",
       quote: "to my amazing officers that i've been priveleged to work alongside with, to the members both new and returning that i've been honored to lead, to my second home and found family: thank you. it's been a wonderful four years, and an honor to be your president <3",
-      photo: "src/assets/special/MATHEW.png", // Replace with actual photo path
-      photo2: "src/assets/special/MATHEWBUILD.png", // Replace with actual photo path
+      photo: "/public/assets/special/MATHEW.png", // Replace with actual photo path
+      photo2: "/public/assets/special/MATHEWBUILD.png", // Replace with actual photo path
     }
   ];
 
@@ -328,6 +327,8 @@ export default function AboutUs({ setActiveSection }) {
           >
             {specialThanks.map((person, index) => {
               const [isFlipped, setIsFlipped] = React.useState(false);
+              const [photo1Error, setPhoto1Error] = React.useState(false);
+              const [photo2Error, setPhoto2Error] = React.useState(false);
 
               return (
                 <motion.div
@@ -386,25 +387,28 @@ export default function AboutUs({ setActiveSection }) {
                         backfaceVisibility: "hidden",
                         borderRadius: "0.5rem",
                         border: "0.5rem solid white",
-                        overflow: "hidden"
+                        overflow: "hidden",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: photo1Error ? "var(--gold)" : "transparent"
                       }}
                     >
-                      <img
-                        src={person.photo}
-                        alt={person.name}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover"
-                        }}
-                        onError={(e) => {
-                          e.target.style.display = "none";
-                          e.target.parentElement.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; background: var(--gold); color: var(--dark); font-size: 1.2rem;">Photo</div>';
-                        }}
-                      />
+
+                        <img
+                          src={person.photo}
+                          alt={person.name}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover"
+                          }}
+                          onError={() => setPhoto1Error(true)}
+                        />
+                      
                     </motion.div>
 
-                    {/* Second photo - back (grayscale) */}
+                    {/* Second photo - back */}
                     <motion.div
                       animate={{ rotateY: isFlipped ? 0 : -180 }}
                       transition={{ duration: 0.6 }}
@@ -416,23 +420,23 @@ export default function AboutUs({ setActiveSection }) {
                         borderRadius: "0.5rem",
                         border: "0.5rem solid white",
                         overflow: "hidden",
-                        transform: "rotateY(180deg)"
+                        transform: "rotateY(180deg)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: photo2Error ? "var(--gold)" : "transparent"
                       }}
                     >
-                      <img
-                        src={person.photo2}
-                        alt={person.name}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                         
-                        }}
-                        onError={(e) => {
-                          e.target.style.display = "none";
-                          e.target.parentElement.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; background: var(--gold); color: var(--dark); font-size: 1.2rem;">Photo</div>';
-                        }}
-                      />
+                        <img
+                          src={person.photo2}
+                          alt={person.name}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover"
+                          }}
+                          onError={() => setPhoto2Error(true)}
+                        />
                     </motion.div>
                   </div>
                 </motion.div>

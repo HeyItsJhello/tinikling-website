@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Obra Letra";
-    src: url(/src/assets/fonts/ObraLetra.woff) format("woff2");
+    src: url(/assets/fonts/ObraLetra.woff) format("woff2");
 }
 
 :root {

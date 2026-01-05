@@ -114,7 +114,7 @@ export default function SocialEvents({ setActiveSection }) {
                     borderRadius: "1rem",
                     objectPosition: ""
                   }}
-                  src="src/assets/events/NONMAC/2025KAPIT.png" 
+                  src="/assets/events/NONMAC/2025KAPIT.png" 
                   alt="Event Photo" 
                 />
               </div>
@@ -181,7 +181,7 @@ export default function SocialEvents({ setActiveSection }) {
                     borderRadius: "1rem",
                     objectPosition: "center 35%"
                   }}
-                  src="src/assets/events/SOCIAL/THANKSGIVING.png" 
+                  src="/assets/events/SOCIAL/THANKSGIVING.png" 
                   alt="Event Photo" 
                 />
               </div>
@@ -241,7 +241,7 @@ export default function SocialEvents({ setActiveSection }) {
                     borderRadius: "1rem",
                     objectPosition: "center "
                   }}
-                  src="src/assets/events/SOCIAL/WINTER.png" 
+                  src="/assets/events/SOCIAL/WINTER.png" 
                   alt="Event Photo" 
                 />
               </div>
@@ -291,7 +291,7 @@ export default function SocialEvents({ setActiveSection }) {
                     borderRadius: "1rem",
                     objectPosition: "center 35%"
                   }}
-                  src="src/assets/events/SOCIAL/ABOVEANDMORE.png" 
+                  src="/assets/events/SOCIAL/ABOVEANDMORE.png" 
                   alt="Event Photo" 
                 />
 
@@ -332,7 +332,7 @@ export default function SocialEvents({ setActiveSection }) {
               justifyContent: "center"
             }}>
               <img
-                src="src/assets/events/SOCIAL/BELOWLEFTANDMORE.png"
+                src="/assets/events/SOCIAL/BELOWLEFTANDMORE.png"
                 alt="Event Photo"
                 style={{
                   flex: "1 1 20rem",
@@ -345,7 +345,7 @@ export default function SocialEvents({ setActiveSection }) {
                 }}
               />
               <img
-                src="src/assets/events/SOCIAL/BELOWRIGHTANDMORE.png"
+                src="/assets/events/SOCIAL/BELOWRIGHTANDMORE.png"
                 alt="Event Video"
                 style={{
                   flex: "1 1 20rem",

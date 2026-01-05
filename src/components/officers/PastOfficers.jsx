@@ -25,7 +25,7 @@ export default function PastOfficers() {
           const yearData = pastOfficersData[year];
           // Convert year format from "2023-2024" to "23-24"
           const shortYear = year.split("-").map(y => y.slice(2)).join("-");
-          const imagePath = `/src/assets/officers/groupphotos/${shortYear}Officers.png`;
+          const imagePath = `/assets/officers/groupphotos/${shortYear}Officers.png`;
           
           return (
             <motion.div

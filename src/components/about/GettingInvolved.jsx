@@ -87,7 +87,7 @@ export default function GettingInvolved({ setActiveSection }) {
                     borderRadius: "1rem",
                     objectPosition: ""
                   }}
-                  src="src/assets/involvement/KABATAAN.png" 
+                  src="/assets/involvement/KABATAAN.png" 
                   alt="Event Photo" 
                 />
               </div>
@@ -157,7 +157,7 @@ export default function GettingInvolved({ setActiveSection }) {
                     borderRadius: "1rem",
                     objectPosition: ""
                   }}
-                  src="src/assets/involvement/KAPIT.png" 
+                  src="/assets/involvement/KAPIT.png" 
                   alt="Event Photo" 
                 />
               </div>

@@ -43,7 +43,7 @@ export default function Developer() {
           {/* Portrait Image */}
           <div style={{ marginBottom: "1.5rem" }}>
             <img
-              src="/src/assets/developer/jhelson.png"
+              src="/assets/developer/jhelson.png"
               alt="Jhelson Gonzales"
               style={{
                 width: "15rem",

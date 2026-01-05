@@ -93,7 +93,7 @@ export default function EventsGrid() {
         {isBayanihan && (
           <div style={{ flex: "1 1 20rem", maxWidth: "45rem", marginLeft: "4rem" }}>
             <img
-              src={event.image && event.image !== "" ? event.image : "/src/assets/hero.jpeg"}
+              src={event.image && event.image !== "" ? event.image : "/assets/hero.jpeg"}
               alt={event.title}
               style={{
                 width: "100%",
@@ -180,7 +180,7 @@ export default function EventsGrid() {
         {!isBayanihan && (
           <div style={{ flex: "1 1 20rem", maxWidth: "45rem", marginRight: "0rem", order: 2 }}>
             <img
-              src={event.image && event.image !== "" ? event.image : "/src/assets/hero.jpeg"}
+              src={event.image && event.image !== "" ? event.image : "/assets/hero.jpeg"}
               alt={event.title}
               style={{
                 width: "100%",

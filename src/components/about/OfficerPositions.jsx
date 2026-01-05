@@ -448,7 +448,7 @@ export default function OfficerPositions({ setActiveSection }) {
                       borderRadius: "1rem",
                       objectPosition: "",
                     }}
-                    src="src/assets/involvement/ADVERTISEMENT.png"
+                    src="/assets/involvement/ADVERTISEMENT.png"
                     alt="Event Photo"
                   />
                 </div>
@@ -650,7 +650,7 @@ export default function OfficerPositions({ setActiveSection }) {
                       borderRadius: "1rem",
                       objectPosition: "",
                     }}
-                    src="src/assets/involvement/EVENTSCOORD.png"
+                    src="/assets/involvement/EVENTSCOORD.png"
                     alt="Event Photo"
                   />
                 </div>
@@ -777,7 +777,7 @@ export default function OfficerPositions({ setActiveSection }) {
                       borderRadius: "1rem",
                       objectPosition: "",
                     }}
-                    src="src/assets/involvement/OFFICERS3.png"
+                    src="/assets/involvement/OFFICERS3.png"
                     alt="Event Photo"
                   />
                 </div>

@@ -17,7 +17,7 @@ export const events = [
         date: "Dec 5, 2025",
         year: "2025-current",
         description: "",
-        image: "/src/assets/events/NONMAC/2025KAPIT.png",
+        image: "/assets/events/NONMAC/2025KAPIT.png",
         video: "",
         isMakeAChange: false
   },
@@ -26,7 +26,7 @@ export const events = [
     date: "Dec 5, 2025",
     year: "2025-current",
     description: "",
-    image: "/src/assets/events/NONMAC/2025MULTI.png",
+    image: "/assets/events/NONMAC/2025MULTI.png",
     video: "https://youtu.be/n6ZdCdoPTeg?si=ovsdAqGIX_TlL_nP",
     isMakeAChange: false
   },
@@ -35,7 +35,7 @@ export const events = [
     date: "Oct 25, 2025",
     year: "2025-current",
     description: "",
-    image: "/src/assets/events/NONMAC/2025BOBA.png",
+    image: "/assets/events/NONMAC/2025BOBA.png",
     video: "https://www.instagram.com/p/DQS0FPLD5zT/?img_index=16",
     isMakeAChange: false
   },
@@ -44,7 +44,7 @@ export const events = [
     date: "October 18, 2025",
     year: "2025-current",
     description: "",
-    image: "/src/assets/events/NONMAC/2025SARI.png",
+    image: "/assets/events/NONMAC/2025SARI.png",
     video: "https://youtu.be/54ZBVQ6WRJc?si=8GW2nvKivhOTTABy",
     isMakeAChange: false
   },
@@ -53,7 +53,7 @@ export const events = [
     date: "Sept 26, 2025",
     year: "2025-current",
     description: "",
-    image: "/src/assets/events/NONMAC/2025HOCO.png",
+    image: "/assets/events/NONMAC/2025HOCO.png",
     video: "https://youtu.be/Q5tDq8bTYiU?si=PB9gaJNTvh-w0tWP",
     isMakeAChange: false
   },
@@ -62,7 +62,7 @@ export const events = [
     date: "Aug 15, 2025",
     year: "2025-current",
     description: "",
-    image: "/src/assets/events/NONMAC/2025BTS.png",
+    image: "/assets/events/NONMAC/2025BTS.png",
     video: "https://youtu.be/P10o6I4s2xI?si=yFg5nW-X5qnJMMCf",
     isMakeAChange: false
   },
@@ -73,7 +73,7 @@ export const events = [
     date: "Apr 25, 2025",
     year: "2024-25",
     description: "Our annual cultural showcase featuring traditional Filipino folk dances and guest performances.\nAll Proceeds went to the Kapit Bisig Relief program!",
-    image: "src/assets/hero.jpeg",
+    image: "/assets/hero.jpeg",
     video: "https://youtube.com/playlist?list=PLwIEA66EISxCVrXeAlC4x0I9mz5_XJKoW&si=h8ZUpr01KKsmOaSX",
     isMakeAChange: true,
     featured: true,
@@ -84,7 +84,7 @@ export const events = [
     date: "Feb 28, 2025",
     year: "2024-25",
     description: "",
-    image: "/src/assets/dances/tinikling.png",
+    image: "/assets/dances/tinikling.png",
     video: "https://www.youtube.com/watch?v=kekAbDbEn-Y",
     isMakeAChange: false
   },
@@ -93,7 +93,7 @@ export const events = [
     date: "Dec 6, 2024",
     year: "2024-25",
     description: "",
-    image: "/src/assets/events/NONMAC/2024MULTI.png",
+    image: "/assets/events/NONMAC/2024MULTI.png",
     video: "https://www.instagram.com/p/DDgCjz2Ro3x/",
     isMakeAChange: false
   },
@@ -102,7 +102,7 @@ export const events = [
     date: "Nov 2, 2024",
     year: "2024-25",
     description: "",
-    image: "/src/assets/events/NONMAC/2024BOBA.png",
+    image: "/assets/events/NONMAC/2024BOBA.png",
     video: "https://www.instagram.com/p/DCVcOcUP0TA/?img_index=7",
     isMakeAChange: false
   },
@@ -111,7 +111,7 @@ export const events = [
     date: "Oct 26, 2024",
     year: "2024-25",
     description: "",
-    image: "/src/assets/events/NONMAC/2024SARI.png",
+    image: "/assets/events/NONMAC/2024SARI.png",
     video: "https://youtu.be/8ZOCcDxBnkI?si=gbkB9SUtd4CaZy6R",
     isMakeAChange: false
   },
@@ -120,7 +120,7 @@ export const events = [
     date: "Oct 6, 2024",
     year: "2024-25",
     description: "",
-    image: "/src/assets/events/NONMAC/2024HOCO.png",
+    image: "/assets/events/NONMAC/2024HOCO.png",
     video: "",
     isMakeAChange: false
   },
@@ -129,7 +129,7 @@ export const events = [
     date: "Apr 2025",
     year: "2024-25",
     description: "",
-    image: "/src/assets/events/DEBUTS/KAI.png",
+    image: "/assets/events/DEBUTS/KAI.png",
     video: "",
     isMakeAChange: false
   },
@@ -138,7 +138,7 @@ export const events = [
     date: "Aug 2024",
     year: "2024-25",
     description: "",
-    image: "src/assets/events/DEBUTS/LEIA.png",
+    image: "/assets/events/DEBUTS/LEIA.png",
     video: "",
     isMakeAChange: false
   },
@@ -147,7 +147,7 @@ export const events = [
     date: "July 2024",
     year: "2024-25",
     description: "",
-    image: "src/assets/events/DEBUTS/ABIGAIL.png",
+    image: "/assets/events/DEBUTS/ABIGAIL.png",
     video: "",
     isMakeAChange: false
   },
@@ -158,7 +158,7 @@ export const events = [
     date: "Apr 2024",
     year: "2023-24",
     description: "Our annual cultural showcase featuring traditional Filipino folk dances and guest performances.\nAll Proceeds went to the Arriola-Ochengco campaign!",
-    image: "src/assets/events/2024MAC.png",
+    image: "/assets/events/2024MAC.png",
     video: "https://www.youtube.com/playlist?list=PLwIEA66EISxBXfZ6I8MESN-nh1M6stZnR",
     isMakeAChange: true,
     featured: true
@@ -168,7 +168,7 @@ export const events = [
     date: "Feb 2024",
     year: "2023-24",
     description: "",
-    image: "/src/assets/events/NONMAC/2024POLY.png",
+    image: "/assets/events/NONMAC/2024POLY.png",
     video: "https://youtu.be/9yXqAHjDiww?si=_oIX0-ubig1L65sy",
     isMakeAChange: false
   },
@@ -177,7 +177,7 @@ export const events = [
     date: "Dec 2023",
     year: "2023-24",
     description: "",
-    image: "/src/assets/events/NONMAC/2023MULTI.png",
+    image: "/assets/events/NONMAC/2023MULTI.png",
     video: "https://youtu.be/wSKK7xy0t3Y?si=74AMoFkRc4dvyEyX",
     isMakeAChange: false
   },
@@ -186,7 +186,7 @@ export const events = [
     date: "Nov 2023",
     year: "2023-24",
     description: "",
-    image: "/src/assets/events/NONMAC/2023BOBA.png",
+    image: "/assets/events/NONMAC/2023BOBA.png",
     video: "",
     isMakeAChange: false
   },
@@ -195,7 +195,7 @@ export const events = [
     date: "Oct 2023",
     year: "2023-24",
     description: "The 2023 Bayanihan Festival was the first youth-led Filipino event in Elk Grove which strived to create unity within the region. As a part of celebrating Filipino culture, our president organized a Tinikling dance competition known as the Bayanihan Battle between EGUSD Filipino clubs where the winning group would win a cash prize. With a 16 member choreography and a tutorial segment, Franklin's TDC went up against Cosumnes Oaks's TDC.",
-    image: "/src/assets/events/NONMAC/2023BAYA.png",
+    image: "/assets/events/NONMAC/2023BAYA.png",
     video: "",
     isMakeAChange: false
   },
@@ -204,7 +204,7 @@ export const events = [
     date: "Sept 2023",
     year: "2023-24",
     description: "",
-    image: "/src/assets/events/NONMAC/2023HOCO.png",
+    image: "/assets/events/NONMAC/2023HOCO.png",
     video: "",
     isMakeAChange: false
   },
@@ -213,7 +213,7 @@ export const events = [
     date: "Aug 2023",
     year: "2023-24",
     description: "",
-    image: "/src/assets/events/NONMAC/2023BTS.png",
+    image: "/assets/events/NONMAC/2023BTS.png",
     video: "https://youtu.be/85ReORBtGLM?si=gmwgla_SfOXiING3",
     isMakeAChange: false
   },
@@ -224,7 +224,7 @@ export const events = [
     date: "Apr 2023",
     year: "2022-23",
     description: "Our annual cultural showcase featuring traditional Filipino folk dances and guest performances.\nAll Proceeds went to the Bayanihan Disaster Response!",
-    image: "/src/assets/events/2023MAC.png",
+    image: "/assets/events/2023MAC.png",
     video: "",
     isMakeAChange: true
   },
@@ -233,7 +233,7 @@ export const events = [
     date: "Mar 2023",
     year: "2022-23",
     description: "",
-    image: "/src/assets/events/NONMAC/2023POLY.png",
+    image: "/assets/events/NONMAC/2023POLY.png",
     video: "",
     isMakeAChange: false
   },
@@ -242,7 +242,7 @@ export const events = [
     date: "Dec 2022",
     year: "2022-23",
     description: "",
-    image: "/src/assets/events/NONMAC/2022MULTI.png",
+    image: "/assets/events/NONMAC/2022MULTI.png",
     video: "",
     isMakeAChange: false
   },
@@ -251,7 +251,7 @@ export const events = [
     date: "Nov 2022",
     year: "2022-23",
     description: "",
-    image: "/src/assets/events/NONMAC/2022BOBA.png",
+    image: "/assets/events/NONMAC/2022BOBA.png",
     video: "",
     isMakeAChange: false
   },
@@ -260,7 +260,7 @@ export const events = [
     date: "Sept 2022",
     year: "2022-23",
     description: "",
-    image: "/src/assets/events/NONMAC/2022HOCO.png",
+    image: "/assets/events/NONMAC/2022HOCO.png",
     video: "",
     isMakeAChange: false
   },
@@ -271,7 +271,7 @@ export const events = [
     date: "Apr 2022",
     year: "2021-22",
     description: "Our annual cultural showcase featuring traditional Filipino folk dances and guest performances.\nAll Proceeds went to the Kapit Bisig Typhoon Relief program!",
-    image: "src/assets/events/2022MAC.png",
+    image: "/assets/events/2022MAC.png",
     video: "",
     isMakeAChange: true
   },
@@ -280,7 +280,7 @@ export const events = [
     date: "Mar 2022",
     year: "2021-22",
     description: "",
-    image: "/src/assets/events/NONMAC/2022POLY.png",
+    image: "/assets/events/NONMAC/2022POLY.png",
     video: "",
     isMakeAChange: false
   },
@@ -289,7 +289,7 @@ export const events = [
     date: "Feb 2022",
     year: "2021-22",
     description: "",
-    image: "/src/assets/events/NONMAC/2021BOBA.png",
+    image: "/assets/events/NONMAC/2021BOBA.png",
     video: "",
     isMakeAChange: false
   },
@@ -298,7 +298,7 @@ export const events = [
     date: "Oct 2021",
     year: "2021-22",
     description: "",
-    image: "src/assets/events/NONMAC/2022HOMECHURCH.png",
+    image: "/assets/events/NONMAC/2022HOMECHURCH.png",
     video: "https://www.youtube.com/watch?v=bLKHEVCOKvo",
     isMakeAChange: false
   },
@@ -307,7 +307,7 @@ export const events = [
     date: "Oct 2021",
     year: "2021-22",
     description: "",
-    image: "/src/assets/events/NONMAC/2021HOCO.png",
+    image: "/assets/events/NONMAC/2021HOCO.png",
     video: "",
     isMakeAChange: false
   },
@@ -318,7 +318,7 @@ export const events = [
     date: "Mar 2020",
     year: "2019-20",
     description: "",
-    image: "/src/assets/events/NONMAC/2020LINKCREW.png",
+    image: "/assets/events/NONMAC/2020LINKCREW.png",
     video: "",
     isMakeAChange: false
   },
@@ -327,7 +327,7 @@ export const events = [
     date: "Dec 2019",
     year: "2019-20",
     description: "",
-    image: "/src/assets/events/NONMAC/2020SINAG.png",
+    image: "/assets/events/NONMAC/2020SINAG.png",
     video: "https://www.facebook.com/reel/711398089753559",
     isMakeAChange: false
   },
@@ -337,7 +337,7 @@ export const events = [
     date: "Sept 2019",
     year: "2019-20",
     description: "",
-    image: "/src/assets/events/NONMAC/2019HOCO.png",
+    image: "/assets/events/NONMAC/2019HOCO.png",
     video: "",
     isMakeAChange: false
   },
@@ -346,7 +346,7 @@ export const events = [
     date: "Aug 2019",
     year: "2019-20",
     description: "",
-    image: "/src/assets/events/NONMAC/2019BTS.png",
+    image: "/assets/events/NONMAC/2019BTS.png",
     video: "",
     isMakeAChange: false
   },
@@ -357,7 +357,7 @@ export const events = [
     date: "Apr 2019",
     year: "2018-19",
     description: "Our annual cultural showcase featuring traditional Filipino folk dances and guest performances.",
-    image: "/src/assets/events/2019MAC.png",
+    image: "/assets/events/2019MAC.png",
     video: "",
     isMakeAChange: true
   },
@@ -366,7 +366,7 @@ export const events = [
     date: "Mar 2019",
     year: "2018-19",
     description: "",
-    image: "/src/assets/events/NONMAC/2019BLACKLIGHT.png",
+    image: "/assets/events/NONMAC/2019BLACKLIGHT.png",
     video: "",
     isMakeAChange: false
   },
@@ -375,7 +375,7 @@ export const events = [
     date: "Feb 2019",
     year: "2018-19",
     description: "",
-    image: "/src/assets/events/NONMAC/2019POLY.png",
+    image: "/assets/events/NONMAC/2019POLY.png",
     video: "https://www.facebook.com/reel/642047592920907",
     isMakeAChange: false
   },
@@ -384,7 +384,7 @@ export const events = [
     date: "Jan 2019",
     year: "2018-19",
     description: "",
-    image: "/src/assets/events/NONMAC/2019TET.png",
+    image: "/assets/events/NONMAC/2019TET.png",
     video: "https://www.facebook.com/reel/324021544900112",
     isMakeAChange: false
   },
@@ -393,7 +393,7 @@ export const events = [
     date: "Dec 2018",
     year: "2018-19",
     description: "",
-    image: "/src/assets/events/NONMAC/2018FUSION.png",
+    image: "/assets/events/NONMAC/2018FUSION.png",
     video: "https://www.facebook.com/reel/284347895517706",
     isMakeAChange: false
   },
@@ -402,7 +402,7 @@ export const events = [
     date: "Jan 2019",
     year: "2018-19",
     description: "",
-    image: "/src/assets/events/NONMAC/2018BOBA.png",
+    image: "/assets/events/NONMAC/2018BOBA.png",
     video: "https://www.facebook.com/reel/2015995988692777",
     isMakeAChange: false
   },
@@ -411,7 +411,7 @@ export const events = [
     date: "Oct 2018",
     year: "2018-19",
     description: "",
-    image: "/src/assets/events/NONMAC/2018SINAG.png",
+    image: "/assets/events/NONMAC/2018SINAG.png",
     video: "https://www.facebook.com/reel/2222855361290009",
     isMakeAChange: false
   },
@@ -420,7 +420,7 @@ export const events = [
     date: "Sept 2018",
     year: "2018-19",
     description: "",
-    image: "/src/assets/events/NONMAC/2018HOCO.png",
+    image: "/assets/events/NONMAC/2018HOCO.png",
     video: "https://www.facebook.com/reel/328758941032009/?s=single_unit",
     isMakeAChange: false
   },
@@ -429,7 +429,7 @@ export const events = [
     date: "Aug 2018",
     year: "2018-19",
     description: "",
-    image: "/src/assets/events/NONMAC/2018MULTIFESTIVAL.png",
+    image: "/assets/events/NONMAC/2018MULTIFESTIVAL.png",
     video: "https://www.facebook.com/reel/230640964285485",
     isMakeAChange: false
   },
@@ -440,7 +440,7 @@ export const events = [
     date: "May 2018",
     year: "2017-18",
     description: "Our annual cultural showcase featuring traditional Filipino folk dances and guest performances.\nAll Proceeds went to My Sisters House, which helps survivors of domestic abuse.!",
-    image: "/src/assets/events/2018MAC.png",
+    image: "/assets/events/2018MAC.png",
     video: "https://www.facebook.com/reel/10155712793013049",
     isMakeAChange: true
   },
@@ -449,7 +449,7 @@ export const events = [
     date: "Mar 2018",
     year: "2017-18",
     description: "",
-    image: "/src/assets/events/NONMAC/2018BLACKLIGHT.png",
+    image: "/assets/events/NONMAC/2018BLACKLIGHT.png",
     video: "https://www.facebook.com/reel/10155619870498049",
     isMakeAChange: false
   },
@@ -458,7 +458,7 @@ export const events = [
     date: "Feb 2018",
     year: "2017-18",
     description: "",
-    image: "/src/assets/events/NONMAC/2017POLY.png",
+    image: "/assets/events/NONMAC/2017POLY.png",
     video: "",
     isMakeAChange: false
   },
@@ -467,7 +467,7 @@ export const events = [
     date: "Jan 2018",
     year: "2017-18",
     description: "",
-    image: "/src/assets/events/NONMAC/2017TET.png",
+    image: "/assets/events/NONMAC/2017TET.png",
     video: "https://www.facebook.com/reel/10154492650383049",
     isMakeAChange: false
   },
@@ -476,7 +476,7 @@ export const events = [
     date: "Dec 2017",
     year: "2017-18",
     description: "",
-    image: "/src/assets/events/NONMAC/2017KAISER.png",
+    image: "/assets/events/NONMAC/2017KAISER.png",
     video: "https://www.facebook.com/reel/10155372993613049",
     isMakeAChange: false
   },
@@ -485,7 +485,7 @@ export const events = [
     date: "Sept 2017",
     year: "2017-18",
     description: "",
-    image: "/src/assets/events/NONMAC/2017HOCO.png",
+    image: "/assets/events/NONMAC/2017HOCO.png",
     video: "",
     isMakeAChange: false
   },
@@ -496,7 +496,7 @@ export const events = [
     date: "Apr 2017",
     year: "2016-17",
     description: "Our 2nd annual cultural showcase featuring traditional Filipino folk dances and guest performances.\n All Proceeds went to towards Clean Water",
-    image: "/src/assets/events/2017MAC.png",
+    image: "/assets/events/2017MAC.png",
     video: "https://www.facebook.com/100063458893851/videos/pcb.10154659363568049/10154659359768049",
     isMakeAChange: true
   },
@@ -505,7 +505,7 @@ export const events = [
     date: "Mar 2017",
     year: "2016-17",
     description: "",
-    image: "/src/assets/events/NONMAC/2017UNITED.png",
+    image: "/assets/events/NONMAC/2017UNITED.png",
     video: "https://www.facebook.com/reel/10154644288863049",
     isMakeAChange: false
   },
@@ -514,7 +514,7 @@ export const events = [
     date: "Jan 2017",
     year: "2016-17",
     description: "",
-    image: "src/assets/events/NONMAC/2017TET.png",
+    image: "/assets/events/NONMAC/2017TET.png",
     video: "https://www.facebook.com/reel/10154492650383049",
     isMakeAChange: false
   },
@@ -523,7 +523,7 @@ export const events = [
     date: "Dec 2016",
     year: "2016-17",
     description: "",
-    image: "src/assets/events/NONMAC/2016BOBA.png",
+    image: "/assets/events/NONMAC/2016BOBA.png",
     video: "",
     isMakeAChange: false
   },
@@ -534,7 +534,7 @@ export const events = [
     date: "Apr 2016",
     year: "2015-16",
     description: "Our 1st annual cultural showcase featuring traditional Filipino folk dances and guest performances.\n All Proceeds went to helping the Homeless through Loaves & Fishes",
-    image: "/src/assets/events/2016MAC.png",
+    image: "/assets/events/2016MAC.png",
     video: "https://www.instagram.com/p/BFNIVRISy0T/?fbclid=IwY2xjawPGrllleHRuA2FlbQIxMQBzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeC5SVaYokfMA2DsPBWK6fRWdS0GXFaWClPtw_ayO9c8456WnNQGFLc79Sz5M_aem_yF0jNCcaiWe1DaMJfy6CCQ",
     isMakeAChange: true
   },
@@ -543,7 +543,7 @@ export const events = [
     date: "Feb 2016",
     year: "2015-16",
     description: "",
-    image: "/src/assets/events/NONMAC/2016POLY.png",
+    image: "/assets/events/NONMAC/2016POLY.png",
     video: "",
     isMakeAChange: false
   },
@@ -552,7 +552,7 @@ export const events = [
     date: "Jan 2016",
     year: "2015-16",
     description: "",
-    image: "/src/assets/events/NONMAC/2016TET.png",
+    image: "/assets/events/NONMAC/2016TET.png",
     video: "https://www.youtube.com/watch?v=20sivDkHe8I&t=64s",
     isMakeAChange: false
   },
@@ -561,7 +561,7 @@ export const events = [
     date: "Nov 2015",
     year: "2015-16",
     description: "",
-    image: "/src/assets/events/NONMAC/2016HEIN.png",
+    image: "/assets/events/NONMAC/2016HEIN.png",
     video: "",
     isMakeAChange: false
   },
@@ -570,7 +570,7 @@ export const events = [
     date: "Oct 2015",
     year: "2015-16",
     description: "",
-    image: "/src/assets/events/NONMAC/2016STONELAKE.png",
+    image: "/assets/events/NONMAC/2016STONELAKE.png",
     video: "",
     isMakeAChange: false
   },
@@ -581,7 +581,7 @@ export const events = [
     date: "Feb 2015",
     year: "2014-15",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2015FUSION.png",
+    image: "/assets/events/NONMAC/Pre2016/2015FUSION.png",
     video: "https://www.youtube.com/watch?v=gmO0HAmfVQM",
     isMakeAChange: false
   },
@@ -590,7 +590,7 @@ export const events = [
     date: "Oct 2014",
     year: "2014-15",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2014HOCO.png",
+    image: "/assets/events/NONMAC/Pre2016/2014HOCO.png",
     video: "",
     isMakeAChange: false
   },
@@ -601,7 +601,7 @@ export const events = [
     date: "Feb 2014",
     year: "2013-14",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2014FUSION.png",
+    image: "/assets/events/NONMAC/Pre2016/2014FUSION.png",
     video: "",
     isMakeAChange: false
   },
@@ -610,7 +610,7 @@ export const events = [
     date: "Dec 2013",
     year: "2013-14",
     description: "With performances from Franklin High School's Tinikling Dance Club, Haka, Poly, Korean Dance Club, and UNDFND, Hope After Haiyan was a fundraising performance raising funds for Red Cross Philippines after Typhoon Haiyan, helping rebuild homes and livelihood in the Philippines.",
-    image: "src/assets/events/NONMAC/Pre2016/2013HOPEAFTERHAIYAN.png",
+    image: "/assets/events/NONMAC/Pre2016/2013HOPEAFTERHAIYAN.png",
     video: "",
     isMakeAChange: true
   },
@@ -621,7 +621,7 @@ export const events = [
     date: "Feb 2013",
     year: "2012-13",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2013FUSION.png",
+    image: "/assets/events/NONMAC/Pre2016/2013FUSION.png",
     video: "https://www.youtube.com/watch?v=4PUdCTSBvjc",
     isMakeAChange: false
   },
@@ -630,7 +630,7 @@ export const events = [
     date: "Sept 2012",
     year: "2012-13",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2012HOCO.png",
+    image: "/assets/events/NONMAC/Pre2016/2012HOCO.png",
     video: "https://www.facebook.com/reel/4665106711527",
     isMakeAChange: false
   },
@@ -641,7 +641,7 @@ export const events = [
     date: "Apr 2012",
     year: "2011-12",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2012INSPIRE.png",
+    image: "/assets/events/NONMAC/Pre2016/2012INSPIRE.png",
     video: "https://www.youtube.com/watch?v=eW1lkoL3rX8",
     isMakeAChange: false
   },
@@ -650,7 +650,7 @@ export const events = [
     date: "Apr 2012",
     year: "2011-12",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2012FUSIONSHOWCASE.png",
+    image: "/assets/events/NONMAC/Pre2016/2012FUSIONSHOWCASE.png",
     video: "https://www.youtube.com/watch?v=VswShls5Hkg",
     isMakeAChange: false
   },
@@ -659,7 +659,7 @@ export const events = [
     date: "Feb 2012",
     year: "2011-12",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2012FUSION.png",
+    image: "/assets/events/NONMAC/Pre2016/2012FUSION.png",
     video: "https://www.youtube.com/watch?v=u887_MnwREc",
     isMakeAChange: false
   },
@@ -668,7 +668,7 @@ export const events = [
     date: "Dec 2011",
     year: "2011-12",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2011RUSSEL.png",
+    image: "/assets/events/NONMAC/Pre2016/2011RUSSEL.png",
     video: "https://www.facebook.com/reel/308843335813878",
     isMakeAChange: false
   },
@@ -679,7 +679,7 @@ export const events = [
     date: "June 2011",
     year: "2010-11",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2011FILIPINOFIESTA.png",
+    image: "/assets/events/NONMAC/Pre2016/2011FILIPINOFIESTA.png",
     video: "https://www.facebook.com/reel/10150627979150713",
     isMakeAChange: false
   },
@@ -688,7 +688,7 @@ export const events = [
     date: "Apr 2011",
     year: "2010-11",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2011YFC.png",
+    image: "/assets/events/NONMAC/Pre2016/2011YFC.png",
     video: "",
     isMakeAChange: false
   },
@@ -697,7 +697,7 @@ export const events = [
     date: "Mar 2011",
     year: "2010-11",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2011FUSION.png",
+    image: "/assets/events/NONMAC/Pre2016/2011FUSION.png",
     video: "https://www.youtube.com/watch?v=SVgp_t8cWXQ&fbclid=IwY2xjawPGsDZleHRuA2FlbQIxMABicmlkETF2Z2NFNWVab0c2d2VqUEthc3J0YwZHcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmDDpb9JFCAyTDdnNlepJxuwiC62FfIca_O8CcvHXMk0VTwsUoKzbewcoIqx_aem_rnvUge3rQxcHrERkl25dLg",
     isMakeAChange: false
   },
@@ -706,7 +706,7 @@ export const events = [
     date: "Mar 2011",
     year: "2010-11",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2011INSPIRE.png",
+    image: "/assets/events/NONMAC/Pre2016/2011INSPIRE.png",
     video: "https://www.youtube.com/watch?v=Mi8P1m7J7w0",
     isMakeAChange: false
   },
@@ -715,7 +715,7 @@ export const events = [
     date: "July 2010",
     year: "2010-11",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2010JULYFOURTH.png",
+    image: "/assets/events/NONMAC/Pre2016/2010JULYFOURTH.png",
     video: "",
     isMakeAChange: false
   },
@@ -726,7 +726,7 @@ export const events = [
     date: "May 2010",
     year: "2009-10",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2010SENIORGOODBYE.png",
+    image: "/assets/events/NONMAC/Pre2016/2010SENIORGOODBYE.png",
     video: "https://www.facebook.com/reel/411962983591",
     isMakeAChange: false
   },
@@ -735,7 +735,7 @@ export const events = [
     date: "May 2010",
     year: "2009-10",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2010MULTIWEEK.png",
+    image: "/assets/events/NONMAC/Pre2016/2010MULTIWEEK.png",
     video: "https://www.facebook.com/reel/396056123591",
     isMakeAChange: false
   },
@@ -744,7 +744,7 @@ export const events = [
     date: "Apr 2010",
     year: "2009-10",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2010BLACKLIGHT.png",
+    image: "/assets/events/NONMAC/Pre2016/2010BLACKLIGHT.png",
     video: "https://www.facebook.com/reel/387204658591",
     isMakeAChange: false
   },
@@ -753,7 +753,7 @@ export const events = [
     date: "Mar 2010",
     year: "2009-10",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2010FUSION.png",
+    image: "/assets/events/NONMAC/Pre2016/2010FUSION.png",
     video: "https://www.facebook.com/reel/355084063591",
     isMakeAChange: false
   },
@@ -762,7 +762,7 @@ export const events = [
     date: "Mar 2010",
     year: "2009-10",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2010STRAUS.png",
+    image: "/assets/events/NONMAC/Pre2016/2010STRAUS.png",
     video: "",
     isMakeAChange: false
   },
@@ -771,7 +771,7 @@ export const events = [
     date: "Dec 2009",
     year: "2009-10",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2009MULTIWEEK.png",
+    image: "/assets/events/NONMAC/Pre2016/2009MULTIWEEK.png",
     video: "",
     isMakeAChange: false
   },
@@ -780,7 +780,7 @@ export const events = [
     date: "Nov 2009",
     year: "2009-10",
     description: "",
-    image: "src/assets/events/NONMAC/Pre2016/2009MORNING.png",
+    image: "/assets/events/NONMAC/Pre2016/2009MORNING.png",
     video: "https://www.youtube.com/watch?v=MdNRD_XwRCY",
     isMakeAChange: false
   }

@@ -137,7 +137,7 @@ export default function BecomeMember({ setActiveSection }) {
                     borderRadius: "1rem",
                     objectPosition: ""
                   }}
-                  src="src/assets/involvement/JOINUP.png" 
+                  src="/assets/involvement/JOINUP.png" 
                   alt="Event Photo" 
                 />
               </div>

@@ -130,7 +130,7 @@ export default function Home() {
                           position: "relative"
                         }}>
                           <img 
-                            src={"src/assets/dances/collage/Tinikling-Collage.png"} 
+                            src={"/assets/dances/collage/Tinikling-Collage.png"} 
                             className="collage"
                             style={{
                               width: "100%",
