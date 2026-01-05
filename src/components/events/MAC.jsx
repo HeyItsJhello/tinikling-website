@@ -64,7 +64,6 @@ export default function MakeAChange({ setActiveSection }) {
             style={{
               width: "100%",
               maxWidth: "75rem",
-              borderRadius: "0.5rem",
               boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
               display: "flex",
               alignItems: "center",

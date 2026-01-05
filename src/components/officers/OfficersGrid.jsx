@@ -73,7 +73,7 @@ export default function OfficersGrid() {
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
                 display: "flex",
                 alignItems: "center",
-                padding: "2rem",
+                padding: "4rem",
                 gap: "2rem",
                 height: "350px"
               }}

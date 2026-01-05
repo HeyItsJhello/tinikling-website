@@ -479,7 +479,7 @@ export default function OfficerPositions({ setActiveSection }) {
                     justifyContent: "center",
                   }}
                 >
-                  "blah blah quote"
+                  "hi my name is kaleb and i am writing a quote"
                 </blockquote>
               </div>
             </div>
