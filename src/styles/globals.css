@@ -99,6 +99,16 @@ section {
         overflow: visible !important;
         height: auto !important;
     }
+
+    /* Fix content being hidden under navbar */
+    main {
+        padding-top: 5rem !important;
+    }
+
+    /* Fix dances page - smaller cards with visible arrows */
+    .dances-scroll {
+        padding-top: 6rem !important;
+    }
 }
 
 @media (max-width: 600px) {
@@ -204,13 +214,14 @@ section {
 /* Mobile-specific dance card styles */
 @media (max-width: 768px) {
   .dances-scroll {
-    gap: 3.5rem !important;
-    padding-inline: calc(50% - min(40vw, 10rem)) !important;
+    gap: 4rem !important;
+    padding-inline: calc(50% - min(35vw, 9rem)) !important;
   }
 
   .dance-card {
-    width: min(80vw, 20rem) !important;
-    min-width: min(80vw, 15rem) !important;
+    width: min(70vw, 18rem) !important;
+    min-width: min(70vw, 14rem) !important;
+    min-height: 28rem !important;
   }
 
   .dance-card img {
@@ -218,34 +229,36 @@ section {
   }
 
   .scroll-arrow {
-    font-size: 1.5rem !important;
-    left: calc(100% + 3.5rem / 2) !important;
+    font-size: 2rem !important;
+    left: calc(100% + 4rem / 2) !important;
+    color: var(--red) !important;
   }
 }
 
 @media (max-width: 480px) {
   .dances-scroll {
-    gap: 3rem !important;
-    padding-inline: calc(50% - min(40vw, 10rem)) !important;
+    gap: 3.5rem !important;
+    padding-inline: calc(50% - min(35vw, 8rem)) !important;
   }
 
   .dance-card {
-    width: min(80vw, 20rem) !important;
-    min-width: min(80vw, 15rem) !important;
-    padding: 1rem !important;
+    width: min(70vw, 16rem) !important;
+    min-width: min(70vw, 13rem) !important;
+    padding: 0.8rem !important;
+    min-height: 26rem !important;
   }
 
   .dance-card h3 {
-    font-size: 1.25rem !important;
+    font-size: 1.1rem !important;
   }
 
   .dance-card p {
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
   }
 
   .scroll-arrow {
-    font-size: 1.2rem !important;
-    left: calc(100% + 3rem / 2) !important;
+    font-size: 1.8rem !important;
+    left: calc(100% + 3.5rem / 2) !important;
   }
 }
 
@@ -253,4 +266,35 @@ section {
 .collage {
     max-width: 200%;
     max-height: 200%;
+}
+
+/* Mobile fixes for About Us page */
+@media (max-width: 768px) {
+  .about-hero {
+    margin-top: 0rem !important;
+  }
+
+  /* Fix affiliations/founded section */
+  .special-recognition-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 1.5rem !important;
+    gap: 1rem !important;
+  }
+
+  .special-recognition-photo {
+    width: min(15rem, 80vw) !important;
+    height: min(15rem, 80vw) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .special-recognition-card {
+    padding: 1rem !important;
+  }
+
+  .special-recognition-photo {
+    width: min(12rem, 90vw) !important;
+    height: min(12rem, 90vw) !important;
+  }
 }

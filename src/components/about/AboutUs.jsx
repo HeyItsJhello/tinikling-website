@@ -33,14 +33,17 @@ export default function AboutUs({ setActiveSection }) {
     >
       {/* Hero Section */}
       <section
+        className="about-hero"
         style={{
           position: "relative",
           height: "50vh",
+          minHeight: "300px",
           overflowX: "hidden",
           width: "100%",
           margin: 0,
           padding: 0,
-          boxShadow: "0 12px 24px rgba(0, 0, 0, 0.3)"
+          boxShadow: "0 12px 24px rgba(0, 0, 0, 0.3)",
+          marginTop: "4rem"
         }}
       >
         {/* Background image layer */}
@@ -92,18 +95,25 @@ export default function AboutUs({ setActiveSection }) {
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
-            color: "var(--cream)"
+            color: "var(--cream)",
+            padding: "0 1rem"
           }}
         >
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
+            style={{ width: "100%" }}
           >
-            <h1 style={{ fontSize: "3.5rem", margin: "0 0 1rem 0", fontStyle: "italic" }}>
+            <h1 className="about-hero-title" style={{
+              fontSize: "clamp(1.5rem, 5vw, 3.5rem)",
+              margin: "0 0 1rem 0",
+              fontStyle: "italic",
+              lineHeight: "1.3"
+            }}>
               Our mission is to share the beauty of Filipino culture through our dance
             </h1>
-            <p style={{ fontSize: "1.5rem", margin: 0 }}>
+            <p style={{ fontSize: "clamp(1rem, 3vw, 1.5rem)", margin: 0 }}>
               - Tinikling Dance Club 2024
             </p>
           </motion.div>
@@ -320,7 +330,7 @@ export default function AboutUs({ setActiveSection }) {
               display: "flex",
               flexDirection: "column",
               gap: "3rem",
-              padding: "0 2rem",
+              padding: "0 1rem",
               maxWidth: "1000px",
               margin: "0 auto"
             }}
@@ -334,6 +344,7 @@ export default function AboutUs({ setActiveSection }) {
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.02 }}
+                  className="special-recognition-card"
                   style={{
                     backgroundColor: "white",
                     borderRadius: "1rem",
@@ -349,14 +360,14 @@ export default function AboutUs({ setActiveSection }) {
                 >
                   <div style={{ flex: "1", padding: "1rem" }}>
                     <h1 style={{
-                      fontSize: "2.5rem",
+                      fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
                       marginBottom: "1rem",
                       color: "var(--blue)"
                     }}>
                       {person.name}
                     </h1>
                     <p style={{
-                      fontSize: "1rem",
+                      fontSize: "clamp(0.9rem, 2vw, 1rem)",
                       lineHeight: "1.6",
                       color: "var(--dark)"
                     }}>
@@ -367,10 +378,11 @@ export default function AboutUs({ setActiveSection }) {
                   <div
                     onMouseEnter={() => setIsFlipped(true)}
                     onMouseLeave={() => setIsFlipped(false)}
+                    className="special-recognition-photo"
                     style={{
                       position: "relative",
-                      width: "20rem",
-                      height: "20rem",
+                      width: "min(20rem, 40vw)",
+                      height: "min(20rem, 40vw)",
                       flexShrink: 0,
                       perspective: "1000px",
                       cursor: "pointer"
@@ -405,7 +417,7 @@ export default function AboutUs({ setActiveSection }) {
                           }}
                           onError={() => setPhoto1Error(true)}
                         />
-                      
+
                     </motion.div>
 
                     {/* Second photo - back */}

@@ -87,7 +87,8 @@ export default function Home() {
                     display: "flex",
                     flexWrap: "wrap",
                     alignItems: "center",
-                    gap: "0",
+                    justifyContent: "center",
+                    gap: "2rem",
                     width: "100%"
                   }}
                 >
@@ -96,9 +97,9 @@ export default function Home() {
                       flex: "2 1 5%",
                       minWidth: "min(100%, 35rem)",
                       padding: "clamp(1rem, 3vw, 2rem)",
-                      marginLeft: "clamp(0rem, 2vw, 2rem)",
-                      marginRight: "clamp(0rem, 2vw, 2rem)",
-                      boxSizing: "border-box"
+                      margin: "0 auto",
+                      boxSizing: "border-box",
+                      textAlign: "center"
                     }}
                   >
                     <Reveal>
@@ -135,8 +136,8 @@ export default function Home() {
                           aspectRatio: "4/3",
                           position: "relative"
                         }}>
-                          <img 
-                            src={"/assets/dances/collage/Tinikling-Collage.png"} 
+                          <img
+                            src={"/assets/dances/collage/Tinikling-Collage.png"}
                             className="collage"
                             style={{
                               width: "100%",
@@ -146,7 +147,7 @@ export default function Home() {
                           />
                         </div>
                       </motion.div>
-                      
+
                     </Reveal>
                   </section>
                 <MakeAChange setActiveSection={setActiveSection} />

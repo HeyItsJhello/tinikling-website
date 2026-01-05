@@ -30,19 +30,19 @@ export default function GettingInvolved({ setActiveSection }) {
           </h1>
 
           {/* Kabataan Alliance - Description on left, image on right */}
-          <div style={{
+          <div className="involvement-section" style={{
             display: "flex",
             flexWrap: "wrap",
             alignItems: "center",
-            gap: "3rem",
+            gap: "clamp(1rem, 3vw, 3rem)",
             marginBottom: "5rem"
           }}>
             <div style={{
-              flex: "1 1 400px",
-              minWidth: "300px"
+              flex: "1 1 300px",
+              minWidth: "min(300px, 100%)"
             }}>
               <h2 style={{
-                fontSize: "2.5rem",
+                fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
                 color: "var(--blue)",
                 marginBottom: "1.5rem"
               }}>
@@ -51,7 +51,7 @@ export default function GettingInvolved({ setActiveSection }) {
                 </a>
               </h2>
               <p style={{
-                fontSize: "1.2rem",
+                fontSize: "clamp(1rem, 2vw, 1.2rem)",
                 lineHeight: "1.8",
                 color: "var(--dark)",
                 textAlign: "center"
@@ -60,16 +60,16 @@ export default function GettingInvolved({ setActiveSection }) {
                 The Kabataan Alliance is a national alliance of more than 50 Filipino youth and student organizations dedicated to serving our communities in the U.S. and back home in the Philippines.  With the mission to build national unity among Filipino youth across the United States to advocate for the rights and welfare of Filipinos in the US, the Philippines, and around the world, Kabataan Alliance unites and empowers Filipino youth across the U.S. to engage in community organizing and advocacy to build towards a just society where people can reach their full potentials.
               </p>
             </div>
-            <div style={{
-              flex: "1 1 25rem",
-              minWidth: "30rem",
+            <div className="involvement-image" style={{
+              flex: "1 1 300px",
+              minWidth: "min(300px, 100%)",
               display: "flex",
               justifyContent: "center"
             }}>
               <div style={{
                 width: "100%",
                 maxWidth: "40rem",
-                height: "25rem",
+                height: "min(25rem, 60vw)",
                 backgroundColor: "var(--gold)",
                 borderRadius: "1rem",
                 display: "flex",
@@ -79,16 +79,15 @@ export default function GettingInvolved({ setActiveSection }) {
                 fontSize: "1.5rem",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
               }}>
-                <img 
-                  style={{ 
-                    width: "100%", 
-                    height: "100%", 
+                <img
+                  style={{
+                    width: "100%",
+                    height: "100%",
                     objectFit: "cover",
-                    borderRadius: "1rem",
-                    objectPosition: ""
+                    borderRadius: "1rem"
                   }}
-                  src="/assets/involvement/KABATAAN.png" 
-                  alt="Event Photo" 
+                  src="/assets/involvement/KABATAAN.png"
+                  alt="Event Photo"
                 />
               </div>
             </div>
@@ -122,24 +121,24 @@ export default function GettingInvolved({ setActiveSection }) {
 
           {/* Kapit Bisig
            - Image on left, description on right */}
-          <div style={{
+          <div className="involvement-section" style={{
             display: "flex",
             flexWrap: "wrap",
             alignItems: "center",
-            gap: "3rem",
+            gap: "clamp(1rem, 3vw, 3rem)",
             marginBottom: "3rem"
           }}>
-            <div style={{
-              flex: "1 1 25rem",
-              minWidth: "30rem",
+            <div className="involvement-image" style={{
+              flex: "1 1 300px",
+              minWidth: "min(300px, 100%)",
               display: "flex",
               justifyContent: "center",
-              order: window.innerWidth < 768 ? 2 : 1
+              order: 1
             }}>
               <div style={{
                 width: "100%",
                 maxWidth: "40rem",
-                height: "25rem",
+                height: "min(25rem, 60vw)",
                 backgroundColor: "var(--gold)",
                 borderRadius: "1rem",
                 display: "flex",
@@ -149,39 +148,38 @@ export default function GettingInvolved({ setActiveSection }) {
                 fontSize: "1.5rem",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
               }}>
-                <img 
-                  style={{ 
-                    width: "100%", 
-                    height: "100%", 
+                <img
+                  style={{
+                    width: "100%",
+                    height: "100%",
                     objectFit: "cover",
-                    borderRadius: "1rem",
-                    objectPosition: ""
+                    borderRadius: "1rem"
                   }}
-                  src="/assets/involvement/KAPIT.png" 
-                  alt="Event Photo" 
+                  src="/assets/involvement/KAPIT.png"
+                  alt="Event Photo"
                 />
               </div>
             </div>
             <div style={{
-              flex: "1 1 40rem",
-              minWidth: "30rem",
-              order: window.innerWidth < 768 ? 1 : 2
+              flex: "1 1 300px",
+              minWidth: "min(300px, 100%)",
+              order: 2
             }}>
               <h2 style={{
-                fontSize: "2.5rem",
+                fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
                 color: "var(--blue)",
                 marginBottom: "1.5rem"
               }}>
                 Kapit Bisig
               </h2>
               <p style={{
-                fontSize: "1.2rem",
+                fontSize: "clamp(1rem, 2vw, 1.2rem)",
                 lineHeight: "1.8",
                 color: "var(--dark)",
                 textAlign: "center"
               }}>
                 {/* Placeholder text - replace with actual description */}
-                Kabataan Alliance’s Kapit Bisig (“link arms” in Tagalog) Relief  Campaign brings together Filipino youth to fundraise for relief and rehabilitation in vulnerable communities that are impacted by super typhoons in the Philippines. We use education to understand why environmental disasters happen and the impacts it leaves on families. We partner with the National Alliance of Filipino Concerns (NAFCON), to course donations to the Consortium for People’s Development - Disaster Response (CPDDR) that are supporting and directly providing relief to those in need. 
+                Kabataan Alliance's Kapit Bisig ("link arms" in Tagalog) Relief  Campaign brings together Filipino youth to fundraise for relief and rehabilitation in vulnerable communities that are impacted by super typhoons in the Philippines. We use education to understand why environmental disasters happen and the impacts it leaves on families. We partner with the National Alliance of Filipino Concerns (NAFCON), to course donations to the Consortium for People's Development - Disaster Response (CPDDR) that are supporting and directly providing relief to those in need.
               </p>
             </div>
           </div>
