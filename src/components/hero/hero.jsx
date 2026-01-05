@@ -8,7 +8,8 @@ export default function Hero() {
         position: "fixed",
         top: 0,
         left: 0,
-        height: "50vh",
+        height: "clamp(40vh, 50vh, 60vh)",
+        minHeight: "400px",
         overflow: "hidden",
         width: "100vw",
         margin: 0,
@@ -73,13 +74,23 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
+          style={{ padding: "0 1rem" }}
         >
-          <h1 style={{ fontSize: "6rem", margin: "0 0 1rem 0" }}>
+          <h1 style={{
+            fontSize: "clamp(2.5rem, 8vw, 6rem)",
+            margin: "0 0 clamp(0.5rem, 2vw, 1rem) 0",
+            lineHeight: "1.2"
+          }}>
             <span style={{color: "var(--red)"}}>Tinikling</span>{" "}
             <span style={{color: "var(--gold)"}}>Dance</span>{" "}
             <span style={{color: "var(--blue)"}}>Company</span>
           </h1>
-          <p style={{ fontSize: "1.7rem", margin: 0 }}>
+          <p style={{
+            fontSize: "clamp(1rem, 3vw, 1.7rem)",
+            margin: 0,
+            lineHeight: "1.4",
+            maxWidth: "800px"
+          }}>
             A High School dance group performing cultural Filipino dances
           </p>
         </motion.div>

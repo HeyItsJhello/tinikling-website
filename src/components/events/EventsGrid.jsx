@@ -71,27 +71,28 @@ export default function EventsGrid() {
   // Component for Make A Change and Bayanihan featured card
   const FeaturedCard = ({ event }) => {
     const isBayanihan = event.title.toLowerCase().includes('bayanihan');
-    
+
     return (
       <motion.div
         whileHover={{ scale: 1.02 }}
+        className="featured-event-card"
         style={{
           display: "flex",
           flexWrap: "wrap",
-          gap: "2rem",
+          gap: "clamp(1rem, 3vw, 2rem)",
           backgroundColor: "white",
-          padding: "3rem",
-          margin: "0 2rem 3rem 2rem",
+          padding: "clamp(1.5rem, 4vw, 3rem)",
+          margin: "0 clamp(0rem, 2vw, 2rem) 3rem clamp(0rem, 2vw, 2rem)",
           borderRadius: "0.5rem",
           border: "3px solid var(--red)",
           boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15)",
-          minHeight: "25rem",
-          flexDirection: isBayanihan ? "row" : "row"
+          minHeight: "auto",
+          flexDirection: "row"
         }}
       >
         {/* Image - Left for Bayanihan, Right for Make A Change */}
         {isBayanihan && (
-          <div style={{ flex: "1 1 20rem", maxWidth: "45rem", marginLeft: "4rem" }}>
+          <div style={{ flex: "1 1 min(100%, 20rem)", maxWidth: "45rem", marginLeft: "clamp(0rem, 4vw, 4rem)" }}>
             <img
               src={event.image && event.image !== "" ? event.image : "/assets/hero.jpeg"}
               alt={event.title}
@@ -106,25 +107,25 @@ export default function EventsGrid() {
         )}
 
         {/* Content */}
-        <div style={{ 
-          flex: "1 1 25rem", 
-          display: "flex", 
-          flexDirection: "column", 
+        <div style={{
+          flex: "1 1 min(100%, 25rem)",
+          display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
           order: isBayanihan ? 2 : 1
         }}>
-          <h2 style={{ 
-            fontSize: "3rem", 
-            color: "var(--red)", 
+          <h2 style={{
+            fontSize: "clamp(1.5rem, 5vw, 3rem)",
+            color: "var(--red)",
             marginBottom: "1rem",
             fontWeight: "bold"
           }}>
             {event.title}
           </h2>
-          <p style={{ 
-            fontSize: "1.3rem", 
+          <p style={{
+            fontSize: "clamp(1rem, 2.5vw, 1.3rem)",
             lineHeight: "1.8",
             marginBottom: "2rem"
           }}>
@@ -141,11 +142,11 @@ export default function EventsGrid() {
                 style={{
                   backgroundColor: "var(--red)",
                   color: "white",
-                  padding: "1rem 2rem",
+                  padding: "clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem)",
                   borderRadius: "0.5rem",
                   textDecoration: "none",
                   fontWeight: "bold",
-                  fontSize: "1.2rem",
+                  fontSize: "clamp(1rem, 2vw, 1.2rem)",
                   boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)"
                 }}
               >
@@ -162,11 +163,11 @@ export default function EventsGrid() {
                 style={{
                   backgroundColor: "var(--gold)",
                   color: "var(--dark)",
-                  padding: "1rem 2rem",
+                  padding: "clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem)",
                   borderRadius: "0.5rem",
                   textDecoration: "none",
                   fontWeight: "bold",
-                  fontSize: "1.2rem",
+                  fontSize: "clamp(1rem, 2vw, 1.2rem)",
                   boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)"
                 }}
               >
@@ -178,7 +179,7 @@ export default function EventsGrid() {
 
         {/* Image - Right for Make A Change only */}
         {!isBayanihan && (
-          <div style={{ flex: "1 1 20rem", maxWidth: "45rem", marginRight: "0rem", order: 2 }}>
+          <div style={{ flex: "1 1 min(100%, 20rem)", maxWidth: "45rem", marginRight: "0rem", order: 2 }}>
             <img
               src={event.image && event.image !== "" ? event.image : "/assets/hero.jpeg"}
               alt={event.title}
@@ -276,7 +277,7 @@ const EventCard = ({ event }) => (
         {sectionTitle && (
           <>
             <h2 style={{
-              fontSize: "3rem",
+              fontSize: "clamp(1.75rem, 5vw, 3rem)",
               color: "var(--red)",
               textAlign: "center",
               marginBottom: "1rem",
@@ -285,7 +286,7 @@ const EventCard = ({ event }) => (
               {sectionTitle}
             </h2>
             <div style={{
-              width: "60%",
+              width: "clamp(60%, 20vw + 40%, 60%)",
               height: "2px",
               backgroundColor: "var(--gold)",
               margin: "0 auto 3rem auto"
@@ -301,10 +302,11 @@ const EventCard = ({ event }) => (
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(18rem, 22rem))",
-              gap: "2rem",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 18rem), 1fr))",
+              gap: "clamp(1rem, 3vw, 2rem)",
               justifyContent: "center",
-              gridAutoRows: "1fr"
+              gridAutoRows: "1fr",
+              maxWidth: "100%"
             }}
           >
             {otherEvents.map((event, idx) => (
@@ -324,14 +326,14 @@ const EventCard = ({ event }) => (
   };
 
   return (
-    <section style={{ padding: "2rem" }}>
+    <section style={{ padding: "clamp(1rem, 3vw, 2rem)" }}>
       {/* Year Navigation Header */}
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          gap: "2rem",
+          gap: "clamp(1rem, 3vw, 2rem)",
           marginBottom: "3rem",
           paddingBottom: "1rem"
         }}
@@ -345,23 +347,24 @@ const EventCard = ({ event }) => (
               backgroundColor: "var(--gold)",
               border: "none",
               borderRadius: "50%",
-              width: "3rem",
-              height: "3rem",
-              fontSize: "1.5rem",
+              width: "clamp(2.5rem, 6vw, 3rem)",
+              height: "clamp(2.5rem, 6vw, 3rem)",
+              fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center"
+              justifyContent: "center",
+              flexShrink: 0
             }}
           >
             ←
           </motion.button>
         ) : (
-          <div style={{ width: "3rem" }} />
+          <div style={{ width: "clamp(2.5rem, 6vw, 3rem)" }} />
         )}
 
         <h1 style={{
-          fontSize: "4rem",
+          fontSize: "clamp(2rem, 8vw, 4rem)",
           color: "var(--red)",
           margin: 0,
           fontWeight: "bold"
@@ -378,19 +381,20 @@ const EventCard = ({ event }) => (
               backgroundColor: "var(--gold)",
               border: "none",
               borderRadius: "50%",
-              width: "3rem",
-              height: "3rem",
-              fontSize: "1.5rem",
+              width: "clamp(2.5rem, 6vw, 3rem)",
+              height: "clamp(2.5rem, 6vw, 3rem)",
+              fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center"
+              justifyContent: "center",
+              flexShrink: 0
             }}
           >
             →
           </motion.button>
         ) : (
-          <div style={{ width: "3rem" }} />
+          <div style={{ width: "clamp(2.5rem, 6vw, 3rem)" }} />
         )}
       </div>
 

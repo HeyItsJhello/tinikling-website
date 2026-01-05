@@ -68,6 +68,7 @@ export default function OfficersGrid() {
             <motion.div
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
+              className="officer-detail-card"
               style={{
                 backgroundColor: "white",
                 borderRadius: "1rem",
@@ -75,8 +76,8 @@ export default function OfficersGrid() {
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                padding: "2rem",
-                gap: "1.5rem",
+                padding: "clamp(1rem, 3vw, 2rem)",
+                gap: "clamp(1rem, 2vw, 1.5rem)",
                 minHeight: "280px",
                 height: "100%",
                 boxSizing: "border-box"
@@ -97,7 +98,7 @@ export default function OfficersGrid() {
               >
                 <h2
                   style={{
-                    fontSize: "1.5rem",
+                    fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
                     color: "var(--red)",
                     marginBottom: "0.5rem",
                     fontWeight: "bold",
@@ -109,7 +110,7 @@ export default function OfficersGrid() {
                 </h2>
                 <h3
                   style={{
-                    fontSize: "1rem",
+                    fontSize: "clamp(0.9rem, 2vw, 1rem)",
                     color: "var(--blue)",
                     marginBottom: "0.75rem",
                     fontWeight: "600",
@@ -125,7 +126,7 @@ export default function OfficersGrid() {
                     flexDirection: "column",
                     gap: "0.4rem",
                     color: "var(--dark)",
-                    fontSize: "0.9rem"
+                    fontSize: "clamp(0.8rem, 1.5vw, 0.9rem)"
                   }}
                 >
                   <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
@@ -148,9 +149,10 @@ export default function OfficersGrid() {
 
               {/* Photo on the right with 1:1 aspect ratio */}
               <div
+                className="officer-detail-image"
                 style={{
-                  width: "180px",
-                  height: "180px",
+                  width: "clamp(120px, 30vw, 180px)",
+                  height: "clamp(120px, 30vw, 180px)",
                   flexShrink: 0
                 }}
               >

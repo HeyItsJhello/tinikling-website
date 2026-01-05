@@ -56,11 +56,11 @@ export default function DancesGrid({ dances, title }) {
 
   useEffect(() => {
     if (!isReady) return;
-    
+
     const container = scrollRef.current;
     if (!container) return;
 
-    const onScroll = () => {
+    const updateArrows = () => {
       const containerRect = container.getBoundingClientRect();
       const centerX = containerRect.left + containerRect.width / 2;
 
@@ -85,13 +85,13 @@ export default function DancesGrid({ dances, title }) {
       });
     };
 
-    onScroll(); // initial state
-    container.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    updateArrows(); // initial state
+    container.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
 
     return () => {
-      container.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      container.removeEventListener("scroll", updateArrows);
+      window.removeEventListener("resize", updateArrows);
     };
   }, [isReady]);
 
@@ -105,7 +105,7 @@ export default function DancesGrid({ dances, title }) {
       }}
     >
 
-      <h1>{title}</h1>
+      <h1 style={{ textAlign: "center" }}>{title}</h1>
 
       <div
         ref={scrollRef}
@@ -116,9 +116,9 @@ export default function DancesGrid({ dances, title }) {
           flexWrap: "nowrap",
           overflowX: "scroll",
           overflowY: "hidden",
-          gap: "5rem",
+          gap: "clamp(2rem, 5vw, 5rem)",
           marginTop: "3rem",
-          paddingInline: "40%",
+          paddingInline: "max(calc(50% - 10rem), 5%)",
           paddingTop: "1.5rem",
           paddingBottom: "3rem",
           boxSizing: "border-box",
@@ -128,7 +128,7 @@ export default function DancesGrid({ dances, title }) {
           <div
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            style={{ position: "relative", zIndex: 10}}
+            style={{ position: "relative", zIndex: 10, flexShrink: 0}}
           >
             <DanceCard dance={dance} />
             {index < dances.length - 1 && (
@@ -138,13 +138,18 @@ export default function DancesGrid({ dances, title }) {
                 className="scroll-arrow"
                 style={{
                   position: "absolute",
-                  right: "-3rem",
-                  top: "15rem",
+                  left: "calc(100% + clamp(2rem, 5vw, 5rem) / 2)",
+                  top: "50%",
+                  transform: "translate(-50%, -50%)",
                   background: "none",
                   border: "none",
                   cursor: "pointer",
-                  fontSize: "1.5rem",
-                  transition: "transform 0.3s ease"
+                  fontSize: "clamp(1.2rem, 2vw, 1.5rem)",
+                  transition: "transform 0.3s ease",
+                  color: "var(--gold)",
+                  fontWeight: "bold",
+                  padding: "0.5rem",
+                  zIndex: 20
                 }}
               >
                 →
@@ -155,7 +160,7 @@ export default function DancesGrid({ dances, title }) {
       </div>
       <style jsx>{`
         .scroll-arrow.flipped {
-          transform: scaleX(-1) !important;
+          transform: translate(-50%, -50%) scaleX(-1) !important;
         }
       `}</style>
     </section>

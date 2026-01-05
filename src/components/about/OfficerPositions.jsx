@@ -37,8 +37,8 @@ export default function OfficerPositions({ setActiveSection }) {
 
       <div
         style={{
-          marginRight: "7rem",
-          marginLeft: "7rem",
+          marginRight: "clamp(1rem, 10vw, 7rem)",
+          marginLeft: "clamp(1rem, 10vw, 7rem)",
           marginBottom: "3rem",
         }}
       >
@@ -46,6 +46,8 @@ export default function OfficerPositions({ setActiveSection }) {
           <h2
             style={{
               color: "var(--dark)",
+              textAlign: "center",
+              fontSize: "clamp(1rem, 2.5vw, 2rem)"
             }}
           >
             As a dance company, TDC has officer applicants go through a lengthy
@@ -61,7 +63,7 @@ export default function OfficerPositions({ setActiveSection }) {
       {/* Executive Positions - President, VP, Assistant */}
       <section
         style={{
-          padding: "2rem 2rem",
+          padding: "clamp(1rem, 3vw, 2rem)",
           maxWidth: "1200px",
           margin: "0 auto",
         }}
@@ -79,26 +81,27 @@ export default function OfficerPositions({ setActiveSection }) {
             <div
               style={{
                 backgroundColor: "white",
-                padding: "2rem",
+                padding: "clamp(1rem, 3vw, 2rem)",
                 borderRadius: "1rem",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
               }}
             >
               <h2
                 style={{
-                  fontSize: "2.5rem",
+                  fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
                   color: "var(--blue)",
                   marginBottom: "1rem",
+                  textAlign: "center"
                 }}
               >
                 President
               </h2>
               <p
                 style={{
-                  fontSize: "1.2rem",
+                  fontSize: "clamp(1rem, 2vw, 1.2rem)",
                   lineHeight: "1.8",
                   color: "var(--dark)",
-                  textAlign: "center",
+                  textAlign: "center"
                 }}
               >
                 Presidents runs the club's and officer's meetings, coordinating

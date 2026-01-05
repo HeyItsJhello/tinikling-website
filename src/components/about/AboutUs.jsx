@@ -172,7 +172,7 @@ export default function AboutUs({ setActiveSection }) {
             <p>
               We also host numerous{" "}
               <span
-                onClick={() => setActiveSection('events')}
+                onClick={() => setActiveSection('socialevents')}
                 style={{
                   color: "var(--blue)",
                   fontWeight: "bold",
