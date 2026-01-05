@@ -298,3 +298,48 @@ section {
     height: min(12rem, 90vw) !important;
   }
 }
+
+/* Officer positions mobile fixes */
+@media (max-width: 768px) {
+  .officer-card-content {
+    gap: 1.5rem !important;
+    margin-left: 0 !important;
+  }
+
+  .officer-card-content img {
+    object-fit: contain !important;
+  }
+}
+
+/* Officers modal mobile fixes */
+@media (max-width: 768px) {
+  .officer-modal {
+    top: 5rem !important;
+    max-height: calc(100vh - 6rem) !important;
+    padding: 1rem !important;
+    margin: 1rem !important;
+    width: calc(100% - 2rem) !important;
+  }
+
+  .officer-modal-buttons {
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  .officer-modal-buttons button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .officer-modal h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+
+  .officer-modal h3 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem) !important;
+  }
+
+  .officer-modal p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
+  }
+}

@@ -237,6 +237,7 @@ export default function OfficersGrid() {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.3 }}
                 onClick={(e) => e.stopPropagation()}
+                className="officer-modal"
                 style={{
                   backgroundColor: "white",
                   border: "0.1875rem solid var(--red)",
@@ -245,6 +246,7 @@ export default function OfficersGrid() {
                   maxWidth: "56.25rem",
                   width: "100%",
                   height: "85vh",
+                  maxHeight: "calc(100vh - 4rem)",
                   position: "relative",
                   display: "flex",
                   flexDirection: "column"
@@ -289,11 +291,12 @@ export default function OfficersGrid() {
                 >
                   {/* Year Navigation Header */}
                   <div
+                    className="officer-modal-buttons"
                     style={{
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      gap: "2rem",
+                      gap: "clamp(1rem, 3vw, 2rem)",
                       marginBottom: "2rem",
                       borderBottom: "0.125rem solid var(--gold)",
                       paddingBottom: "1rem"
@@ -308,9 +311,9 @@ export default function OfficersGrid() {
                           backgroundColor: "var(--gold)",
                           border: "none",
                           borderRadius: "50%",
-                          width: "3rem",
-                          height: "3rem",
-                          fontSize: "1.5rem",
+                          width: "clamp(2.5rem, 8vw, 3rem)",
+                          height: "clamp(2.5rem, 8vw, 3rem)",
+                          fontSize: "clamp(1.2rem, 4vw, 1.5rem)",
                           cursor: "pointer",
                           display: "flex",
                           alignItems: "center",
@@ -320,12 +323,12 @@ export default function OfficersGrid() {
                         ←
                       </motion.button>
                     ) : (
-                      <div style={{ width: "3rem" }} />
+                      <div style={{ width: "clamp(2.5rem, 8vw, 3rem)" }} />
                     )}
 
                     <h2
                       style={{
-                        fontSize: "2rem",
+                        fontSize: "clamp(1.5rem, 5vw, 2rem)",
                         color: "var(--red)",
                         fontWeight: "bold",
                         margin: 0
@@ -343,9 +346,9 @@ export default function OfficersGrid() {
                           backgroundColor: "var(--gold)",
                           border: "none",
                           borderRadius: "50%",
-                          width: "3rem",
-                          height: "3rem",
-                          fontSize: "1.5rem",
+                          width: "clamp(2.5rem, 8vw, 3rem)",
+                          height: "clamp(2.5rem, 8vw, 3rem)",
+                          fontSize: "clamp(1.2rem, 4vw, 1.5rem)",
                           cursor: "pointer",
                           display: "flex",
                           alignItems: "center",
@@ -355,7 +358,7 @@ export default function OfficersGrid() {
                         →
                       </motion.button>
                     ) : (
-                      <div style={{ width: "3rem" }} />
+                      <div style={{ width: "clamp(2.5rem, 8vw, 3rem)" }} />
                     )}
                   </div>
 
