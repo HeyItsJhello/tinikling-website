@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { events } from "../../data/events";
+import ProgramModal from "./ProgramModal";
 
 export default function EventsGrid() {
   const [currentYearIndex, setCurrentYearIndex] = useState(0);
+  const [modalState, setModalState] = useState({ isOpen: false, program: null, eventTitle: "" });
   const today = new Date();
 
   // Helper to parse dates
@@ -71,7 +73,15 @@ export default function EventsGrid() {
   // Component for Make A Change and Bayanihan featured card
   const FeaturedCard = ({ event }) => {
     const isBayanihan = event.title.toLowerCase().includes('bayanihan');
-    
+
+    const openProgramModal = () => {
+      setModalState({
+        isOpen: true,
+        program: event.program,
+        eventTitle: event.title
+      });
+    };
+
     return (
       <motion.div
         whileHover={{ scale: 1.02 }}
@@ -172,6 +182,29 @@ export default function EventsGrid() {
               >
                 2025 Show Program
               </motion.a>
+            )}
+            {event.program && (
+              <motion.button
+                onClick={openProgramModal}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                style={{
+                  backgroundColor: "var(--gold)",
+                  color: "var(--dark)",
+                  padding: "1rem 2rem",
+                  borderRadius: "0.5rem",
+                  textDecoration: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  fontWeight: "bold",
+                  fontSize: "1.2rem",
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
+                  display: "inline-block",
+                  fontFamily: "var(--font-body)"
+                }}
+              >
+                {event.title.includes("2024") ? "2024" : event.title.includes("2023") ? "2023" : ""} Show Program
+              </motion.button>
             )}
           </div>
         </div>
@@ -324,8 +357,15 @@ const EventCard = ({ event }) => (
   };
 
   return (
-    <section style={{ padding: "2rem" }}>
-      {/* Year Navigation Header */}
+    <>
+      <ProgramModal
+        isOpen={modalState.isOpen}
+        onClose={() => setModalState({ isOpen: false, program: null, eventTitle: "" })}
+        program={modalState.program}
+        eventTitle={modalState.eventTitle}
+      />
+      <section style={{ padding: "2rem" }}>
+        {/* Year Navigation Header */}
       <div
         style={{
           display: "flex",
@@ -419,6 +459,7 @@ const EventCard = ({ event }) => (
           )}
         </motion.div>
       </AnimatePresence>
-    </section>
+      </section>
+    </>
   );
 }
