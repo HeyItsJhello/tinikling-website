@@ -290,6 +290,11 @@ section {
     margin-top: -5rem !important;
   }
 
+  /* Fix Who are we section centering on mobile in home page */
+  section[style*="marginLeft"] {
+    margin-left: 0 !important;
+  }
+
   /* Fix affiliations/founded section */
   .special-recognition-card {
     flex-direction: column !important;
@@ -339,12 +344,14 @@ section {
 
   .officer-modal-buttons {
     gap: 0.5rem !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
   }
 
   .officer-modal-buttons button {
-    padding: 0.5rem 1rem !important;
-    font-size: 0.9rem !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.85rem !important;
+    min-width: 2.5rem !important;
+    flex-shrink: 0 !important;
   }
 
   .officer-modal h2 {

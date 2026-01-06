@@ -80,7 +80,9 @@ export default function ProgramModal({ isOpen, onClose, program, eventTitle }) {
                 marginBottom: "2rem",
                 textAlign: "center",
                 fontWeight: "bold",
-                paddingRight: 0
+                paddingRight: 0,
+                paddingLeft: "2.5rem",
+                paddingTop: "0.5rem"
               }}>
                 {eventTitle} Program
               </h2>
