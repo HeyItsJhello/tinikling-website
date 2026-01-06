@@ -20,9 +20,9 @@ export default function EventCard({ event }) {
                 width: "100%",
             }}
         />
-        <h3>{event.title}</h3>
-        <strong>{event.date}</strong>
-        <p>{event.description}</p>
+        <h3 className="event-card-title">{event.title}</h3>
+        <strong className="event-card-date">{event.date}</strong>
+        <p className="event-card-description">{event.description}</p>
     </motion.div>
     );
 }

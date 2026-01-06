@@ -56,11 +56,13 @@ export default function OfficersGrid() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 500px), 1fr))",
-          gap: "1.5rem",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 31.25rem), 1fr))",
+          gap: "2rem",
           marginTop: "3rem",
           marginBottom: "3rem",
-          gridAutoRows: "1fr"
+          gridAutoRows: "1fr",
+          maxWidth: "75rem",
+          margin: "3rem auto"
         }}
       >
         {officers.map((officer, index) => (
@@ -76,9 +78,9 @@ export default function OfficersGrid() {
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                padding: "clamp(1rem, 3vw, 2rem)",
-                gap: "clamp(1rem, 2vw, 1.5rem)",
-                minHeight: "280px",
+                padding: "clamp(1.5rem, 3vw, 2.5rem)",
+                gap: "clamp(1.5rem, 3vw, 2rem)",
+                minHeight: "20rem",
                 height: "100%",
                 boxSizing: "border-box"
               }}
@@ -98,9 +100,9 @@ export default function OfficersGrid() {
               >
                 <h2
                   style={{
-                    fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
+                    fontSize: "clamp(1.5rem, 3vw, 2rem)",
                     color: "var(--red)",
-                    marginBottom: "0.5rem",
+                    marginBottom: "0.75rem",
                     fontWeight: "bold",
                     wordWrap: "break-word",
                     overflowWrap: "break-word"
@@ -110,9 +112,9 @@ export default function OfficersGrid() {
                 </h2>
                 <h3
                   style={{
-                    fontSize: "clamp(0.9rem, 2vw, 1rem)",
+                    fontSize: "clamp(1.1rem, 2.5vw, 1.3rem)",
                     color: "var(--blue)",
-                    marginBottom: "0.75rem",
+                    marginBottom: "1rem",
                     fontWeight: "600",
                     wordWrap: "break-word",
                     overflowWrap: "break-word"
@@ -124,9 +126,9 @@ export default function OfficersGrid() {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "0.4rem",
+                    gap: "0.5rem",
                     color: "var(--dark)",
-                    fontSize: "clamp(0.8rem, 1.5vw, 0.9rem)"
+                    fontSize: "clamp(0.95rem, 2vw, 1.1rem)"
                   }}
                 >
                   <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
@@ -151,8 +153,8 @@ export default function OfficersGrid() {
               <div
                 className="officer-detail-image"
                 style={{
-                  width: "clamp(120px, 30vw, 180px)",
-                  height: "clamp(120px, 30vw, 180px)",
+                  width: "clamp(10rem, 30vw, 15rem)",
+                  height: "clamp(10rem, 30vw, 15rem)",
                   flexShrink: 0
                 }}
               >

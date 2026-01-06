@@ -161,7 +161,39 @@ export const events = [
     image: "/assets/events/2024MAC.png",
     video: "https://www.youtube.com/playlist?list=PLwIEA66EISxBXfZ6I8MESN-nh1M6stZnR",
     isMakeAChange: true,
-    featured: true
+    featured: true,
+    program: {
+      acts: [
+        {
+          title: "Act 1",
+          performances: [
+            "Vocal - National Anthemes (US & PH)",
+            "Tinikling, Back to School Choreography\nChoreographed by Oli Hufana and Hyacinth Cheung",
+            "Guest Performance: Poly - Mareva",
+            "Tinikling, Parade Choreography",
+            "Guest Performance: Sheldon FPC - Eskrima",
+            "Kappa Malong Malong\nChoreographed by Brielle Dam",
+            "Guest Performance: Iridescent - Only one by VCHA",
+            "Pandanggo Sa Ilaw\nChoreographed by Jerome Kekoa Cabrera and Brielle Dam",
+            "Binasuan\nChoreographed by Oli Hufana and Hyacinth Cheung"
+          ]
+        },
+        {
+          title: "Act 2",
+          performances: [
+            "Senior Spotlight",
+            "Guest Performance: Haka - Red Raiders & Farewell",
+            "Tinikling, Multicultural Rally\nChoreographed by Yumilka Wagas and Kai Tapiador",
+            "Tutorials",
+            "Sayaw sa Bangko\nChoreographed by Yumilka Wagas and Jerome Kekoa Cabrera",
+            "Guest Performance: Pacifika United - Fotu'i He La'a",
+            "Kapag Apir\nChoreographed by Kai Tapiador",
+            "Justice for Arriola-Ochengo Family Speech",
+            "Tinikling, Poly Night Choreography\nChoreographed by Jerome Kekoa Cabrera"
+          ]
+        }
+      ]
+    }
   },
   {
     title: "Poly Night",
@@ -226,7 +258,40 @@ export const events = [
     description: "Our annual cultural showcase featuring traditional Filipino folk dances and guest performances.\nAll Proceeds went to the Bayanihan Disaster Response!",
     image: "/assets/events/2023MAC.png",
     video: "",
-    isMakeAChange: true
+    isMakeAChange: true,
+    program: {
+      acts: [
+        {
+          title: "Act 1",
+          performances: [
+            "MC Introduction",
+            "Vocal - US and Philippines National Anthem",
+            "NAFCON Introduction by Kami Yamamoto",
+            "Tinikling, Boba Choreography\nChoreographed by Maliyah Manalastas",
+            "Guest Performance: Solstice - Shooting Star",
+            "Kappa Malong Malong\nChoreographed by Maliyah Manalastas",
+            "Guest Performance: Poly - Te Auhune Ote'a",
+            "Tinikling, Parade Choreography",
+            "Guest Performance: Haka - Kapo O Pongo & Toia Mai",
+            "Tinikling, Multicultural Rally\nChoreographed by Yumilka Wagas",
+            "Tinikling Tutorials"
+          ]
+        },
+        {
+          title: "Act 2",
+          performances: [
+            "Senior Spotlight",
+            "Guest Performance: Poly - Motu Uta",
+            "Binasuan\nChoreographed by Brielle Dam",
+            "Guest Performance: Solstice - Tell Me",
+            "Guest Performance: Sheldon PIC - Eskrima",
+            "Sayaw sa Bangko\nChoreographed by Yumilka Wagas",
+            "Guest Performance: Haka - Ancestral & Tau Kau Tau",
+            "Tinikling, Poly Night\nChoreographed by Brielle Dam and Kai Tapiador"
+          ]
+        }
+      ]
+    }
   },
   {
     title: "Poly Night",

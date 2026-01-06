@@ -268,10 +268,26 @@ section {
     max-height: 200%;
 }
 
+/* Event card text sizing overrides */
+.event-card-title {
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem) !important;
+  margin: 0.4rem 0 !important;
+  font-weight: 600 !important;
+}
+
+.event-card-date {
+  font-size: clamp(0.85rem, 1.2vw, 1rem) !important;
+}
+
+.event-card-description {
+  font-size: clamp(0.85rem, 1.2vw, 1rem) !important;
+  margin: 0.4rem 0 !important;
+}
+
 /* Mobile fixes for About Us page */
 @media (max-width: 768px) {
   .about-hero {
-    margin-top: 0rem !important;
+    margin-top: -5rem !important;
   }
 
   /* Fix affiliations/founded section */

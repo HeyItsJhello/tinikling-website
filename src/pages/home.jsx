@@ -88,7 +88,7 @@ export default function Home() {
                     flexWrap: "wrap",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: "2rem",
+                    gap: "clamp(1rem, 3vw, 2rem)",
                     width: "100%"
                   }}
                 >
@@ -98,6 +98,7 @@ export default function Home() {
                       minWidth: "min(100%, 35rem)",
                       padding: "clamp(1rem, 3vw, 2rem)",
                       margin: "0 auto",
+                      marginLeft: "clamp(0rem, 5vw, 5rem)",
                       boxSizing: "border-box",
                       textAlign: "center"
                     }}

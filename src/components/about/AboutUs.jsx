@@ -42,8 +42,7 @@ export default function AboutUs({ setActiveSection }) {
           width: "100%",
           margin: 0,
           padding: 0,
-          boxShadow: "0 12px 24px rgba(0, 0, 0, 0.3)",
-          marginTop: "4rem"
+          boxShadow: "0 12px 24px rgba(0, 0, 0, 0.3)"
         }}
       >
         {/* Background image layer */}
@@ -258,28 +257,30 @@ export default function AboutUs({ setActiveSection }) {
           style={{
             width: "100%",
             backgroundColor: "var(--red)",
-            padding: "4rem 2rem",
+            padding: "4rem 0",
             marginTop: "3rem",
-            color: "var(--cream)"
+            color: "var(--cream)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
           }}
         >
           <div
             style={{
-              maxWidth: "1400px",
-              margin: "0 auto",
               display: "flex",
-              justifyContent: "space-around",
-              alignItems: "flex-start",
-              flexWrap: "wrap",
-              gap: "4rem"
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "clamp(2rem, 4vw, 4rem)",
+              padding: "0 2rem"
             }}
           >
             {/* Affiliations Section */}
-            <div style={{ flex: "1 1 300px", textAlign: "center" }}>
+            <div style={{ textAlign: "center" }}>
               <h2 style={{
                 fontSize: "2.5rem",
                 marginBottom: "1.5rem",
-                color: "var(--gold)"
+                color: "var(--gold)",
+                margin: "0 0 1.5rem 0"
               }}>
                 Affiliations
               </h2>
@@ -289,12 +290,21 @@ export default function AboutUs({ setActiveSection }) {
               </div>
             </div>
 
+            {/* Divider */}
+            <div style={{
+              width: "0.125rem",
+              height: "8rem",
+              backgroundColor: "var(--gold)",
+              flexShrink: 0
+            }} />
+
             {/* Special Thanks Section */}
-            <div style={{ flex: "1 1 300px", textAlign: "center" }}>
+            <div style={{ textAlign: "center" }}>
               <h2 style={{
                 fontSize: "2.5rem",
                 marginBottom: "1.5rem",
-                color: "var(--gold)"
+                color: "var(--gold)",
+                margin: "0 0 1.5rem 0"
               }}>
                 Founded
               </h2>

@@ -26,18 +26,20 @@ export default function MakeAChange({ setActiveSection }) {
         style={{
           width: "100%",
           backgroundColor: "var(--red)",
-          padding: "clamp(2rem, 6vw, 5rem)",
-          marginTop: "clamp(3rem, 10vw, 10rem)",
+          padding: "clamp(3rem, 9vw, 7rem) clamp(2rem, 4vw, 3rem)",
+          marginTop: "clamp(3rem, 8vw, 6rem)",
           textAlign: "center",
           color: "white",
-          fontSize: "clamp(1.2rem, 3vw, 2rem)",
           fontWeight: "bold",
           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           marginBottom: "3rem",
-          boxSizing: "border-box"
+          boxSizing: "border-box",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
         }}
       >
-        <h1 style={{color: "var(--cream)", fontSize: "clamp(1.5rem, 4vw, 3rem)"}}>{daysUntil} Days Until Make A Change</h1>
+        <h1 style={{color: "var(--cream)", fontSize: "clamp(2.5rem, 7vw, 7rem)", margin: 0, lineHeight: 1.2}}>{daysUntil} Days Until Make A Change</h1>
       </div>
 
       {/* Content Section */}
@@ -46,7 +48,7 @@ export default function MakeAChange({ setActiveSection }) {
           display: "flex",
           flexWrap: "wrap",
           alignItems: "center",
-          gap: "clamp(1rem, 4vw, 3rem)",
+          gap: "clamp(1rem, 2vw, 0.5rem)",
           width: "100%",
           boxSizing: "border-box"
         }}
@@ -59,9 +61,9 @@ export default function MakeAChange({ setActiveSection }) {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            padding: "clamp(1rem, 3vw, 2rem)",
-            marginLeft: "clamp(0rem, 5vw, 5rem)",
-            marginRight: "clamp(0rem, 5vw, 5rem)",
+            padding: "clamp(1rem, 2vw, 1.5rem)",
+            marginLeft: "clamp(0rem, 4vw, 4rem)",
+            marginRight: "clamp(0rem, 4vw, 4rem)",
             boxSizing: "border-box"
           }}
         >
@@ -100,9 +102,9 @@ export default function MakeAChange({ setActiveSection }) {
           style={{
             flex: "1.5 1 30rem",
             minWidth: "min(100%, 350px)",
-            padding: "clamp(1rem, 3vw, 2rem)",
-            marginRight: "clamp(0rem, 5vw, 5rem)",
-            marginLeft: "clamp(0rem, 5vw, 5rem)",
+            padding: "clamp(1rem, 2vw, 1.5rem)",
+            marginRight: "clamp(0rem, 4vw, 4rem)",
+            marginLeft: "clamp(0rem, 4vw, 4rem)",
             boxSizing: "border-box",
             display: "flex",
             flexDirection: "column",

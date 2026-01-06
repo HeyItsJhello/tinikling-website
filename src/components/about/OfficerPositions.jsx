@@ -413,9 +413,8 @@ export default function OfficerPositions({ setActiveSection }) {
             <div
               className="officer-card-content"
               style={{
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "stretch",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
                 gap: "2rem",
                 marginBottom: "2rem",
                 maxWidth: "62.5rem",
@@ -425,8 +424,6 @@ export default function OfficerPositions({ setActiveSection }) {
               {/* Picture */}
               <div
                 style={{
-                  flex: "1 1 min(300px, 100%)",
-                  minWidth: "min(300px, 100%)",
                   display: "flex",
                 }}
               >
@@ -461,8 +458,6 @@ export default function OfficerPositions({ setActiveSection }) {
               {/* Quote */}
               <div
                 style={{
-                  flex: "1 1 min(300px, 100%)",
-                  minWidth: "min(300px, 100%)",
                   display: "flex",
                 }}
               >
@@ -566,8 +561,8 @@ export default function OfficerPositions({ setActiveSection }) {
             <div
               className="officer-card-content"
               style={{
-                display: "flex",
-                flexWrap: "wrap",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
                 alignItems: "center",
                 gap: "2rem",
                 marginLeft: "clamp(0rem, 3vw, 3rem)",
@@ -576,8 +571,6 @@ export default function OfficerPositions({ setActiveSection }) {
             >
               <div
                 style={{
-                  flex: "1 1 min(300px, 100%)",
-                  minWidth: "min(300px, 100%)",
                 }}
               >
                 <p
@@ -626,8 +619,6 @@ export default function OfficerPositions({ setActiveSection }) {
               </div>
               <div
                 style={{
-                  flex: "1 1 min(300px, 100%)",
-                  minWidth: "min(300px, 100%)",
                   display: "flex",
                   justifyContent: "center",
                 }}
@@ -754,8 +745,6 @@ export default function OfficerPositions({ setActiveSection }) {
               </p>
               <div
                 style={{
-                  flex: "1 1 min(300px, 100%)",
-                  minWidth: "min(300px, 100%)",
                   display: "flex",
                   justifyContent: "center",
                 }}

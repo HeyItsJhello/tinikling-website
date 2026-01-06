@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function DanceCard({ dance }) {
+    const [isExpanded, setIsExpanded] = useState(false);
+
     return (
         <motion.div
             layout
             transition={{ layout: { duration: 0.3, ease: "easeOut" } }}
             whileHover={{ y: -8 }}
+            onTap={() => setIsExpanded(!isExpanded)}
             className="dance-card"
             style={{
                 background: "white",
@@ -19,7 +23,8 @@ export default function DanceCard({ dance }) {
                 flexDirection: "column",
                 borderRadius: "0.5rem",
                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                zIndex: 10
+                zIndex: 10,
+                cursor: "pointer"
             }}
         >
             <img
@@ -35,15 +40,22 @@ export default function DanceCard({ dance }) {
                 }}
             />
 
-            <h3 style={{ margin: "1rem 0 0.5rem" }}>{dance.name}</h3>
+            <h3 style={{
+                margin: "1rem 0 0.5rem",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                width: "100%"
+            }}>{dance.name}</h3>
 
             <motion.p
                 initial={false}
+                animate={{ WebkitLineClamp: isExpanded ? "unset" : 10 }}
                 whileHover={{ WebkitLineClamp: "unset" }}
                 style={{
                     display: "-webkit-box",
                     WebkitBoxOrient: "vertical",
-                    WebkitLineClamp: 10,
+                    WebkitLineClamp: isExpanded ? "unset" : 10,
                     overflow: "hidden",
                     textOverflow: "ellipsis",
                     flex: "1 0 auto",
