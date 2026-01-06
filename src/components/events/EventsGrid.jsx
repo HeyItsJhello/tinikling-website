@@ -2,11 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { events } from "../../data/events";
 import ProgramModal from "./ProgramModal";
-import ProgramModal from "./ProgramModal";
 
 export default function EventsGrid() {
   const [currentYearIndex, setCurrentYearIndex] = useState(0);
-  const [modalState, setModalState] = useState({ isOpen: false, program: null, eventTitle: "" });
   const [modalState, setModalState] = useState({ isOpen: false, program: null, eventTitle: "" });
   const today = new Date();
 
@@ -84,14 +82,6 @@ export default function EventsGrid() {
       });
     };
 
-
-    const openProgramModal = () => {
-      setModalState({
-        isOpen: true,
-        program: event.program,
-        eventTitle: event.title
-      });
-    };
 
     return (
       <motion.div
@@ -474,8 +464,6 @@ const EventCard = ({ event }) => (
           )}
         </motion.div>
       </AnimatePresence>
-      </section>
-    </>
       </section>
     </>
   );
