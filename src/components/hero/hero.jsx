@@ -15,7 +15,7 @@ export default function Hero() {
         margin: 0,
         padding: 0,
         zIndex: 1,
-        boxShadow: "0 12px 24px rgba(0, 0, 0, 0.3)"
+        boxShadow: "0 12px 24px rgba(0, 0, 0, 0.3)",
       }}
     >
       {/* Background image layer */}
@@ -32,7 +32,7 @@ export default function Hero() {
           backgroundRepeat: "no-repeat",
         }}
       />
-      
+
       {/* Dark overlay */}
       <div
         style={{
@@ -41,10 +41,10 @@ export default function Hero() {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundColor: "rgba(43, 43, 43, 0.8)"
+          backgroundColor: "rgba(43, 43, 43, 0.8)",
         }}
       />
-      
+
       {/* Gradient transition to cream background */}
       <div
         style={{
@@ -53,11 +53,12 @@ export default function Hero() {
           left: 0,
           width: "100%",
           height: "30%",
-          background: "linear-gradient(to bottom, transparent, rgba(139, 115, 85, 0.4), rgba(139, 115, 85, 0.7))",
+          background:
+            "linear-gradient(to bottom, transparent, rgba(139, 115, 85, 0.4), rgba(139, 115, 85, 0.7))",
           pointerEvents: "none",
         }}
       />
-      
+
       <div
         style={{
           position: "relative",
@@ -67,7 +68,7 @@ export default function Hero() {
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          color: "var(--cream)"
+          color: "var(--cream)",
         }}
       >
         <motion.div
@@ -76,21 +77,26 @@ export default function Hero() {
           transition={{ duration: 1 }}
           style={{ padding: "0 1rem" }}
         >
-          <h1 style={{
-            fontSize: "clamp(2.5rem, 8vw, 6rem)",
-            margin: "0 0 clamp(0.5rem, 2vw, 1rem) 0",
-            lineHeight: "1.2"
-          }}>
-            <span style={{color: "var(--red)"}}>Tinikling</span>{" "}
-            <span style={{color: "var(--gold)"}}>Dance</span>{" "}
-            <span style={{color: "var(--blue)"}}>Company</span>
+          <h1
+            style={{
+              fontSize: "clamp(2.5rem, 8vw, 6rem)",
+              margin: "0 0 clamp(0.5rem, 2vw, 1rem) 0",
+              lineHeight: "1.2",
+            }}
+          >
+            <span style={{ color: "var(--red)" }}>Tinikling</span>{" "}
+            <span style={{ color: "var(--gold)" }}>Dance</span>{" "}
+            <span style={{ color: "var(--blue)" }}>Company</span>
           </h1>
-          <p style={{
-            fontSize: "clamp(1rem, 3vw, 1.7rem)",
-            margin: 0,
-            lineHeight: "1.4",
-            maxWidth: "800px"
-          }}>
+          <p
+            style={{
+              fontSize: "clamp(1rem, 3vw, 1.7rem)",
+              lineHeight: "1.4",
+              maxWidth: "50rem", // 800px → 50rem
+              margin: "0 auto",
+              textAlign: "center",
+            }}
+          >
             A High School dance group performing cultural Filipino dances
           </p>
         </motion.div>
