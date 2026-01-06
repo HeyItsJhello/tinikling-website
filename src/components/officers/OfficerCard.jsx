@@ -21,7 +21,7 @@ export default function OfficerCard({ officer }) {
           alt={officer.name}
           style={{
             width: "100%",
-            height: "10rem",
+            aspectRatio: "1/1",
             borderRadius: "0.5rem",
             objectFit: "cover",
             marginBottom: "1.5rem",

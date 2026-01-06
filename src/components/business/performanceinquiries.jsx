@@ -79,13 +79,14 @@ ${formData.questions}
         width: "100%",
         maxWidth: "900px",
         margin: "0 auto",
-        padding: "3rem 2rem",
-        backgroundColor: "var(--cream)"
+        padding: "clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem)",
+        backgroundColor: "var(--cream)",
+        boxSizing: "border-box"
       }}
     >
       <h1
         style={{
-          fontSize: "4rem",
+          fontSize: "clamp(2rem, 6vw, 4rem)",
           color: "var(--red)",
           marginBottom: "2rem",
           textAlign: "center",
@@ -109,14 +110,15 @@ ${formData.questions}
         }}
       >
         {/* Name Fields */}
-        <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>
-          <div style={{ flex: 1 }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "1.5rem" }}>
+          <div style={{ flex: "1 1 min(100%, 200px)" }}>
             <label
               style={{
                 display: "block",
                 marginBottom: "0.5rem",
                 fontWeight: "600",
-                color: "var(--dark)"
+                color: "var(--dark)",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)"
               }}
             >
               First Name *
@@ -132,18 +134,19 @@ ${formData.questions}
                 padding: "0.75rem",
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
-                fontSize: "1rem",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
                 boxSizing: "border-box"
               }}
             />
           </div>
-          <div style={{ flex: 1 }}>
+          <div style={{ flex: "1 1 min(100%, 200px)" }}>
             <label
               style={{
                 display: "block",
                 marginBottom: "0.5rem",
                 fontWeight: "600",
-                color: "var(--dark)"
+                color: "var(--dark)",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)"
               }}
             >
               Last Name *
@@ -159,7 +162,7 @@ ${formData.questions}
                 padding: "0.75rem",
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
-                fontSize: "1rem",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
                 boxSizing: "border-box"
               }}
             />
@@ -196,14 +199,15 @@ ${formData.questions}
         </div>
 
         {/* Email and Phone */}
-        <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>
-          <div style={{ flex: 1 }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "1.5rem" }}>
+          <div style={{ flex: "1 1 min(100%, 200px)" }}>
             <label
               style={{
                 display: "block",
                 marginBottom: "0.5rem",
                 fontWeight: "600",
-                color: "var(--dark)"
+                color: "var(--dark)",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)"
               }}
             >
               Email *
@@ -219,18 +223,19 @@ ${formData.questions}
                 padding: "0.75rem",
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
-                fontSize: "1rem",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
                 boxSizing: "border-box"
               }}
             />
           </div>
-          <div style={{ flex: 1 }}>
+          <div style={{ flex: "1 1 min(100%, 200px)" }}>
             <label
               style={{
                 display: "block",
                 marginBottom: "0.5rem",
                 fontWeight: "600",
-                color: "var(--dark)"
+                color: "var(--dark)",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)"
               }}
             >
               Phone *
@@ -246,6 +251,7 @@ ${formData.questions}
                 padding: "0.75rem",
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
                 fontSize: "1rem",
                 boxSizing: "border-box"
               }}

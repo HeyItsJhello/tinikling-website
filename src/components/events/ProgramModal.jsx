@@ -37,10 +37,11 @@ export default function ProgramModal({ isOpen, onClose, program, eventTitle }) {
               style={{
                 backgroundColor: "white",
                 borderRadius: "1rem",
-                padding: "3rem",
-                maxWidth: "50rem",
-                width: "100%",
-                maxHeight: "80vh",
+                padding: "clamp(1.5rem, 4vw, 2.5rem)",
+                maxWidth: "40rem",
+                width: "90%",
+                maxHeight: "70vh",
+                marginTop: "8rem",
                 overflowY: "auto",
                 boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
                 position: "relative"
@@ -74,12 +75,15 @@ export default function ProgramModal({ isOpen, onClose, program, eventTitle }) {
 
               {/* Title */}
               <h2 style={{
-                fontSize: "2.5rem",
+                fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
                 color: "var(--red)",
                 marginBottom: "2rem",
+                marginTop: "2.5rem",
                 textAlign: "center",
                 fontWeight: "bold",
-                paddingRight: "3rem"
+                paddingRight: 0,
+                paddingLeft: 0,
+                paddingTop: 0
               }}>
                 {eventTitle} Program
               </h2>
@@ -88,7 +92,7 @@ export default function ProgramModal({ isOpen, onClose, program, eventTitle }) {
               {program.acts.map((act, actIndex) => (
                 <div key={actIndex} style={{ marginBottom: "2.5rem" }}>
                   <h3 style={{
-                    fontSize: "1.8rem",
+                    fontSize: "clamp(1.3rem, 4vw, 1.8rem)",
                     color: "var(--gold)",
                     marginBottom: "1.5rem",
                     fontWeight: "bold",
@@ -108,7 +112,7 @@ export default function ProgramModal({ isOpen, onClose, program, eventTitle }) {
                         paddingLeft: "1.5rem",
                         position: "relative",
                         lineHeight: "1.6",
-                        fontSize: "1.1rem",
+                        fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
                         color: "var(--dark)",
                         whiteSpace: "pre-line"
                       }}>

@@ -37,8 +37,8 @@ export default function OfficerPositions({ setActiveSection }) {
 
       <div
         style={{
-          marginRight: "7rem",
-          marginLeft: "7rem",
+          marginRight: "clamp(1rem, 10vw, 7rem)",
+          marginLeft: "clamp(1rem, 10vw, 7rem)",
           marginBottom: "3rem",
         }}
       >
@@ -46,6 +46,8 @@ export default function OfficerPositions({ setActiveSection }) {
           <h2
             style={{
               color: "var(--dark)",
+              textAlign: "center",
+              fontSize: "clamp(1rem, 2.5vw, 2rem)"
             }}
           >
             As a dance company, TDC has officer applicants go through a lengthy
@@ -61,7 +63,7 @@ export default function OfficerPositions({ setActiveSection }) {
       {/* Executive Positions - President, VP, Assistant */}
       <section
         style={{
-          padding: "2rem 2rem",
+          padding: "clamp(1rem, 3vw, 2rem)",
           maxWidth: "1200px",
           margin: "0 auto",
         }}
@@ -79,26 +81,27 @@ export default function OfficerPositions({ setActiveSection }) {
             <div
               style={{
                 backgroundColor: "white",
-                padding: "2rem",
+                padding: "clamp(1rem, 3vw, 2rem)",
                 borderRadius: "1rem",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
               }}
             >
               <h2
                 style={{
-                  fontSize: "2.5rem",
+                  fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
                   color: "var(--blue)",
                   marginBottom: "1rem",
+                  textAlign: "center"
                 }}
               >
                 President
               </h2>
               <p
                 style={{
-                  fontSize: "1.2rem",
+                  fontSize: "clamp(1rem, 2vw, 1.2rem)",
                   lineHeight: "1.8",
                   color: "var(--dark)",
-                  textAlign: "center",
+                  textAlign: "center"
                 }}
               >
                 Presidents runs the club's and officer's meetings, coordinating
@@ -408,28 +411,27 @@ export default function OfficerPositions({ setActiveSection }) {
 
             {/* Picture and Quote Side by Side - Same Height */}
             <div
+              className="officer-card-content"
               style={{
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "stretch",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
                 gap: "2rem",
                 marginBottom: "2rem",
                 maxWidth: "62.5rem",
                 margin: "0 auto 2rem auto",
-                minHeight: "25rem",
               }}
             >
               {/* Picture */}
               <div
                 style={{
-                  flex: "1 1 18.75rem",
-                  minWidth: "18.75rem",
                   display: "flex",
                 }}
               >
                 <div
                   style={{
                     width: "100%",
+                    height: "auto",
+                    minHeight: "20rem",
                     backgroundColor: "var(--gold)",
                     borderRadius: "1rem",
                     display: "flex",
@@ -444,9 +446,8 @@ export default function OfficerPositions({ setActiveSection }) {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
+                      objectFit: "contain",
                       borderRadius: "1rem",
-                      objectPosition: "",
                     }}
                     src="/assets/involvement/ADVERTISEMENT.png"
                     alt="Event Photo"
@@ -457,19 +458,17 @@ export default function OfficerPositions({ setActiveSection }) {
               {/* Quote */}
               <div
                 style={{
-                  flex: "1 1 18.75rem",
-                  minWidth: "18.75rem",
                   display: "flex",
                 }}
               >
                 <blockquote
                   style={{
-                    fontSize: "1.3rem",
+                    fontSize: "clamp(1rem, 2.5vw, 1.3rem)",
                     fontStyle: "italic",
                     color: "var(--dark)",
                     textAlign: "center",
                     margin: 0,
-                    padding: "2rem",
+                    padding: "clamp(1rem, 3vw, 2rem)",
                     width: "100%",
                     borderLeft: "4px solid var(--blue)",
                     backgroundColor: "var(--cream)",
@@ -560,24 +559,23 @@ export default function OfficerPositions({ setActiveSection }) {
 
             {/* Content with picture on right/below */}
             <div
+              className="officer-card-content"
               style={{
-                display: "flex",
-                flexWrap: "wrap",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
                 alignItems: "center",
                 gap: "2rem",
-                marginLeft: "3rem",
+                marginLeft: "clamp(0rem, 3vw, 3rem)",
                 marginBottom: "2rem",
               }}
             >
               <div
                 style={{
-                  flex: "1 1 300px",
-                  minWidth: "300px",
                 }}
               >
                 <p
                   style={{
-                    fontSize: "1.2rem",
+                    fontSize: "clamp(1rem, 2vw, 1.2rem)",
                     lineHeight: "1.8",
                     color: "var(--dark)",
                     textAlign: "center",
@@ -605,9 +603,9 @@ export default function OfficerPositions({ setActiveSection }) {
                       backgroundColor: "var(--blue)",
                       color: "var(--cream)",
                       font: "var(--font-display)",
-                      fontSize: "1.3rem",
+                      fontSize: "clamp(1rem, 2.5vw, 1.3rem)",
                       fontWeight: "bold",
-                      padding: "1rem 2.5rem",
+                      padding: "clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem)",
                       border: "none",
                       borderRadius: "0.5rem",
                       cursor: "pointer",
@@ -621,8 +619,6 @@ export default function OfficerPositions({ setActiveSection }) {
               </div>
               <div
                 style={{
-                  flex: "1 1 300px",
-                  minWidth: "300px",
                   display: "flex",
                   justifyContent: "center",
                 }}
@@ -631,7 +627,9 @@ export default function OfficerPositions({ setActiveSection }) {
                   style={{
                     width: "100%",
                     maxWidth: "400px",
-                    height: "350px",
+                    height: "auto",
+                    minHeight: "20rem",
+                    aspectRatio: "4/5",
                     backgroundColor: "var(--gold)",
                     borderRadius: "1rem",
                     display: "flex",
@@ -646,9 +644,8 @@ export default function OfficerPositions({ setActiveSection }) {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
+                      objectFit: "contain",
                       borderRadius: "1rem",
-                      objectPosition: "",
                     }}
                     src="/assets/involvement/EVENTSCOORD.png"
                     alt="Event Photo"
@@ -748,8 +745,6 @@ export default function OfficerPositions({ setActiveSection }) {
               </p>
               <div
                 style={{
-                  flex: "1 1 300px",
-                  minWidth: "300px",
                   display: "flex",
                   justifyContent: "center",
                 }}
@@ -758,7 +753,9 @@ export default function OfficerPositions({ setActiveSection }) {
                   style={{
                     width: "100%",
                     maxWidth: "400px",
-                    height: "350px",
+                    height: "auto",
+                    minHeight: "20rem",
+                    aspectRatio: "4/5",
                     backgroundColor: "var(--gold)",
                     borderRadius: "1rem",
                     display: "flex",
@@ -773,9 +770,8 @@ export default function OfficerPositions({ setActiveSection }) {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
+                      objectFit: "contain",
                       borderRadius: "1rem",
-                      objectPosition: "",
                     }}
                     src="/assets/involvement/OFFICERS3.png"
                     alt="Event Photo"

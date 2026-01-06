@@ -4,15 +4,21 @@ export default function Footer({ setActiveSection }) {
       style={{
         background: "var(--dark)",
         color: "var(--cream)",
-        padding: "4rem 6vw",
+        padding: "clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 6vw)",
         textAlign: "center",
         position: "relative"
       }}
     >
-      <p style={{ marginBottom: "1rem" }}>
+      <p style={{
+        marginBottom: "1rem",
+        fontSize: "clamp(0.9rem, 2vw, 1rem)"
+      }}>
         © {new Date().getFullYear()} Tinikling Dance Company
       </p>
-      <p style={{ fontSize: "0.9rem", opacity: 0.7 }}>
+      <p style={{
+        fontSize: "clamp(0.8rem, 1.5vw, 0.9rem)",
+        opacity: 0.7
+      }}>
         @fhs_tdc on Instagram
       </p>
       

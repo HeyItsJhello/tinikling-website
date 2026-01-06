@@ -27,16 +27,150 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw + 0.25rem, 2rem);
 }
 
 p {
     font-family: var(--font-body);
     color: var(--red);
+    font-size: clamp(0.9rem, 1vw + 0.25rem, 1.1rem);
 }
 
 section {
-    padding: 6rem 8vw;
+    padding: clamp(2rem, 4vw, 6rem) clamp(1rem, 4vw, 8vw);
+}
+
+/* Responsive utilities */
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+/* Mobile-first media queries */
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .mobile-hamburger {
+        display: flex !important;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    /* Ensure mobile menu is always on top */
+    .mobile-nav-menu {
+        position: fixed !important;
+        z-index: 10001 !important;
+        overflow-y: auto !important;
+        max-height: 100vh !important;
+    }
+
+    .mobile-nav-backdrop {
+        z-index: 10000 !important;
+    }
+
+    /* Ensure navbar is always visible on mobile */
+    .main-navbar {
+        background-color: var(--gold) !important;
+        backdrop-filter: blur(10px) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+        overflow: visible !important;
+        height: auto !important;
+    }
+
+    /* Fix content being hidden under navbar */
+    main {
+        padding-top: 5rem !important;
+    }
+
+    /* Fix dances page - smaller cards with visible arrows */
+    .dances-scroll {
+        padding-top: 6rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .officer-detail-card {
+        flex-direction: column !important;
+        text-align: center !important;
+        min-height: auto !important;
+    }
+
+    .officer-detail-image {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .featured-event-card {
+        flex-direction: column !important;
+    }
+
+    .featured-event-card > div {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        order: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 1.5rem 0.75rem;
+    }
+}
+
+/* Officer positions cards styling */
+.officer-position-card {
+    background-color: white;
+    padding: clamp(1rem, 3vw, 2rem);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.officer-position-card h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.officer-position-card p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Responsive form styling */
+@media (max-width: 768px) {
+    form label {
+        font-size: clamp(0.9rem, 2vw, 1rem) !important;
+    }
+
+    form input,
+    form textarea,
+    form select {
+        font-size: clamp(0.9rem, 2vw, 1rem) !important;
+    }
 }
 
 /* DancesGrid.css */
@@ -72,8 +206,174 @@ section {
   transform: rotate(180deg);
 }
 
+/* Dance card hover effect */
+.dance-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Mobile-specific dance card styles */
+@media (max-width: 768px) {
+  .dances-scroll {
+    gap: 4rem !important;
+    padding-inline: calc(50% - min(35vw, 9rem)) !important;
+  }
+
+  .dance-card {
+    width: min(70vw, 18rem) !important;
+    min-width: min(70vw, 14rem) !important;
+    min-height: 28rem !important;
+  }
+
+  .dance-card img {
+    max-width: 100% !important;
+  }
+
+  .scroll-arrow {
+    font-size: 2rem !important;
+    left: calc(100% + 4rem / 2) !important;
+    color: var(--red) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dances-scroll {
+    gap: 3.5rem !important;
+    padding-inline: calc(50% - min(35vw, 8rem)) !important;
+  }
+
+  .dance-card {
+    width: min(70vw, 16rem) !important;
+    min-width: min(70vw, 13rem) !important;
+    padding: 0.8rem !important;
+    min-height: 26rem !important;
+  }
+
+  .dance-card h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .dance-card p {
+    font-size: 0.85rem !important;
+  }
+
+  .scroll-arrow {
+    font-size: 1.8rem !important;
+    left: calc(100% + 3.5rem / 2) !important;
+  }
+}
+
 
 .collage {
     max-width: 200%;
     max-height: 200%;
+}
+
+/* Event card text sizing overrides */
+.event-card-title {
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem) !important;
+  margin: 0.4rem 0 !important;
+  font-weight: 600 !important;
+}
+
+.event-card-date {
+  font-size: clamp(0.85rem, 1.2vw, 1rem) !important;
+}
+
+.event-card-description {
+  font-size: clamp(0.85rem, 1.2vw, 1rem) !important;
+  margin: 0.4rem 0 !important;
+}
+
+/* Mobile fixes for About Us page */
+@media (max-width: 768px) {
+  .about-hero {
+    margin-top: -5rem !important;
+  }
+
+  /* Fix Who are we section centering on mobile in home page */
+  main section {
+    margin-left: 0 !important;
+  }
+
+  /* Fix affiliations/founded section */
+  .special-recognition-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 1.5rem !important;
+    gap: 1rem !important;
+  }
+
+  .special-recognition-photo {
+    width: min(15rem, 80vw) !important;
+    height: min(15rem, 80vw) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .special-recognition-card {
+    padding: 1rem !important;
+  }
+
+  .special-recognition-photo {
+    width: min(12rem, 90vw) !important;
+    height: min(12rem, 90vw) !important;
+  }
+}
+
+/* Officer positions mobile fixes */
+@media (max-width: 768px) {
+  .officer-card-content {
+    gap: 1.5rem !important;
+    margin-left: 0 !important;
+  }
+
+  .officer-card-content img {
+    object-fit: contain !important;
+  }
+}
+
+/* Officers modal mobile fixes */
+@media (max-width: 768px) {
+  .officer-modal {
+    top: 5rem !important;
+    max-height: calc(100vh - 6rem) !important;
+    padding: 1rem !important;
+    margin: 1rem !important;
+    width: calc(100% - 2rem) !important;
+  }
+
+  /* Make close button smaller and more in corner */
+  .officer-modal > div > button:first-child {
+    width: 2rem !important;
+    height: 2rem !important;
+    font-size: 1.2rem !important;
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+  }
+
+  .officer-modal-buttons {
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important;
+    margin-top: 2rem !important;
+  }
+
+  .officer-modal-buttons button {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.85rem !important;
+    min-width: 2.5rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .officer-modal h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    margin-top: 2rem !important;
+  }
+
+  .officer-modal h3 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem) !important;
+  }
+
+  .officer-modal p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
+  }
 }

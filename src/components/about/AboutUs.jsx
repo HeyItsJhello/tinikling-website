@@ -33,9 +33,11 @@ export default function AboutUs({ setActiveSection }) {
     >
       {/* Hero Section */}
       <section
+        className="about-hero"
         style={{
           position: "relative",
           height: "50vh",
+          minHeight: "300px",
           overflowX: "hidden",
           width: "100%",
           margin: 0,
@@ -92,18 +94,25 @@ export default function AboutUs({ setActiveSection }) {
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
-            color: "var(--cream)"
+            color: "var(--cream)",
+            padding: "0 1rem"
           }}
         >
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
+            style={{ width: "100%" }}
           >
-            <h1 style={{ fontSize: "3.5rem", margin: "0 0 1rem 0", fontStyle: "italic" }}>
+            <h1 className="about-hero-title" style={{
+              fontSize: "clamp(1.5rem, 5vw, 3.5rem)",
+              margin: "0 0 1rem 0",
+              fontStyle: "italic",
+              lineHeight: "1.3"
+            }}>
               Our mission is to share the beauty of Filipino culture through our dance
             </h1>
-            <p style={{ fontSize: "1.5rem", margin: 0 }}>
+            <p style={{ fontSize: "clamp(1rem, 3vw, 1.5rem)", margin: 0 }}>
               - Tinikling Dance Club 2024
             </p>
           </motion.div>
@@ -172,7 +181,7 @@ export default function AboutUs({ setActiveSection }) {
             <p>
               We also host numerous{" "}
               <span
-                onClick={() => setActiveSection('events')}
+                onClick={() => setActiveSection('socialevents')}
                 style={{
                   color: "var(--blue)",
                   fontWeight: "bold",
@@ -248,28 +257,30 @@ export default function AboutUs({ setActiveSection }) {
           style={{
             width: "100%",
             backgroundColor: "var(--red)",
-            padding: "4rem 2rem",
+            padding: "4rem 0",
             marginTop: "3rem",
-            color: "var(--cream)"
+            color: "var(--cream)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
           }}
         >
           <div
             style={{
-              maxWidth: "1400px",
-              margin: "0 auto",
               display: "flex",
-              justifyContent: "space-around",
-              alignItems: "flex-start",
-              flexWrap: "wrap",
-              gap: "4rem"
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "clamp(2rem, 4vw, 4rem)",
+              padding: "0 2rem"
             }}
           >
             {/* Affiliations Section */}
-            <div style={{ flex: "1 1 300px", textAlign: "center" }}>
+            <div style={{ textAlign: "center" }}>
               <h2 style={{
                 fontSize: "2.5rem",
                 marginBottom: "1.5rem",
-                color: "var(--gold)"
+                color: "var(--gold)",
+                margin: "0 0 1.5rem 0"
               }}>
                 Affiliations
               </h2>
@@ -279,12 +290,21 @@ export default function AboutUs({ setActiveSection }) {
               </div>
             </div>
 
+            {/* Divider */}
+            <div style={{
+              width: "0.125rem",
+              height: "8rem",
+              backgroundColor: "var(--gold)",
+              flexShrink: 0
+            }} />
+
             {/* Special Thanks Section */}
-            <div style={{ flex: "1 1 300px", textAlign: "center" }}>
+            <div style={{ textAlign: "center" }}>
               <h2 style={{
                 fontSize: "2.5rem",
                 marginBottom: "1.5rem",
-                color: "var(--gold)"
+                color: "var(--gold)",
+                margin: "0 0 1.5rem 0"
               }}>
                 Founded
               </h2>
@@ -320,7 +340,7 @@ export default function AboutUs({ setActiveSection }) {
               display: "flex",
               flexDirection: "column",
               gap: "3rem",
-              padding: "0 2rem",
+              padding: "0 1rem",
               maxWidth: "1000px",
               margin: "0 auto"
             }}
@@ -334,6 +354,7 @@ export default function AboutUs({ setActiveSection }) {
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.02 }}
+                  className="special-recognition-card"
                   style={{
                     backgroundColor: "white",
                     borderRadius: "1rem",
@@ -349,14 +370,14 @@ export default function AboutUs({ setActiveSection }) {
                 >
                   <div style={{ flex: "1", padding: "1rem" }}>
                     <h1 style={{
-                      fontSize: "2.5rem",
+                      fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
                       marginBottom: "1rem",
                       color: "var(--blue)"
                     }}>
                       {person.name}
                     </h1>
                     <p style={{
-                      fontSize: "1rem",
+                      fontSize: "clamp(0.9rem, 2vw, 1rem)",
                       lineHeight: "1.6",
                       color: "var(--dark)"
                     }}>
@@ -367,10 +388,11 @@ export default function AboutUs({ setActiveSection }) {
                   <div
                     onMouseEnter={() => setIsFlipped(true)}
                     onMouseLeave={() => setIsFlipped(false)}
+                    className="special-recognition-photo"
                     style={{
                       position: "relative",
-                      width: "20rem",
-                      height: "20rem",
+                      width: "min(20rem, 40vw)",
+                      height: "min(20rem, 40vw)",
                       flexShrink: 0,
                       perspective: "1000px",
                       cursor: "pointer"
@@ -405,7 +427,7 @@ export default function AboutUs({ setActiveSection }) {
                           }}
                           onError={() => setPhoto1Error(true)}
                         />
-                      
+
                     </motion.div>
 
                     {/* Second photo - back */}
