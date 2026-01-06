@@ -291,7 +291,7 @@ section {
   }
 
   /* Fix Who are we section centering on mobile in home page */
-  section[style*="marginLeft"] {
+  main section {
     margin-left: 0 !important;
   }
 
@@ -342,9 +342,19 @@ section {
     width: calc(100% - 2rem) !important;
   }
 
+  /* Make close button smaller and more in corner */
+  .officer-modal > div > button:first-child {
+    width: 2rem !important;
+    height: 2rem !important;
+    font-size: 1.2rem !important;
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+  }
+
   .officer-modal-buttons {
     gap: 0.5rem !important;
     flex-wrap: nowrap !important;
+    margin-top: 2rem !important;
   }
 
   .officer-modal-buttons button {
@@ -356,6 +366,7 @@ section {
 
   .officer-modal h2 {
     font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    margin-top: 2rem !important;
   }
 
   .officer-modal h3 {
