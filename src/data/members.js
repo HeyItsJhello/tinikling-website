@@ -141,7 +141,7 @@ export const alumniData = {
   "2026-2027": ["Aidan Santo Domingo", "Alicia Lor", "Carmelia Hayamizu", "Daniel Xiong", "Darren Hung", "Iannah Ubando", "Jay Lafradez", "Jhelson Gonzales", "Keala Jade Cabrera", "Kylee Rubio", "Madalyn Vang", "Mariah Angel Jacinto", "Mason Dela Cruz", "Owen Guerrero", "Rio Fox", "Wynoria Sabel"],
   "2025-2026": ["Abrynn Lacho", "Alchemy Smith", "Ameria Canales", "Anthony Lucero Chadwick", "Aster Fong", "Cade Hu", "Carl Dela Cruz", "Darius Mamauag", "Emilyann Vang", "Hyacinth Cheung", "Jadelyn Caguimbal", "Jared Tristeza", "Jaren Acebedo", "Kaleb Espinoza", "Kalen Wan", "Lea Joy Saito", "Lynn Ly", "Marlee Gerlach", "Monique Tapalla", "Nicholas Fong", "Quinn Manapat", "Sophia Jane Peralta", "Zephyr Caseiro"],
   "2024-2025": ["Gabriela Fong Somera", "Brielle Dam", "Faith Tiongson", "Jasmine Constantino", "Jerome Kekoa Cabrera", "Kai Tapiador", "Justin Aquino"],
-  "2023-2024": ["Ace Sarabia", "Eli Pascua", "Honey Leigh Aguilar", "Jakin Cantor", "Oli Hufana", "Yumilka Wagas"],
+  "2023-2024": ["Ace Sarabia", "Eli Pascua", "Honey Leigh Aguilar", "Jakin Cantor", "Hannah Hufana", "Yumilka Wagas"],
   "2022-2023": ["Allison Labucay", "Drea Atanacio", "Evan Chau", "Faith Barba", "Isaiah Cupino", "Jacob Neria", "Jioia Ross", "John Le", "Madon Lou-Dizon", "Mikaela Mariano", "Nina Montero", "Ronald Bajao", "Tiffany Kong", "Timothy Doan", "Skai Ono"],
   "2021-2022": ["Adam Orpilla", "August Post", "Janna Madrinan"],
   "2020-2021": ["Ayanna Naavarro", "Chris p. Gabriel Asilo", "Khrizza Manalastas", "Rylan Silvestre"],

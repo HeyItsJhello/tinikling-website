@@ -6,7 +6,7 @@ export default function MakeAChange({ setActiveSection }) {
 
     useEffect(() => {
             const calculateDays = () => {
-            const eventDate = new Date("2026-04-17T00:00:00-07:00"); // Pacific Time (PDT)
+            const eventDate = new Date("2026-04-16T17:30:00-08:00"); // 5:30 PM Pacific Standard Time (PST)
             const today = new Date();
             const timeDiff = eventDate - today;
             const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));

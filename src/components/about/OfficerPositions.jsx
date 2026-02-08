@@ -478,7 +478,7 @@ export default function OfficerPositions({ setActiveSection }) {
                     justifyContent: "center",
                   }}
                 >
-                  "hi my name is kaleb and i am writing a quote"
+                  "My name is Hannah Hufana and I was the advertising officer for  2023-2024. In high school, I was very timid and kept to myself. This position made me realize I could be a leader and helped hone my communication skills. If you told me I was helping teach groups of up to 30+ people to dance I would not have believed you! Supporting the club I loved in my own creative way was so fun and further built my portfolio for future creative work"
                 </blockquote>
               </div>
             </div>
@@ -509,7 +509,7 @@ export default function OfficerPositions({ setActiveSection }) {
                 }}
               >
                 {/* Add past officers names/info here */}
-                Kaleb Espinoza, Quinn Manapat, Oli Hufana, Jerome Kekoa Cabrera,
+                Kaleb Espinoza, Quinn Manapat, Hannah Hufana, Jerome Kekoa Cabrera,
                 Evan Chau, Hunter Vong, Keilin Tankiamco, Jericho Mata, Molly
                 Barron, Venus Villadelgado, Roxanne Devera, Justin Vallesteros
               </p>

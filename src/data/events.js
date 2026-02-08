@@ -1,3 +1,5 @@
+import { image } from "framer-motion/client";
+
 export const events = [
   // Upcoming Events (future dates)
   {
@@ -64,6 +66,15 @@ export const events = [
     description: "",
     image: "/assets/events/NONMAC/2025BTS.png",
     video: "https://youtu.be/P10o6I4s2xI?si=yFg5nW-X5qnJMMCf",
+    isMakeAChange: false
+  },
+  {
+    title: "Helen Carr Castello Multicultural Festival",
+    date: "Feb 6, 2026",
+    year: "2025-current",
+    description: "",
+    image: "/assets/events/NONMAC/2026HCC.jpg",
+    video: "https://youtu.be/mVey6bYrt74?si=lDL7J36DXjr9cOsT",
     isMakeAChange: false
   },
 
@@ -168,14 +179,14 @@ export const events = [
           title: "Act 1",
           performances: [
             "Vocal - National Anthemes (US & PH)",
-            "Tinikling, Back to School Choreography\nChoreographed by Oli Hufana and Hyacinth Cheung",
+            "Tinikling, Back to School Choreography\nChoreographed by Hannah Hufana and Hyacinth Cheung",
             "Guest Performance: Poly - Mareva",
             "Tinikling, Parade Choreography",
             "Guest Performance: Sheldon FPC - Eskrima",
             "Kappa Malong Malong\nChoreographed by Brielle Dam",
             "Guest Performance: Iridescent - Only one by VCHA",
             "Pandanggo Sa Ilaw\nChoreographed by Jerome Kekoa Cabrera and Brielle Dam",
-            "Binasuan\nChoreographed by Oli Hufana and Hyacinth Cheung"
+            "Binasuan\nChoreographed by Hannah Hufana and Hyacinth Cheung"
           ]
         },
         {
@@ -203,6 +214,16 @@ export const events = [
     image: "/assets/events/NONMAC/2024POLY.png",
     video: "https://youtu.be/9yXqAHjDiww?si=_oIX0-ubig1L65sy",
     isMakeAChange: false
+  },
+  {
+    title: "Helen Carr Castello Multicultural Festival",
+    date: "May 17, 2024",
+    year: "2023-24",
+    description: "",
+    image: "/assets/events/NONMAC/2024HCC.png",
+    video: "",
+    isMakeAChange: false
+
   },
   {
     title: "Multicultural Rally",
