@@ -292,6 +292,14 @@ export const alumniData = {
 };
 
 export const quotes = {
+  "2027-2028": {
+    "KC Patacsil": "Why is Anran eating my pussy? I'm a man",
+    "Aaron Joshua De Los Santos": "Then it goes",
+  },
+  "2025-2026": {
+    "Jhelson Glenn De Jose Gonzales":
+      "No matter what anyone says, I don't like kids",
+  },
   "2024-2025": {
     "Gabriela Fong Somera":
       "I've only been in this club for a year, but you guys are great.",
