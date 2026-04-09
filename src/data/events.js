@@ -87,6 +87,15 @@ export const events = [
     video: "",
     isMakeAChange: false,
   },
+  {
+    title: "Erin's Debut",
+    date: "Apr 4, 2026",
+    year: "2025-current",
+    description: "",
+    image: "/assets/events/DEBUTS/ERIN.png",
+    video: "",
+    isMakeAChange: false,
+  },
 
   // 24-25 School Year
   {
