@@ -1,10 +1,10 @@
 import { image } from "framer-motion/client";
 
 export const events = [
-  // Upcoming Events (future dates)
+  // Upcoming Events (future dates) — add next year's MAC here once date is confirmed
   {
     title: "Make A Change",
-    date: "April 17, 2026",
+    date: "TBD",
     year: "upcoming",
     description:
       "Our largest annual cultural production showcasing traditional Filipino dances.",
@@ -14,11 +14,22 @@ export const events = [
     featured: true,
   },
 
-  // Current Year 2025 (past events from this school year)
+  // 25-26 School Year
+  {
+    title: "Make A Change 2026",
+    date: "April 17, 2026",
+    year: "2025-26",
+    description:
+      "Our annual cultural showcase featuring traditional Filipino folk dances and guest performances.",
+    image: "",
+    video: "",
+    isMakeAChange: true,
+    featured: true,
+  },
   {
     title: "Tapioca and Tea Kapit Bisig Fundraiser",
     date: "Dec 5, 2025",
-    year: "2025-current",
+    year: "2025-26",
     description: "",
     image: "/assets/events/NONMAC/2025KAPIT.png",
     video: "",
@@ -27,7 +38,7 @@ export const events = [
   {
     title: "Multicultural Rally",
     date: "Dec 5, 2025",
-    year: "2025-current",
+    year: "2025-26",
     description: "",
     image: "/assets/events/NONMAC/2025MULTI.png",
     video: "https://youtu.be/n6ZdCdoPTeg?si=ovsdAqGIX_TlL_nP",
@@ -36,7 +47,7 @@ export const events = [
   {
     title: "Boba Fundraiser",
     date: "Oct 25, 2025",
-    year: "2025-current",
+    year: "2025-26",
     description: "",
     image: "/assets/events/NONMAC/2025BOBA.png",
     video: "https://www.instagram.com/p/DQS0FPLD5zT/?img_index=16",
@@ -45,7 +56,7 @@ export const events = [
   {
     title: "Sari Sari Night Market",
     date: "October 18, 2025",
-    year: "2025-current",
+    year: "2025-26",
     description: "",
     image: "/assets/events/NONMAC/2025SARI.png",
     video: "https://youtu.be/54ZBVQ6WRJc?si=8GW2nvKivhOTTABy",
@@ -54,7 +65,7 @@ export const events = [
   {
     title: "Homecoming Parade",
     date: "Sept 26, 2025",
-    year: "2025-current",
+    year: "2025-26",
     description: "",
     image: "/assets/events/NONMAC/2025HOCO.png",
     video: "https://youtu.be/Q5tDq8bTYiU?si=PB9gaJNTvh-w0tWP",
@@ -63,7 +74,7 @@ export const events = [
   {
     title: "Back To School Rally",
     date: "Aug 15, 2025",
-    year: "2025-current",
+    year: "2025-26",
     description: "",
     image: "/assets/events/NONMAC/2025BTS.png",
     video: "https://youtu.be/P10o6I4s2xI?si=yFg5nW-X5qnJMMCf",
@@ -72,7 +83,7 @@ export const events = [
   {
     title: "Helen Carr Castello Multicultural Festival",
     date: "Feb 6, 2026",
-    year: "2025-current",
+    year: "2025-26",
     description: "",
     image: "/assets/events/NONMAC/2026HCC.jpg",
     video: "https://youtu.be/mVey6bYrt74?si=lDL7J36DXjr9cOsT",
@@ -81,7 +92,7 @@ export const events = [
   {
     title: "Poly Night",
     date: "Mar 5, 2026",
-    year: "2025-current",
+    year: "2025-26",
     description: "",
     image: "/assets/events/NONMAC/2026POLY.png",
     video: "",
@@ -90,7 +101,7 @@ export const events = [
   {
     title: "Erin's Debut",
     date: "Apr 4, 2026",
-    year: "2025-current",
+    year: "2025-26",
     description: "",
     image: "/assets/events/DEBUTS/ERIN.png",
     video: "",

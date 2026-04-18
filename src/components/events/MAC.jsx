@@ -1,23 +1,39 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { events } from "../../data/events";
+import { newYearStarted } from "../../data/config";
 
 export default function MakeAChange({ setActiveSection }) {
-  const [daysUntil, setDaysUntil] = useState(0);
+  const [countdownText, setCountdownText] = useState("");
 
-    useEffect(() => {
-            const calculateDays = () => {
-            const eventDate = new Date("2026-04-16T17:30:00-08:00"); // 5:30 PM Pacific Standard Time (PST)
-            const today = new Date();
-            const timeDiff = eventDate - today;
-            const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-            setDaysUntil(days);
-        };
+  useEffect(() => {
+    const calculate = () => {
+      if (!newYearStarted) {
+        // Show days since the most recent past Make A Change
+        const pastMACs = events.filter(e => e.isMakeAChange && e.year !== "upcoming" && e.date !== "TBD");
+        const sorted = pastMACs.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const lastMAC = sorted[0];
+        if (lastMAC) {
+          const days = Math.floor((new Date() - new Date(lastMAC.date)) / (1000 * 60 * 60 * 24));
+          setCountdownText(`${days} ${days === 1 ? "Day" : "Days"} Since Make A Change`);
+        }
+      } else {
+        // Show countdown to next Make A Change, or TBD if no date set
+        const upcomingMAC = events.find(e => e.year === "upcoming" && e.isMakeAChange);
+        const dateStr = upcomingMAC?.date;
+        if (!dateStr || dateStr === "TBD") {
+          setCountdownText("Make A Change — Date TBD");
+        } else {
+          const days = Math.ceil((new Date(dateStr) - new Date()) / (1000 * 60 * 60 * 24));
+          setCountdownText(days > 0 ? `${days} ${days === 1 ? "Day" : "Days"} Until Make A Change` : "Make A Change — Date TBD");
+        }
+      }
+    };
 
-        calculateDays();
-        const interval = setInterval(calculateDays, 1000 * 60 * 60); // Update every hour
-
-        return () => clearInterval(interval);
-    }, []);
+    calculate();
+    const interval = setInterval(calculate, 1000 * 60 * 60);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -39,7 +55,9 @@ export default function MakeAChange({ setActiveSection }) {
           justifyContent: "center"
         }}
       >
-        <h1 style={{color: "var(--cream)", fontSize: "clamp(2.5rem, 7vw, 7rem)", margin: 0, lineHeight: 1.2}}>{daysUntil} Days Until Make A Change</h1>
+        <h1 style={{color: "var(--cream)", fontSize: "clamp(2.5rem, 7vw, 7rem)", margin: 0, lineHeight: 1.2}}>
+          {countdownText}
+        </h1>
       </div>
 
       {/* Content Section */}

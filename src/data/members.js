@@ -210,7 +210,7 @@ export const alumniData = {
   ],
   "2023-2024": [
     "Ace Sarabia",
-    "Eli Pascua",
+    "Elijah Pascua",
     "Honey Leigh Aguilar",
     "Jakin Cantor",
     "Hannah Hufana",
@@ -220,7 +220,7 @@ export const alumniData = {
   ],
   "2022-2023": [
     "Allison Labucay",
-    "Drea Atanacio",
+    "Andrea Atanacio",
     "Evan Chau",
     "Faith Barba",
     "Isaiah Cupino",

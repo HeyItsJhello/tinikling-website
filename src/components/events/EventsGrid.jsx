@@ -30,8 +30,11 @@ export default function EventsGrid() {
   });
 
   // Define year sections - combine upcoming and current into current school year
+  // Each new year: add { keys: ["upcoming", "YYYY-current"], title: "YY-YY" } at the top,
+  // and change the previous year's entry to { keys: ["YYYY-YY"], title: "YY-YY" }
   const yearSections = [
-    { keys: ["upcoming", "2025-current"], title: "25-26" },
+    { keys: ["upcoming", "2026-current"], title: "26-27" },
+    { keys: ["2025-26"], title: "25-26" },
     { keys: ["2024-25"], title: "24-25" },
     { keys: ["2023-24"], title: "23-24" },
     { keys: ["2022-23"], title: "22-23" },
@@ -65,9 +68,9 @@ export default function EventsGrid() {
   // Combine events from all keys in this section
   const sectionEvents = currentSection.keys.flatMap(key => groupedEvents[key] || []);
 
-  // For 25-26, separate upcoming and past events
+  // For the current year, separate upcoming and past events
   const upcomingEvents = currentYearIndex === 0 ? (groupedEvents["upcoming"] || []) : [];
-  const pastEvents = currentYearIndex === 0 ? (groupedEvents["2025-current"] || []) : [];
+  const pastEvents = currentYearIndex === 0 ? (groupedEvents["2026-current"] || []) : [];
   const isCurrentYear = currentYearIndex === 0;
 
   // Component for Make A Change and Bayanihan featured card
@@ -453,7 +456,7 @@ const EventCard = ({ event }) => (
               No events available for this year.
             </p>
           ) : isCurrentYear ? (
-            // For 25-26, show Upcoming and Past Events separately
+            // For the current year, show Upcoming and Past Events separately
             <>
               {upcomingEvents.length > 0 && renderEventsSection(upcomingEvents, "Upcoming Events")}
               {pastEvents.length > 0 && renderEventsSection(pastEvents, "Past Events")}
