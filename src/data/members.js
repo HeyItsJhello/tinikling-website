@@ -292,6 +292,14 @@ export const alumniData = {
 };
 
 export const quotes = {
+  "2025-2026": {
+    "Cade Hu":
+      "I was really nervous to join TDC freshman year but I’m so glad I did because I made so many new friends and even reconnected with a few old ones. I used to struggle with performance anxiety but dancing at rallies, Make A Change, and other events really helped me overcome that fear. This club is definitely one of my most memorable aspects of high school and I’m happy I got out of my comfort zone. Thank you for letting me be a part of TDC for the past 4 years.",
+    "Lea Joy Saito":
+      "People who are destined to meet will do so, apparently by chance, at precisely the right moment",
+    "Monique Tapalla":
+      "I always pictured myself dancing in high school but what I couldn’t foresee were the countless friendships and memories I would be able to make here in TDC. It hasn’t been a perfect four years but I’m beyond happy to have spent those years in a club that feels like family. Thank you to all the officers and members who have made TDC the amazing club that it is today. Godspeed to the next generation of tinklers and live laugh love TDC.",
+  },
   "2024-2025": {
     "Gabriela Fong Somera":
       "I've only been in this club for a year, but you guys are great.",
