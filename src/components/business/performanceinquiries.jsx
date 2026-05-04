@@ -15,28 +15,28 @@ export default function PerformanceInquiry() {
     address: "",
     danceType: [],
     description: "",
-    questions: ""
+    questions: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleDanceChange = (danceName) => {
-    setFormData(prev => {
+    setFormData((prev) => {
       const currentDances = prev.danceType;
       if (currentDances.includes(danceName)) {
         return {
           ...prev,
-          danceType: currentDances.filter(d => d !== danceName)
+          danceType: currentDances.filter((d) => d !== danceName),
         };
       } else {
         return {
           ...prev,
-          danceType: [...currentDances, danceName]
+          danceType: [...currentDances, danceName],
         };
       }
     });
@@ -44,12 +44,12 @@ export default function PerformanceInquiry() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (formData.danceType.length === 0) {
       alert("Please select at least one dance");
       return;
     }
-    
+
     const subject = `Performance Inquiry - ${formData.companyEvent}`;
     const body = `
 First Name: ${formData.firstName}
@@ -81,7 +81,7 @@ ${formData.questions}
         margin: "0 auto",
         padding: "clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem)",
         backgroundColor: "var(--cream)",
-        boxSizing: "border-box"
+        boxSizing: "border-box",
       }}
     >
       <h1
@@ -90,27 +90,38 @@ ${formData.questions}
           color: "var(--red)",
           marginBottom: "2rem",
           textAlign: "center",
-          fontWeight: "bold"
+          fontWeight: "bold",
         }}
       >
         Performance Inquiries
       </h1>
 
-        <b
-            style ={{
-                color: "var(--red)",
-                paddingBottom: "3rem"
-            }}
-        >We perform at Debuts and Community Events in the Elk Grove and Sacramento area</b>
-
-        <br/>
-      <form onSubmit={handleSubmit}
+      <b
         style={{
-            paddingTop: "2rem"
+          color: "var(--red)",
+          paddingBottom: "3rem",
+        }}
+      >
+        We perform at Debuts and Community Events in the Elk Grove and
+        Sacramento area
+      </b>
+
+      <br />
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          paddingTop: "2rem",
         }}
       >
         {/* Name Fields */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "1.5rem" }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "1rem",
+            marginBottom: "1.5rem",
+          }}
+        >
           <div style={{ flex: "1 1 min(100%, 200px)" }}>
             <label
               style={{
@@ -118,7 +129,7 @@ ${formData.questions}
                 marginBottom: "0.5rem",
                 fontWeight: "600",
                 color: "var(--dark)",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)"
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
               }}
             >
               First Name *
@@ -135,7 +146,7 @@ ${formData.questions}
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
                 fontSize: "clamp(0.9rem, 2vw, 1rem)",
-                boxSizing: "border-box"
+                boxSizing: "border-box",
               }}
             />
           </div>
@@ -146,7 +157,7 @@ ${formData.questions}
                 marginBottom: "0.5rem",
                 fontWeight: "600",
                 color: "var(--dark)",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)"
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
               }}
             >
               Last Name *
@@ -163,7 +174,7 @@ ${formData.questions}
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
                 fontSize: "clamp(0.9rem, 2vw, 1rem)",
-                boxSizing: "border-box"
+                boxSizing: "border-box",
               }}
             />
           </div>
@@ -176,7 +187,7 @@ ${formData.questions}
               display: "block",
               marginBottom: "0.5rem",
               fontWeight: "600",
-              color: "var(--dark)"
+              color: "var(--dark)",
             }}
           >
             Company / Event Name *
@@ -193,13 +204,20 @@ ${formData.questions}
               border: "2px solid var(--gold)",
               borderRadius: "0.5rem",
               fontSize: "1rem",
-              boxSizing: "border-box"
+              boxSizing: "border-box",
             }}
           />
         </div>
 
         {/* Email and Phone */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "1.5rem" }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "1rem",
+            marginBottom: "1.5rem",
+          }}
+        >
           <div style={{ flex: "1 1 min(100%, 200px)" }}>
             <label
               style={{
@@ -207,7 +225,7 @@ ${formData.questions}
                 marginBottom: "0.5rem",
                 fontWeight: "600",
                 color: "var(--dark)",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)"
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
               }}
             >
               Email *
@@ -224,7 +242,7 @@ ${formData.questions}
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
                 fontSize: "clamp(0.9rem, 2vw, 1rem)",
-                boxSizing: "border-box"
+                boxSizing: "border-box",
               }}
             />
           </div>
@@ -235,7 +253,7 @@ ${formData.questions}
                 marginBottom: "0.5rem",
                 fontWeight: "600",
                 color: "var(--dark)",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)"
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
               }}
             >
               Phone *
@@ -253,7 +271,7 @@ ${formData.questions}
                 borderRadius: "0.5rem",
                 fontSize: "clamp(0.9rem, 2vw, 1rem)",
                 fontSize: "1rem",
-                boxSizing: "border-box"
+                boxSizing: "border-box",
               }}
             />
           </div>
@@ -266,7 +284,7 @@ ${formData.questions}
               display: "block",
               marginBottom: "0.5rem",
               fontWeight: "600",
-              color: "var(--dark)"
+              color: "var(--dark)",
             }}
           >
             Date and Time *
@@ -286,7 +304,7 @@ ${formData.questions}
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
                 fontSize: "1rem",
-                textAlign: "center"
+                textAlign: "center",
               }}
             />
             <input
@@ -303,7 +321,7 @@ ${formData.questions}
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
                 fontSize: "1rem",
-                textAlign: "center"
+                textAlign: "center",
               }}
             />
             <input
@@ -320,7 +338,7 @@ ${formData.questions}
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
                 fontSize: "1rem",
-                textAlign: "center"
+                textAlign: "center",
               }}
             />
             <input
@@ -336,7 +354,7 @@ ${formData.questions}
                 padding: "0.75rem",
                 border: "2px solid var(--gold)",
                 borderRadius: "0.5rem",
-                fontSize: "1rem"
+                fontSize: "1rem",
               }}
             />
           </div>
@@ -349,7 +367,7 @@ ${formData.questions}
               display: "block",
               marginBottom: "0.5rem",
               fontWeight: "600",
-              color: "var(--dark)"
+              color: "var(--dark)",
             }}
           >
             Address *
@@ -366,7 +384,7 @@ ${formData.questions}
               border: "2px solid var(--gold)",
               borderRadius: "0.5rem",
               fontSize: "1rem",
-              boxSizing: "border-box"
+              boxSizing: "border-box",
             }}
           />
         </div>
@@ -378,70 +396,147 @@ ${formData.questions}
               display: "block",
               marginBottom: "1rem",
               fontWeight: "600",
-              color: "var(--dark)"
+              color: "var(--dark)",
             }}
           >
             What dance(s) are you looking to have performed? *
           </label>
-          
-          <div style={{ 
-            border: "2px solid var(--gold)", 
-            borderRadius: "0.5rem", 
-            padding: "1rem",
-            backgroundColor: "white"
-          }}>
+
+          <div
+            style={{
+              border: "2px solid var(--gold)",
+              borderRadius: "0.5rem",
+              padding: "1rem",
+              backgroundColor: "white",
+            }}
+          >
             {/* Tinikling */}
             <div style={{ marginBottom: "0.75rem" }}>
-              <label style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+              >
                 <input
                   type="checkbox"
                   checked={formData.danceType.includes("Tinikling")}
                   onChange={() => handleDanceChange("Tinikling")}
-                  style={{ marginRight: "0.5rem", width: "18px", height: "18px", cursor: "pointer" }}
+                  style={{
+                    marginRight: "0.5rem",
+                    width: "18px",
+                    height: "18px",
+                    cursor: "pointer",
+                  }}
                 />
-                <span style={{ fontSize: "1rem", fontWeight: "600" }}>Tinikling</span>
+                <span style={{ fontSize: "1rem", fontWeight: "600" }}>
+                  Tinikling
+                </span>
               </label>
             </div>
 
-            <hr style={{ margin: "0.75rem 0", border: "none", borderTop: "1px solid var(--gold)" }} />
+            <hr
+              style={{
+                margin: "0.75rem 0",
+                border: "none",
+                borderTop: "1px solid var(--gold)",
+              }}
+            />
 
             {/* Dances This Year */}
             <div style={{ marginBottom: "0.75rem" }}>
-              {["Bulaklakan", "Cariñosa", "Kapag Apir", "Kini Kini", "Maglalatik", "Pangalay", "Sayaw Sa Bangko"].map(dance => (
-                <label key={dance} style={{ display: "flex", alignItems: "center", cursor: "pointer", marginBottom: "0.5rem" }}>
+              {[
+                "Bulaklakan",
+                "Cariñosa",
+                "Kapag Apir",
+                "Kini Kini",
+                "Maglalatik",
+                "Pangalay",
+                "Sayaw Sa Bangko",
+              ].map((dance) => (
+                <label
+                  key={dance}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer",
+                    marginBottom: "0.5rem",
+                  }}
+                >
                   <input
                     type="checkbox"
                     checked={formData.danceType.includes(dance)}
                     onChange={() => handleDanceChange(dance)}
-                    style={{ marginRight: "0.5rem", width: "18px", height: "18px", cursor: "pointer" }}
+                    style={{
+                      marginRight: "0.5rem",
+                      width: "18px",
+                      height: "18px",
+                      cursor: "pointer",
+                    }}
                   />
                   <span style={{ fontSize: "1rem" }}>{dance}</span>
                 </label>
               ))}
             </div>
 
-            <hr style={{ margin: "0.75rem 0", border: "none", borderTop: "1px solid var(--gold)" }} />
+            <hr
+              style={{
+                margin: "0.75rem 0",
+                border: "none",
+                borderTop: "1px solid var(--gold)",
+              }}
+            />
 
             {/* Not Done This Year */}
             <div style={{ marginBottom: "0.75rem" }}>
-              {["Binasuan", "Itik Itik", "Kappa Malong Malong", "Pandanggo Oasiwas", "Pandanggo Sa Ilaw"].map(dance => (
-                <label key={dance} style={{ display: "flex", alignItems: "center", cursor: "pointer", marginBottom: "0.5rem" }}>
+              {[
+                "Binasuan",
+                "Itik Itik",
+                "Kappa Malong Malong",
+                "Pandanggo Oasiwas",
+                "Pandanggo Sa Ilaw",
+              ].map((dance) => (
+                <label
+                  key={dance}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer",
+                    marginBottom: "0.5rem",
+                  }}
+                >
                   <input
                     type="checkbox"
                     checked={formData.danceType.includes(dance)}
                     onChange={() => handleDanceChange(dance)}
-                    style={{ marginRight: "0.5rem", width: "18px", height: "18px", cursor: "pointer" }}
+                    style={{
+                      marginRight: "0.5rem",
+                      width: "18px",
+                      height: "18px",
+                      cursor: "pointer",
+                    }}
                   />
-                  <span style={{ fontSize: "1rem", opacity: 0.8 }}>{dance}</span>
+                  <span style={{ fontSize: "1rem", opacity: 0.8 }}>
+                    {dance}
+                  </span>
                 </label>
               ))}
             </div>
 
-            <hr style={{ margin: "0.75rem 0", border: "none", borderTop: "1px solid var(--gold)" }} />
+            <hr
+              style={{
+                margin: "0.75rem 0",
+                border: "none",
+                borderTop: "1px solid var(--gold)",
+              }}
+            />
           </div>
-          
+
           {formData.danceType.length === 0 && (
-            <div style={{ color: "red", fontSize: "0.9rem", marginTop: "0.5rem" }}>
+            <div
+              style={{ color: "red", fontSize: "0.9rem", marginTop: "0.5rem" }}
+            >
               Please select at least one dance
             </div>
           )}
@@ -454,7 +549,7 @@ ${formData.questions}
               display: "block",
               marginBottom: "0.5rem",
               fontWeight: "600",
-              color: "var(--dark)"
+              color: "var(--dark)",
             }}
           >
             Description of requested performance *
@@ -473,7 +568,7 @@ ${formData.questions}
               fontSize: "1rem",
               boxSizing: "border-box",
               fontFamily: "inherit",
-              resize: "vertical"
+              resize: "vertical",
             }}
           />
         </div>
@@ -485,7 +580,7 @@ ${formData.questions}
               display: "block",
               marginBottom: "0.5rem",
               fontWeight: "600",
-              color: "var(--dark)"
+              color: "var(--dark)",
             }}
           >
             Any questions, comments, or concerns?
@@ -503,7 +598,7 @@ ${formData.questions}
               fontSize: "1rem",
               boxSizing: "border-box",
               fontFamily: "inherit",
-              resize: "vertical"
+              resize: "vertical",
             }}
           />
         </div>
@@ -515,7 +610,7 @@ ${formData.questions}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             style={{
-                fontFamily:"font-display",
+              fontFamily: "font-display",
               backgroundColor: "var(--red)",
               color: "white",
               fontSize: "1.5rem",
@@ -525,7 +620,7 @@ ${formData.questions}
               borderRadius: "0.5rem",
               cursor: "pointer",
               boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
-              transition: "all 0.3s ease"
+              transition: "all 0.3s ease",
             }}
           >
             Send

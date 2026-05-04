@@ -339,7 +339,7 @@ const EventCard = ({ event }) => (
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 18rem), 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 18rem), 19rem))",
               gap: "clamp(1rem, 3vw, 2rem)",
               justifyContent: "center",
               gridAutoRows: "1fr",

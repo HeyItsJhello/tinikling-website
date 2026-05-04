@@ -95,7 +95,7 @@ export const events = [
     year: "2025-26",
     description: "",
     image: "/assets/events/NONMAC/2026POLY.png",
-    video: "",
+    video: "https://youtu.be/MuvPDqydVqQ?si=gwFupX2BcBDJrQJg",
     isMakeAChange: false,
   },
   {
@@ -104,7 +104,7 @@ export const events = [
     year: "2025-26",
     description: "",
     image: "/assets/events/DEBUTS/ERIN.png",
-    video: "",
+    video: "https://youtu.be/SsFJnJ6dUjE?si=U21MRb4bO-z390j_",
     isMakeAChange: false,
   },
 

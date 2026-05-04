@@ -32,12 +32,10 @@ export default function OfficerCard({ officer }) {
       <h2
         style={{
           fontSize: "1.25rem",
-          marginBottom: "1rem",
-          whiteSpace: "nowrap",
-          overflow: "visible",
-          width: "max-content",
-          maxWidth: "none",
           margin: "0 auto 1rem auto",
+          overflowWrap: "break-word",
+          wordBreak: "break-word",
+          hyphens: "auto",
         }}
       >
         {officer.name}

@@ -31,10 +31,11 @@ export default function OfficersGrid() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(13.75rem, 1fr))",
+          gridTemplateColumns: "repeat(auto-fill, minmax(13.75rem, 14rem))",
           gap: "2rem",
           marginTop: "2rem",
-          marginBottom: "5rem"
+          marginBottom: "5rem",
+          justifyContent: "center",
         }}
       >
         {officers.map((officer, index) => (
@@ -48,7 +49,7 @@ export default function OfficersGrid() {
           width: "80%",
           height: "2px",
           backgroundColor: "var(--gold)",
-          margin: "3rem auto"
+          margin: "3rem auto",
         }}
       />
 
@@ -56,13 +57,14 @@ export default function OfficersGrid() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 31.25rem), 1fr))",
+          gridTemplateColumns:
+            "repeat(auto-fill, minmax(min(100%, 31.25rem), 1fr))",
           gap: "2rem",
           marginTop: "3rem",
           marginBottom: "3rem",
           gridAutoRows: "1fr",
           maxWidth: "75rem",
-          margin: "3rem auto"
+          margin: "3rem auto",
         }}
       >
         {officers.map((officer, index) => (
@@ -82,7 +84,7 @@ export default function OfficersGrid() {
                 gap: "clamp(1.5rem, 3vw, 2rem)",
                 minHeight: "20rem",
                 height: "100%",
-                boxSizing: "border-box"
+                boxSizing: "border-box",
               }}
             >
               {/* Information on the left */}
@@ -95,7 +97,7 @@ export default function OfficersGrid() {
                   textAlign: "left",
                   minWidth: 0,
                   wordWrap: "break-word",
-                  overflowWrap: "break-word"
+                  overflowWrap: "break-word",
                 }}
               >
                 <h2
@@ -105,7 +107,7 @@ export default function OfficersGrid() {
                     marginBottom: "0.75rem",
                     fontWeight: "bold",
                     wordWrap: "break-word",
-                    overflowWrap: "break-word"
+                    overflowWrap: "break-word",
                   }}
                 >
                   {officer.name}
@@ -117,7 +119,7 @@ export default function OfficersGrid() {
                     marginBottom: "1rem",
                     fontWeight: "600",
                     wordWrap: "break-word",
-                    overflowWrap: "break-word"
+                    overflowWrap: "break-word",
                   }}
                 >
                   {officer.role}
@@ -128,22 +130,52 @@ export default function OfficersGrid() {
                     flexDirection: "column",
                     gap: "0.5rem",
                     color: "var(--dark)",
-                    fontSize: "clamp(0.95rem, 2vw, 1.1rem)"
+                    fontSize: "clamp(0.95rem, 2vw, 1.1rem)",
                   }}
                 >
-                  <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
+                  <p
+                    style={{
+                      wordWrap: "break-word",
+                      overflowWrap: "break-word",
+                      margin: 0,
+                    }}
+                  >
                     <strong>Grade:</strong> {officer.grade}
                   </p>
-                  <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
+                  <p
+                    style={{
+                      wordWrap: "break-word",
+                      overflowWrap: "break-word",
+                      margin: 0,
+                    }}
+                  >
                     <strong>Pronouns:</strong> {officer.pronouns}
                   </p>
-                  <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
+                  <p
+                    style={{
+                      wordWrap: "break-word",
+                      overflowWrap: "break-word",
+                      margin: 0,
+                    }}
+                  >
                     <strong>Hobbies:</strong> {officer.hobbies}
                   </p>
-                  <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
+                  <p
+                    style={{
+                      wordWrap: "break-word",
+                      overflowWrap: "break-word",
+                      margin: 0,
+                    }}
+                  >
                     <strong>Favorite Dance:</strong> {officer.favoriteDance}
                   </p>
-                  <p style={{ wordWrap: "break-word", overflowWrap: "break-word", margin: 0 }}>
+                  <p
+                    style={{
+                      wordWrap: "break-word",
+                      overflowWrap: "break-word",
+                      margin: 0,
+                    }}
+                  >
                     <strong>Fun Fact:</strong> {officer.funFact}
                   </p>
                 </div>
@@ -155,7 +187,7 @@ export default function OfficersGrid() {
                 style={{
                   width: "clamp(10rem, 30vw, 15rem)",
                   height: "clamp(10rem, 30vw, 15rem)",
-                  flexShrink: 0
+                  flexShrink: 0,
                 }}
               >
                 <img
@@ -166,7 +198,7 @@ export default function OfficersGrid() {
                     height: "100%",
                     objectFit: "cover",
                     objectPosition: `center ${officer.center_amount}%`,
-                    borderRadius: "0.5rem"
+                    borderRadius: "0.5rem",
                   }}
                 />
               </div>
@@ -181,7 +213,7 @@ export default function OfficersGrid() {
           width: "80%",
           height: "2px",
           backgroundColor: "var(--gold)",
-          margin: "3rem auto"
+          margin: "3rem auto",
         }}
       />
 
@@ -201,7 +233,7 @@ export default function OfficersGrid() {
             border: "none",
             borderRadius: "0.5rem",
             cursor: "pointer",
-            boxShadow: "0 0.25rem 0.375rem rgba(0, 0, 0, 0.2)"
+            boxShadow: "0 0.25rem 0.375rem rgba(0, 0, 0, 0.2)",
           }}
         >
           Members and Alumni
@@ -229,7 +261,7 @@ export default function OfficersGrid() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                padding: "2rem"
+                padding: "2rem",
               }}
             >
               {/* Modal Card */}
@@ -251,11 +283,17 @@ export default function OfficersGrid() {
                   maxHeight: "calc(100vh - 4rem)",
                   position: "relative",
                   display: "flex",
-                  flexDirection: "column"
+                  flexDirection: "column",
                 }}
               >
                 {/* Close Button */}
-                <div style={{ position: "relative", padding: "1rem", flexShrink: 0 }}>
+                <div
+                  style={{
+                    position: "relative",
+                    padding: "1rem",
+                    flexShrink: 0,
+                  }}
+                >
                   <motion.button
                     whileHover={{ scale: 1.1, rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
@@ -276,7 +314,7 @@ export default function OfficersGrid() {
                       alignItems: "center",
                       justifyContent: "center",
                       fontWeight: "bold",
-                      zIndex: 10
+                      zIndex: 10,
                     }}
                   >
                     ×
@@ -288,7 +326,7 @@ export default function OfficersGrid() {
                   style={{
                     flex: 1,
                     overflowY: "auto",
-                    padding: "0 2rem 2rem 2rem"
+                    padding: "0 2rem 2rem 2rem",
                   }}
                 >
                   {/* Year Navigation Header */}
@@ -301,7 +339,7 @@ export default function OfficersGrid() {
                       gap: "clamp(1rem, 3vw, 2rem)",
                       marginBottom: "2rem",
                       borderBottom: "0.125rem solid var(--gold)",
-                      paddingBottom: "1rem"
+                      paddingBottom: "1rem",
                     }}
                   >
                     {currentYearIndex > 0 ? (
@@ -319,7 +357,7 @@ export default function OfficersGrid() {
                           cursor: "pointer",
                           display: "flex",
                           alignItems: "center",
-                          justifyContent: "center"
+                          justifyContent: "center",
                         }}
                       >
                         ←
@@ -333,7 +371,7 @@ export default function OfficersGrid() {
                         fontSize: "clamp(1.5rem, 5vw, 2rem)",
                         color: "var(--red)",
                         fontWeight: "bold",
-                        margin: 0
+                        margin: 0,
                       }}
                     >
                       Class of {currentYear.split("-")[1]}
@@ -354,7 +392,7 @@ export default function OfficersGrid() {
                           cursor: "pointer",
                           display: "flex",
                           alignItems: "center",
-                          justifyContent: "center"
+                          justifyContent: "center",
                         }}
                       >
                         →
@@ -373,16 +411,19 @@ export default function OfficersGrid() {
                           color: "var(--dark)",
                           marginBottom: "1rem",
                           fontWeight: "bold",
-                          textAlign: "center"
+                          textAlign: "center",
                         }}
                       >
-                        {parseInt(currentYear.split("-")[1]) < 2026 ? "Alumni" : "Members"}
+                        {parseInt(currentYear.split("-")[1]) < 2026
+                          ? "Alumni"
+                          : "Members"}
                       </h3>
                       <div
                         style={{
                           display: "grid",
-                          gridTemplateColumns: "repeat(auto-fit, minmax(12.5rem, 1fr))",
-                          gap: "0.5rem"
+                          gridTemplateColumns:
+                            "repeat(auto-fit, minmax(12.5rem, 1fr))",
+                          gap: "0.5rem",
                         }}
                       >
                         {currentData.map((alum, index) => (
@@ -390,7 +431,7 @@ export default function OfficersGrid() {
                             key={index}
                             style={{
                               padding: "0.5rem",
-                              color: "var(--dark)"
+                              color: "var(--dark)",
                             }}
                           >
                             {alum}
@@ -399,66 +440,77 @@ export default function OfficersGrid() {
                       </div>
 
                       {/* Quotes Section */}
-                      {quotes[currentYear] && Object.keys(quotes[currentYear]).length > 0 && (
-                        <div style={{ marginTop: "2rem" }}>
-                          <h3
-                            style={{
-                              fontSize: "1.5rem",
-                              color: "var(--blue)",
-                              marginBottom: "1.5rem",
-                              fontWeight: "bold",
-                              textAlign: "center"
-                            }}
-                          >
-                            Quotes
-                          </h3>
-                          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-                            {Object.entries(quotes[currentYear]).map(([name, quote], index) => (
-                              <div
-                                key={index}
-                                style={{
-                                  backgroundColor: "var(--cream)",
-                                  padding: "1.5rem",
-                                  borderRadius: "0.5rem",
-                                  borderLeft: "4px solid var(--red)"
-                                }}
-                              >
-                                <p
-                                  style={{
-                                    fontSize: "1.1rem",
-                                    fontStyle: "italic",
-                                    color: "var(--dark)",
-                                    marginBottom: "0.5rem",
-                                    lineHeight: "1.6"
-                                  }}
-                                >
-                                  "{quote}"
-                                </p>
-                                <p
-                                  style={{
-                                    fontSize: "1rem",
-                                    fontWeight: "bold",
-                                    color: "var(--blue)",
-                                    textAlign: "right"
-                                  }}
-                                >
-                                  — {name}
-                                </p>
-                              </div>
-                            ))}
+                      {quotes[currentYear] &&
+                        Object.keys(quotes[currentYear]).length > 0 && (
+                          <div style={{ marginTop: "2rem" }}>
+                            <h3
+                              style={{
+                                fontSize: "1.5rem",
+                                color: "var(--blue)",
+                                marginBottom: "1.5rem",
+                                fontWeight: "bold",
+                                textAlign: "center",
+                              }}
+                            >
+                              Quotes
+                            </h3>
+                            <div
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "1.5rem",
+                              }}
+                            >
+                              {Object.entries(quotes[currentYear]).map(
+                                ([name, quote], index) => (
+                                  <div
+                                    key={index}
+                                    style={{
+                                      backgroundColor: "var(--cream)",
+                                      padding: "1.5rem",
+                                      borderRadius: "0.5rem",
+                                      borderLeft: "4px solid var(--red)",
+                                    }}
+                                  >
+                                    <p
+                                      style={{
+                                        fontSize: "1.1rem",
+                                        fontStyle: "italic",
+                                        color: "var(--dark)",
+                                        marginBottom: "0.5rem",
+                                        lineHeight: "1.6",
+                                      }}
+                                    >
+                                      "{quote}"
+                                    </p>
+                                    <p
+                                      style={{
+                                        fontSize: "1rem",
+                                        fontWeight: "bold",
+                                        color: "var(--blue)",
+                                        textAlign: "right",
+                                      }}
+                                    >
+                                      — {name}
+                                    </p>
+                                  </div>
+                                ),
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        )}
                     </div>
                   ) : (
-                    <p style={{ textAlign: "center", color: "var(--dark)", fontSize: "1.2rem" }}>
+                    <p
+                      style={{
+                        textAlign: "center",
+                        color: "var(--dark)",
+                        fontSize: "1.2rem",
+                      }}
+                    >
                       No member data available for this year.
                     </p>
-                  )
-
-                  }
-
-                  
+                  )}
                 </div>
               </motion.div>
             </motion.div>
