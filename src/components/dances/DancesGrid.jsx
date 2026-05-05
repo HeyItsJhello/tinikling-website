@@ -2,12 +2,14 @@ import { useRef, useEffect, useState } from "react";
 import Reveal from "../common/reveal";
 import DanceCard from "./DanceCard";
 
-export default function DancesGrid({ dances, title }) {
+export default function DancesGrid({ dances, title, setActiveSection }) {
   const scrollRef = useRef(null);
   const cardRefs = useRef([]);
   const arrowRefs = useRef([]);
   const arrowStates = useRef([]); // Track whether each arrow is flipped
   const [isReady, setIsReady] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [openModalIndex, setOpenModalIndex] = useState(null);
 
   useEffect(() => {
     // Wait for DOM to be fully ready
@@ -128,9 +130,18 @@ export default function DancesGrid({ dances, title }) {
           <div
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            style={{ position: "relative", zIndex: 10, flexShrink: 0}}
+            style={{ position: "relative", zIndex: hoveredIndex === index || openModalIndex === index ? 30 : 10, flexShrink: 0 }}
           >
-            <DanceCard dance={dance} />
+            <DanceCard
+              dance={dance}
+              isActive={hoveredIndex === index || openModalIndex === index}
+              isAnyHovered={hoveredIndex !== null || openModalIndex !== null}
+              onHoverStart={() => setHoveredIndex(index)}
+              onHoverEnd={() => setHoveredIndex(null)}
+              onModalOpen={() => setOpenModalIndex(index)}
+              onModalClose={() => setOpenModalIndex(null)}
+              setActiveSection={setActiveSection}
+            />
             {index < dances.length - 1 && (
               <button
                 ref={(el) => (arrowRefs.current[index] = el)}

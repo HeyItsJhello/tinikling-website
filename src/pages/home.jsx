@@ -15,6 +15,8 @@ import GettingInvolved from "../components/about/GettingInvolved";
 import OfficerPositions from "../components/about/OfficerPositions";
 import SocialEvents from "../components/events/SocialEvents";
 import { dances } from "../data/dances";
+import { learnConfig } from "../data/learn";
+import LearnPage from "../components/learn/LearnPage";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
@@ -186,7 +188,7 @@ export default function Home() {
               }}
             >
               <Reveal>
-                {mounted && <DancesGrid key={`dances-${activeSection}`} title="Our Dances" dances={dances} />}
+                {mounted && <DancesGrid key={`dances-${activeSection}`} title="Our Dances" dances={dances} setActiveSection={setActiveSection} />}
               </Reveal>
             </main>
           )}
@@ -325,6 +327,12 @@ export default function Home() {
               </Reveal>
             </main>
           )}
+          {activeSection === 'learn' && learnConfig.enabled && (
+            <main style={{ paddingTop: "8rem", background: "var(--cream)", minHeight: "100vh" }}>
+              <LearnPage />
+            </main>
+          )}
+
           {activeSection === 'developer' && (
                 <Developer />
             )}

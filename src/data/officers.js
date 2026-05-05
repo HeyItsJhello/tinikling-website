@@ -57,8 +57,8 @@ export const officers = [
   {
     name: "Madelynn Keilani Somera",
     role: "Event Coordinator",
-    image: "/assets/placeholder.png",
-    center_amount: 0,
+    image: "/assets/officers/mady.jpg",
+    center_amount: 80,
     grade: "Junior",
     pronouns: "She/Her",
     hobbies: "Painting, Sewing, Baking, Origami, Gaming, Reading",

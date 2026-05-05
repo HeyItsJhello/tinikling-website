@@ -1,70 +1,101 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import DanceModal from "./DanceModal";
 
-export default function DanceCard({ dance }) {
-    const [isExpanded, setIsExpanded] = useState(false);
+export default function DanceCard({ dance, isActive, isAnyHovered, onHoverStart, onHoverEnd, onModalOpen, onModalClose, setActiveSection }) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleClick = () => {
+        if (dance.descriptions.length > 1) {
+            setIsModalOpen(true);
+            onModalOpen?.();
+        }
+    };
+
+    const handleModalClose = () => {
+        setIsModalOpen(false);
+        onModalClose?.();
+    };
 
     return (
-        <motion.div
-            layout
-            transition={{ layout: { duration: 0.3, ease: "easeOut" } }}
-            whileHover={{ y: -8 }}
-            onTap={() => setIsExpanded(!isExpanded)}
-            className="dance-card"
-            style={{
-                background: "white",
-                padding: "clamp(1rem, 3vw, 2rem)",
-                textAlign: "center",
-                border: "2px solid var(--gold)",
-                minWidth: "15rem",
-                width: "min(20rem, 85vw)",
-                minHeight: "30rem",
-                display: "flex",
-                flexDirection: "column",
-                borderRadius: "0.5rem",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                zIndex: 10,
-                cursor: "pointer"
-            }}
-        >
-            <img
-                src={dance.image}
-                alt={dance.name}
-                style={{
-                    width: "100%",
-                    maxWidth: "15rem",
-                    height: "auto",
-                    aspectRatio: "1 / 1",
-                    objectFit: "cover",
-                    margin: "0 auto",
+        <>
+            <motion.div
+                layout
+                transition={{ layout: { duration: 0.3, ease: "easeOut" } }}
+                whileHover={{ y: -8 }}
+                animate={{
+                    boxShadow: isActive
+                        ? "0 12px 28px rgba(0,0,0,0.2)"
+                        : "0 4px 6px rgba(0,0,0,0.1)",
+                    opacity: isAnyHovered && !isActive ? 0.5 : 1,
+                    scale: isAnyHovered && !isActive ? 0.97 : 1,
                 }}
-            />
-
-            <h3 style={{
-                margin: "1rem 0 0.5rem",
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                width: "100%"
-            }}>{dance.name}</h3>
-
-            <motion.p
-                initial={false}
-                animate={{ WebkitLineClamp: isExpanded ? "unset" : 10 }}
-                whileHover={{ WebkitLineClamp: "unset" }}
+                onHoverStart={onHoverStart}
+                onHoverEnd={onHoverEnd}
+                onClick={handleClick}
+                className="dance-card"
                 style={{
-                    display: "-webkit-box",
-                    WebkitBoxOrient: "vertical",
-                    WebkitLineClamp: isExpanded ? "unset" : 10,
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                    flex: "1 0 auto",
-                    minHeight: "calc(10 * 1.5em)",
-                    lineHeight: "1.5em",
+                    background: "white",
+                    padding: "clamp(1rem, 3vw, 2rem)",
+                    textAlign: "center",
+                    border: "2px solid var(--gold)",
+                    minWidth: "15rem",
+                    width: "min(20rem, 85vw)",
+                    minHeight: "30rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    borderRadius: "0.5rem",
+                    cursor: dance.descriptions.length > 1 ? "pointer" : "default",
                 }}
             >
-                {dance.description}
-            </motion.p>
-        </motion.div>
+                <img
+                    src={dance.image}
+                    alt={dance.name}
+                    style={{
+                        width: "100%",
+                        maxWidth: "15rem",
+                        height: "auto",
+                        aspectRatio: "1 / 1",
+                        objectFit: "cover",
+                        margin: "0 auto",
+                    }}
+                />
+
+                <h3 style={{
+                    margin: "1rem 0 0.5rem",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    width: "100%"
+                }}>{dance.name}</h3>
+
+                <motion.p
+                    initial={false}
+                    animate={{ WebkitLineClamp: 10 }}
+                    whileHover={{ WebkitLineClamp: "unset" }}
+                    style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 10,
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        flex: "1 0 auto",
+                        minHeight: "calc(10 * 1.5em)",
+                        lineHeight: "1.5em",
+                        margin: 0,
+                        color: "var(--dark)",
+                    }}
+                >
+                    {dance.descriptions[0] || ""}
+                </motion.p>
+            </motion.div>
+
+            <DanceModal
+                isOpen={isModalOpen}
+                onClose={handleModalClose}
+                dance={dance}
+                setActiveSection={setActiveSection}
+            />
+        </>
     );
 }

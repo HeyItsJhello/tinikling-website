@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { learnConfig } from '../../data/learn';
 
 export default function Navbar({ activeSection, setActiveSection }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,7 +58,8 @@ export default function Navbar({ activeSection, setActiveSection }) {
     { label: 'Events', id: 'events' },
     { label: 'Dances', id: 'dances' },
     { label: 'Officers', id: 'officers' },
-    { label: 'Contact Us', id: 'contact' }
+    ...(learnConfig.enabled ? [{ label: 'Learn', id: 'learn' }] : []),
+    { label: 'Contact Us', id: 'contact' },
   ];
 
   const handleNavClick = (id) => {

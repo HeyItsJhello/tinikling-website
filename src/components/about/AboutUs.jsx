@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import aboutUsHERO from "/assets/AboutUsHERO.png";
 import Reveal from "../common/reveal";
+import StatCounter from "./StatCounter";
 
 export default function AboutUs({ setActiveSection }) {
   // Placeholder data for special thanks - you can customize these
@@ -250,6 +251,9 @@ export default function AboutUs({ setActiveSection }) {
           </div>
         </section>
       </Reveal>
+
+      {/* Stat Counter */}
+      <StatCounter />
 
       {/* Affiliations and Special Thanks Bar */}
       <Reveal>
