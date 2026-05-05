@@ -26,7 +26,7 @@ export const dances = [
   {
     name: "Pandanggo sa Ilaw",
     region: "Mindoro",
-    video: "",
+    video: "https://youtu.be/14YxW3ROBA4?si=rSXnXl_cKUnDg_eu",
     steps: [],
     descriptions: [
       "Originating from the Lubang Island in Mindoro, Pandanggo Sa Ilaw roughly translates to 'dance of the lights' or 'towards the light.' The dance consists of dancers balancing candles on their hands and heads, symbolizing the bountiful catches of fishermen.",
@@ -39,7 +39,7 @@ export const dances = [
   {
     name: "Kapag Apir",
     region: "Mindanao",
-    video: "",
+    video: "https://youtu.be/_5bRlr97n-Q?si=2d7j3gbIEu5pjMnE",
     steps: [],
     descriptions: [
       "KAPAG From the Maranao tribes of Mindanao, Kapag Apir is a traditional dance showcasing the grace and poise of dancers. Dancers work with fans to create beautiful images symbolizing royalty of princesses.",
@@ -50,7 +50,7 @@ export const dances = [
   {
     name: "Binasuan",
     region: "Pangasinan",
-    video: "",
+    video: "https://youtu.be/S94Hri03-_w?si=z9lz2lsCbtFJ0Fgz",
     steps: [],
     descriptions: [
       'Originating from the province of Pangasinan, Binasuan roughly translates to "with the use of a drinking glass." Binasuan is a lively performance involving dancers balancing drinking glasses filled with liquid on their hands and head.',

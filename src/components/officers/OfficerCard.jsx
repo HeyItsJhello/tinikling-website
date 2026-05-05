@@ -12,6 +12,8 @@ export default function OfficerCard({ officer }) {
         borderRadius: "0.5rem",
         boxShadow: "0 4px 6px var(--gold)",
         minHeight: "20rem",
+        width: "11rem",
+        flexShrink: 0,
       }}
     >
       {/* Photo (optional) */}

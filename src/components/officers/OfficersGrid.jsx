@@ -30,12 +30,12 @@ export default function OfficersGrid() {
       <h1>Club Officers</h1>
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(13.75rem, 14rem))",
-          gap: "2rem",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "1.25rem",
           marginTop: "2rem",
           marginBottom: "5rem",
-          justifyContent: "center",
         }}
       >
         {officers.map((officer, index) => (
@@ -58,7 +58,7 @@ export default function OfficersGrid() {
         style={{
           display: "grid",
           gridTemplateColumns:
-            "repeat(auto-fill, minmax(min(100%, 31.25rem), 1fr))",
+            "repeat(auto-fit, minmax(min(100%, 31.25rem), 1fr))",
           gap: "2rem",
           marginTop: "3rem",
           marginBottom: "3rem",
