@@ -63,8 +63,9 @@ section {
     padding: clamp(2rem, 4vw, 6rem) clamp(1rem, 4vw, 8vw);
 }
 
-/* Decorative accent under section headings */
-section > h1::after {
+/* Decorative accent under section headings — works even when h1 is inside Reveal/motion wrappers */
+section h1::after,
+main h1::after {
     content: '';
     display: block;
     width: 3.5rem;
@@ -72,6 +73,24 @@ section > h1::after {
     background: var(--red);
     margin: 0.65rem auto 0;
     border-radius: 99px;
+}
+
+/* Link base */
+a {
+    color: inherit;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+/* Keyboard focus visible */
+:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+/* Smooth transition on interactive elements */
+button, a {
+    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
 /* Responsive utilities */

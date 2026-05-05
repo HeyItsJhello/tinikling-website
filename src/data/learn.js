@@ -16,5 +16,3 @@ export const learnConfig = {
     tiktok: { url: "", visible: false },
   },
 };
-
-// The earlier you show up, the harder I'll do you :)
