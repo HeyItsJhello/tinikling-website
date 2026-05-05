@@ -48,18 +48,38 @@ export default function DanceCard({ dance, isActive, isAnyHovered, onHoverStart,
                     cursor: dance.descriptions.length > 1 ? "pointer" : "default",
                 }}
             >
-                <img
-                    src={dance.image}
-                    alt={dance.name}
-                    style={{
-                        width: "100%",
-                        maxWidth: "15rem",
-                        height: "auto",
-                        aspectRatio: "1 / 1",
-                        objectFit: "cover",
-                        margin: "0 auto",
-                    }}
-                />
+                <div style={{ position: "relative", width: "100%", maxWidth: "15rem", margin: "0 auto" }}>
+                    <img
+                        src={dance.image}
+                        alt={dance.name}
+                        style={{
+                            width: "100%",
+                            height: "auto",
+                            aspectRatio: "1 / 1",
+                            objectFit: "cover",
+                            borderRadius: "0.5rem",
+                            display: "block",
+                        }}
+                    />
+                    {dance.region && (
+                        <span style={{
+                            position: "absolute",
+                            bottom: "0.5rem",
+                            left: "0.5rem",
+                            fontSize: "0.62rem",
+                            fontWeight: "700",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.07em",
+                            padding: "0.2rem 0.55rem",
+                            backgroundColor: "rgba(218, 160, 109, 0.92)",
+                            color: "var(--dark)",
+                            borderRadius: "999px",
+                            backdropFilter: "blur(4px)",
+                        }}>
+                            {dance.region}
+                        </span>
+                    )}
+                </div>
 
                 <h3 style={{
                     margin: "1rem 0 0.5rem",

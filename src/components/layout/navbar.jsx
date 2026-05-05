@@ -90,12 +90,19 @@ export default function Navbar({ activeSection, setActiveSection }) {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div style={{
-        fontSize: 'clamp(1.2rem, 3vw, 1.5rem)',
-        fontWeight: 'bold',
-        zIndex: 1002
-      }}>
-        <span style={{color: 'var(--red)'}}>T.D.C</span>
+      <div
+        onClick={() => setActiveSection('welcome')}
+        style={{
+          fontFamily: 'var(--font-display)',
+          fontSize: 'clamp(1.3rem, 3vw, 1.7rem)',
+          letterSpacing: '0.06em',
+          zIndex: 1002,
+          cursor: 'pointer',
+          userSelect: 'none',
+          color: 'var(--red)',
+        }}
+      >
+        T.D.C
       </div>
 
       {/* Hamburger Menu Button - Mobile Only */}

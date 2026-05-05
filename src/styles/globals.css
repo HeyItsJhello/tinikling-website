@@ -16,7 +16,22 @@
 
 body {
     margin: 0;
-    background: var(--cream);
+    background-color: var(--cream);
+    background-image:
+        repeating-linear-gradient(
+            135deg,
+            rgba(218, 160, 109, 0.07) 0px,
+            rgba(218, 160, 109, 0.07) 1px,
+            transparent 1px,
+            transparent 24px
+        ),
+        repeating-linear-gradient(
+            45deg,
+            rgba(218, 160, 109, 0.04) 0px,
+            rgba(218, 160, 109, 0.04) 1px,
+            transparent 1px,
+            transparent 24px
+        );
     font-family: var(--font-body);
     color: var(--dark);
 }
@@ -46,6 +61,17 @@ p {
 
 section {
     padding: clamp(2rem, 4vw, 6rem) clamp(1rem, 4vw, 8vw);
+}
+
+/* Decorative accent under section headings */
+section > h1::after {
+    content: '';
+    display: block;
+    width: 3.5rem;
+    height: 3px;
+    background: var(--red);
+    margin: 0.65rem auto 0;
+    border-radius: 99px;
 }
 
 /* Responsive utilities */
