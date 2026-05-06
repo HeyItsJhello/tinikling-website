@@ -1,64 +1,146 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+const CURRENT_DANCES = [
+  "Tinikling", "Bulaklakan", "Cariñosa", "Kapag Apir",
+  "Kini Kini", "Maglalatik", "Pangalay", "Sayaw Sa Bangko",
+];
+
+const OTHER_DANCES = [
+  "Binasuan", "Itik Itik", "Kappa Malong Malong",
+  "Pandanggo Oasiwas", "Pandanggo Sa Ilaw",
+];
+
+function SectionLabel({ children }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", margin: "1.75rem 0 1.25rem" }}>
+      <span style={{
+        fontSize: "0.68rem", fontWeight: "800", letterSpacing: "0.14em",
+        textTransform: "uppercase", color: "var(--red)",
+        fontFamily: "var(--font-display)", whiteSpace: "nowrap",
+      }}>
+        {children}
+      </span>
+      <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+    </div>
+  );
+}
+
+function Field({ label, required, children }) {
+  return (
+    <div style={{ marginBottom: "1.1rem" }}>
+      <label style={{
+        display: "block", marginBottom: "0.35rem",
+        fontWeight: "600", color: "var(--dark)", fontSize: "0.85rem",
+      }}>
+        {label}
+        {required && <span style={{ color: "var(--red)", marginLeft: "3px" }}>*</span>}
+      </label>
+      {children}
+    </div>
+  );
+}
+
+function Input(props) {
+  const [focused, setFocused] = useState(false);
+  return (
+    <input
+      {...props}
+      style={{
+        width: "100%", padding: "0.65rem 0.85rem",
+        border: `1.5px solid ${focused ? "var(--red)" : "rgba(218,160,109,0.55)"}`,
+        borderRadius: "0.5rem", fontSize: "0.92rem",
+        boxSizing: "border-box", fontFamily: "inherit",
+        background: "white", color: "var(--dark)", outline: "none",
+        boxShadow: focused ? "0 0 0 3px rgba(208,49,45,0.1)" : "none",
+        transition: "border-color 0.18s, box-shadow 0.18s",
+      }}
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
+    />
+  );
+}
+
+function Textarea(props) {
+  const [focused, setFocused] = useState(false);
+  return (
+    <textarea
+      {...props}
+      style={{
+        width: "100%", padding: "0.65rem 0.85rem",
+        border: `1.5px solid ${focused ? "var(--red)" : "rgba(218,160,109,0.55)"}`,
+        borderRadius: "0.5rem", fontSize: "0.92rem",
+        boxSizing: "border-box", fontFamily: "inherit",
+        background: "white", color: "var(--dark)", outline: "none",
+        resize: "vertical",
+        boxShadow: focused ? "0 0 0 3px rgba(208,49,45,0.1)" : "none",
+        transition: "border-color 0.18s, box-shadow 0.18s",
+      }}
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
+    />
+  );
+}
+
+function DancePill({ dance, selected, onToggle }) {
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      style={{
+        padding: "0.38rem 0.9rem",
+        border: `1.5px solid ${selected ? "var(--red)" : "rgba(218,160,109,0.5)"}`,
+        borderRadius: "999px",
+        backgroundColor: selected ? "var(--red)" : "white",
+        color: selected ? "white" : "var(--dark)",
+        fontSize: "0.83rem",
+        fontWeight: selected ? "600" : "400",
+        cursor: "pointer",
+        transition: "all 0.15s ease",
+        fontFamily: "var(--font-body)",
+      }}
+    >
+      {dance}
+    </button>
+  );
+}
+
 export default function PerformanceInquiry() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    firstName: "", lastName: "",
+    email: "", phone: "",
     companyEvent: "",
-    email: "",
-    phone: "",
-    month: "",
-    day: "",
-    year: "",
-    time: "",
+    date: "", time: "",
     address: "",
     danceType: [],
-    description: "",
-    questions: "",
+    description: "", questions: "",
   });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleDanceChange = (danceName) => {
-    setFormData((prev) => {
-      const currentDances = prev.danceType;
-      if (currentDances.includes(danceName)) {
-        return {
-          ...prev,
-          danceType: currentDances.filter((d) => d !== danceName),
-        };
-      } else {
-        return {
-          ...prev,
-          danceType: [...currentDances, danceName],
-        };
-      }
-    });
+  const handleDanceChange = (dance) => {
+    setFormData((prev) => ({
+      ...prev,
+      danceType: prev.danceType.includes(dance)
+        ? prev.danceType.filter((d) => d !== dance)
+        : [...prev.danceType, dance],
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (formData.danceType.length === 0) {
       alert("Please select at least one dance");
       return;
     }
-
     const subject = `Performance Inquiry - ${formData.companyEvent}`;
-    const body = `
-First Name: ${formData.firstName}
+    const body = `First Name: ${formData.firstName}
 Last Name: ${formData.lastName}
 Company/Event Name: ${formData.companyEvent}
 Email: ${formData.email}
 Phone: ${formData.phone}
 
-Date & Time: ${formData.month}/${formData.day}/${formData.year} at ${formData.time}
+Date & Time: ${formData.date} at ${formData.time}
 Address: ${formData.address}
 
 Dance Type Requested: ${formData.danceType.join(", ")}
@@ -67,566 +149,129 @@ Description of Requested Performance:
 ${formData.description}
 
 Questions/Comments/Concerns:
-${formData.questions}
-    `;
+${formData.questions}`;
 
     window.location.href = `mailto:frhstinikling@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
-    <section
-      style={{
-        width: "100%",
-        maxWidth: "900px",
-        margin: "0 auto",
-        padding: "clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem)",
-        backgroundColor: "var(--cream)",
-        boxSizing: "border-box",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "clamp(2rem, 6vw, 4rem)",
-          color: "var(--red)",
-          marginBottom: "2rem",
-          textAlign: "center",
-          fontWeight: "bold",
-        }}
-      >
-        Performance Inquiries
-      </h1>
-
-      <b
-        style={{
-          color: "var(--red)",
-          paddingBottom: "3rem",
-        }}
-      >
-        We perform at Debuts and Community Events in the Elk Grove and
-        Sacramento area
-      </b>
-
-      <br />
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          paddingTop: "2rem",
-        }}
-      >
-        {/* Name Fields */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "1rem",
-            marginBottom: "1.5rem",
-          }}
-        >
-          <div style={{ flex: "1 1 min(100%, 200px)" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "0.5rem",
-                fontWeight: "600",
-                color: "var(--dark)",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)",
-              }}
-            >
-              First Name *
-            </label>
-            <input
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              required
-              style={{
-                width: "100%",
-                padding: "0.75rem",
-                border: "2px solid var(--gold)",
-                borderRadius: "0.5rem",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)",
-                boxSizing: "border-box",
-              }}
-            />
-          </div>
-          <div style={{ flex: "1 1 min(100%, 200px)" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "0.5rem",
-                fontWeight: "600",
-                color: "var(--dark)",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)",
-              }}
-            >
-              Last Name *
-            </label>
-            <input
-              type="text"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              required
-              style={{
-                width: "100%",
-                padding: "0.75rem",
-                border: "2px solid var(--gold)",
-                borderRadius: "0.5rem",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)",
-                boxSizing: "border-box",
-              }}
-            />
-          </div>
+    <section style={{
+      maxWidth: "780px", margin: "0 auto",
+      padding: "0 clamp(1rem, 4vw, 2rem) 5rem",
+      boxSizing: "border-box",
+    }}>
+      <div style={{
+        background: "white", borderRadius: "1.25rem",
+        boxShadow: "0 8px 40px rgba(0,0,0,0.1)",
+        overflow: "hidden",
+      }}>
+        {/* Card header */}
+        <div style={{ background: "var(--red)", padding: "1.6rem 2rem" }}>
+          <h2 style={{
+            color: "white", margin: 0,
+            fontSize: "clamp(1.2rem, 3vw, 1.6rem)",
+            fontFamily: "var(--font-display)",
+          }}>
+            Performance Inquiry
+          </h2>
+          <p style={{
+            color: "rgba(255,255,255,0.78)", margin: "0.3rem 0 0",
+            fontSize: "0.88rem", fontFamily: "var(--font-body)",
+          }}>
+            We perform at debuts and community events in Elk Grove &amp; Sacramento
+          </p>
         </div>
 
-        {/* Company/Event Name */}
-        <div style={{ marginBottom: "1.5rem" }}>
-          <label
-            style={{
-              display: "block",
-              marginBottom: "0.5rem",
-              fontWeight: "600",
-              color: "var(--dark)",
-            }}
-          >
-            Company / Event Name *
-          </label>
-          <input
-            type="text"
-            name="companyEvent"
-            value={formData.companyEvent}
-            onChange={handleChange}
-            required
-            style={{
-              width: "100%",
-              padding: "0.75rem",
-              border: "2px solid var(--gold)",
-              borderRadius: "0.5rem",
-              fontSize: "1rem",
-              boxSizing: "border-box",
-            }}
-          />
-        </div>
+        {/* Form */}
+        <form onSubmit={handleSubmit} style={{ padding: "0.5rem 2rem 2rem" }}>
 
-        {/* Email and Phone */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "1rem",
-            marginBottom: "1.5rem",
-          }}
-        >
-          <div style={{ flex: "1 1 min(100%, 200px)" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "0.5rem",
-                fontWeight: "600",
-                color: "var(--dark)",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)",
-              }}
-            >
-              Email *
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              style={{
-                width: "100%",
-                padding: "0.75rem",
-                border: "2px solid var(--gold)",
-                borderRadius: "0.5rem",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)",
-                boxSizing: "border-box",
-              }}
-            />
+          <SectionLabel>Your Information</SectionLabel>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: "1rem" }}>
+            <Field label="First Name" required>
+              <Input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
+            </Field>
+            <Field label="Last Name" required>
+              <Input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
+            </Field>
           </div>
-          <div style={{ flex: "1 1 min(100%, 200px)" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "0.5rem",
-                fontWeight: "600",
-                color: "var(--dark)",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)",
-              }}
-            >
-              Phone *
-            </label>
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              style={{
-                width: "100%",
-                padding: "0.75rem",
-                border: "2px solid var(--gold)",
-                borderRadius: "0.5rem",
-                fontSize: "clamp(0.9rem, 2vw, 1rem)",
-                fontSize: "1rem",
-                boxSizing: "border-box",
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Date and Time Section */}
-        <div style={{ marginBottom: "1.5rem" }}>
-          <label
-            style={{
-              display: "block",
-              marginBottom: "0.5rem",
-              fontWeight: "600",
-              color: "var(--dark)",
-            }}
-          >
-            Date and Time *
-          </label>
-          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-            <input
-              type="text"
-              name="month"
-              placeholder="MM"
-              value={formData.month}
-              onChange={handleChange}
-              required
-              maxLength="2"
-              style={{
-                width: "70px",
-                padding: "0.75rem",
-                border: "2px solid var(--gold)",
-                borderRadius: "0.5rem",
-                fontSize: "1rem",
-                textAlign: "center",
-              }}
-            />
-            <input
-              type="text"
-              name="day"
-              placeholder="DD"
-              value={formData.day}
-              onChange={handleChange}
-              required
-              maxLength="2"
-              style={{
-                width: "70px",
-                padding: "0.75rem",
-                border: "2px solid var(--gold)",
-                borderRadius: "0.5rem",
-                fontSize: "1rem",
-                textAlign: "center",
-              }}
-            />
-            <input
-              type="text"
-              name="year"
-              placeholder="YYYY"
-              value={formData.year}
-              onChange={handleChange}
-              required
-              maxLength="4"
-              style={{
-                width: "100px",
-                padding: "0.75rem",
-                border: "2px solid var(--gold)",
-                borderRadius: "0.5rem",
-                fontSize: "1rem",
-                textAlign: "center",
-              }}
-            />
-            <input
-              type="text"
-              name="time"
-              placeholder="Time (e.g., 3:00 PM)"
-              value={formData.time}
-              onChange={handleChange}
-              required
-              style={{
-                flex: 1,
-                minWidth: "150px",
-                padding: "0.75rem",
-                border: "2px solid var(--gold)",
-                borderRadius: "0.5rem",
-                fontSize: "1rem",
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Address */}
-        <div style={{ marginBottom: "1.5rem" }}>
-          <label
-            style={{
-              display: "block",
-              marginBottom: "0.5rem",
-              fontWeight: "600",
-              color: "var(--dark)",
-            }}
-          >
-            Address *
-          </label>
-          <input
-            type="text"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            required
-            style={{
-              width: "100%",
-              padding: "0.75rem",
-              border: "2px solid var(--gold)",
-              borderRadius: "0.5rem",
-              fontSize: "1rem",
-              boxSizing: "border-box",
-            }}
-          />
-        </div>
-
-        {/* Dance Type */}
-        <div style={{ marginBottom: "1.5rem" }}>
-          <label
-            style={{
-              display: "block",
-              marginBottom: "1rem",
-              fontWeight: "600",
-              color: "var(--dark)",
-            }}
-          >
-            What dance(s) are you looking to have performed? *
-          </label>
-
-          <div
-            style={{
-              border: "2px solid var(--gold)",
-              borderRadius: "0.5rem",
-              padding: "1rem",
-              backgroundColor: "white",
-            }}
-          >
-            {/* Tinikling */}
-            <div style={{ marginBottom: "0.75rem" }}>
-              <label
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  cursor: "pointer",
-                }}
-              >
-                <input
-                  type="checkbox"
-                  checked={formData.danceType.includes("Tinikling")}
-                  onChange={() => handleDanceChange("Tinikling")}
-                  style={{
-                    marginRight: "0.5rem",
-                    width: "18px",
-                    height: "18px",
-                    cursor: "pointer",
-                  }}
-                />
-                <span style={{ fontSize: "1rem", fontWeight: "600" }}>
-                  Tinikling
-                </span>
-              </label>
-            </div>
-
-            <hr
-              style={{
-                margin: "0.75rem 0",
-                border: "none",
-                borderTop: "1px solid var(--gold)",
-              }}
-            />
-
-            {/* Dances This Year */}
-            <div style={{ marginBottom: "0.75rem" }}>
-              {[
-                "Bulaklakan",
-                "Cariñosa",
-                "Kapag Apir",
-                "Kini Kini",
-                "Maglalatik",
-                "Pangalay",
-                "Sayaw Sa Bangko",
-              ].map((dance) => (
-                <label
-                  key={dance}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  <input
-                    type="checkbox"
-                    checked={formData.danceType.includes(dance)}
-                    onChange={() => handleDanceChange(dance)}
-                    style={{
-                      marginRight: "0.5rem",
-                      width: "18px",
-                      height: "18px",
-                      cursor: "pointer",
-                    }}
-                  />
-                  <span style={{ fontSize: "1rem" }}>{dance}</span>
-                </label>
-              ))}
-            </div>
-
-            <hr
-              style={{
-                margin: "0.75rem 0",
-                border: "none",
-                borderTop: "1px solid var(--gold)",
-              }}
-            />
-
-            {/* Not Done This Year */}
-            <div style={{ marginBottom: "0.75rem" }}>
-              {[
-                "Binasuan",
-                "Itik Itik",
-                "Kappa Malong Malong",
-                "Pandanggo Oasiwas",
-                "Pandanggo Sa Ilaw",
-              ].map((dance) => (
-                <label
-                  key={dance}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  <input
-                    type="checkbox"
-                    checked={formData.danceType.includes(dance)}
-                    onChange={() => handleDanceChange(dance)}
-                    style={{
-                      marginRight: "0.5rem",
-                      width: "18px",
-                      height: "18px",
-                      cursor: "pointer",
-                    }}
-                  />
-                  <span style={{ fontSize: "1rem", opacity: 0.8 }}>
-                    {dance}
-                  </span>
-                </label>
-              ))}
-            </div>
-
-            <hr
-              style={{
-                margin: "0.75rem 0",
-                border: "none",
-                borderTop: "1px solid var(--gold)",
-              }}
-            />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: "1rem" }}>
+            <Field label="Email" required>
+              <Input type="email" name="email" value={formData.email} onChange={handleChange} required />
+            </Field>
+            <Field label="Phone" required>
+              <Input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+            </Field>
           </div>
 
+          <SectionLabel>Event Details</SectionLabel>
+          <Field label="Company / Event Name" required>
+            <Input type="text" name="companyEvent" value={formData.companyEvent} onChange={handleChange} required />
+          </Field>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: "1rem" }}>
+            <Field label="Date" required>
+              <Input type="date" name="date" value={formData.date} onChange={handleChange} required />
+            </Field>
+            <Field label="Time" required>
+              <Input type="text" name="time" placeholder="e.g. 3:00 PM" value={formData.time} onChange={handleChange} required />
+            </Field>
+          </div>
+          <Field label="Address" required>
+            <Input type="text" name="address" value={formData.address} onChange={handleChange} required />
+          </Field>
+
+          <SectionLabel>Dance Selection</SectionLabel>
+          <p style={{ fontSize: "0.8rem", color: "var(--dark)", opacity: 0.55, margin: "0 0 0.6rem", fontFamily: "var(--font-body)" }}>
+            Current repertoire
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.45rem", marginBottom: "1rem" }}>
+            {CURRENT_DANCES.map((dance) => (
+              <DancePill key={dance} dance={dance}
+                selected={formData.danceType.includes(dance)}
+                onToggle={() => handleDanceChange(dance)} />
+            ))}
+          </div>
+          <p style={{ fontSize: "0.8rem", color: "var(--dark)", opacity: 0.55, margin: "0 0 0.6rem", fontFamily: "var(--font-body)" }}>
+            Available on request
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.45rem" }}>
+            {OTHER_DANCES.map((dance) => (
+              <DancePill key={dance} dance={dance}
+                selected={formData.danceType.includes(dance)}
+                onToggle={() => handleDanceChange(dance)} />
+            ))}
+          </div>
           {formData.danceType.length === 0 && (
-            <div
-              style={{ color: "red", fontSize: "0.9rem", marginTop: "0.5rem" }}
-            >
+            <p style={{ color: "var(--red)", fontSize: "0.8rem", margin: "0.5rem 0 0", fontFamily: "var(--font-body)" }}>
               Please select at least one dance
-            </div>
+            </p>
           )}
-        </div>
 
-        {/* Description */}
-        <div style={{ marginBottom: "1.5rem" }}>
-          <label
-            style={{
-              display: "block",
-              marginBottom: "0.5rem",
-              fontWeight: "600",
-              color: "var(--dark)",
-            }}
-          >
-            Description of requested performance *
-          </label>
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            required
-            rows="5"
-            style={{
-              width: "100%",
-              padding: "0.75rem",
-              border: "2px solid var(--gold)",
-              borderRadius: "0.5rem",
-              fontSize: "1rem",
-              boxSizing: "border-box",
-              fontFamily: "inherit",
-              resize: "vertical",
-            }}
-          />
-        </div>
+          <SectionLabel>Anything Else?</SectionLabel>
+          <Field label="Description of requested performance" required>
+            <Textarea name="description" value={formData.description} onChange={handleChange} required rows={4} />
+          </Field>
+          <Field label="Questions, comments, or concerns">
+            <Textarea name="questions" value={formData.questions} onChange={handleChange} rows={3} />
+          </Field>
 
-        {/* Questions/Comments */}
-        <div style={{ marginBottom: "2rem" }}>
-          <label
-            style={{
-              display: "block",
-              marginBottom: "0.5rem",
-              fontWeight: "600",
-              color: "var(--dark)",
-            }}
-          >
-            Any questions, comments, or concerns?
-          </label>
-          <textarea
-            name="questions"
-            value={formData.questions}
-            onChange={handleChange}
-            rows="4"
-            style={{
-              width: "100%",
-              padding: "0.75rem",
-              border: "2px solid var(--gold)",
-              borderRadius: "0.5rem",
-              fontSize: "1rem",
-              boxSizing: "border-box",
-              fontFamily: "inherit",
-              resize: "vertical",
-            }}
-          />
-        </div>
-
-        {/* Submit Button */}
-        <div style={{ textAlign: "center" }}>
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             style={{
-              fontFamily: "font-display",
-              backgroundColor: "var(--red)",
-              color: "white",
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-              padding: "1rem 3rem",
-              border: "none",
-              borderRadius: "0.5rem",
-              cursor: "pointer",
-              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
-              transition: "all 0.3s ease",
+              width: "100%", marginTop: "0.75rem",
+              backgroundColor: "var(--red)", color: "white",
+              fontSize: "1rem", fontWeight: "700",
+              fontFamily: "var(--font-display)",
+              letterSpacing: "0.04em",
+              padding: "0.9rem", border: "none",
+              borderRadius: "0.6rem", cursor: "pointer",
             }}
           >
-            Send
+            Send Inquiry →
           </motion.button>
-        </div>
-      </form>
+        </form>
+      </div>
     </section>
   );
 }

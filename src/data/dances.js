@@ -60,7 +60,7 @@ export const dances = [
   },
   {
     name: "Sayaw Sa Bangko",
-    region: "Bulacan",
+    region: "Pangasinan",
     video: "",
     steps: [],
     descriptions: [
@@ -71,7 +71,7 @@ export const dances = [
   },
   {
     name: "Itik Itik",
-    region: "Surigao",
+    region: "Surigao del Sur",
     video: "",
     steps: [],
     descriptions: [
