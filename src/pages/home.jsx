@@ -18,6 +18,7 @@ import { dances } from "../data/dances";
 import { learnConfig } from "../data/learn";
 import LearnPage from "../components/learn/LearnPage";
 import { motion, AnimatePresence } from "framer-motion";
+import ScrollProgress from "../components/common/ScrollProgress";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('welcome');
@@ -45,6 +46,7 @@ export default function Home() {
 
   return (
     <>
+      <ScrollProgress />
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
       
       <AnimatePresence mode="wait">

@@ -14,6 +14,31 @@
     --font-body: Georgia, serif;
 }
 
+/* Page scrollbar */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--red) rgba(218, 160, 109, 0.15);
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: rgba(218, 160, 109, 0.12);
+    border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--red);
+    border-radius: 999px;
+    border: 2px solid rgba(218, 160, 109, 0.12);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: #b02825;
+}
+
 body {
     margin: 0;
     background-color: var(--cream);
