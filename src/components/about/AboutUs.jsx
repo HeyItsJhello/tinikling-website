@@ -1,8 +1,140 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import aboutUsHERO from "/assets/AboutUsHERO.png";
 import Reveal from "../common/reveal";
 import StatCounter from "./StatCounter";
+
+function SpecialThanksCard({ person }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [photo1Error, setPhoto1Error] = useState(false);
+  const [photo2Error, setPhoto2Error] = useState(false);
+
+  return (
+    <motion.div
+      whileHover={{ y: -5, boxShadow: "0 16px 48px rgba(0,0,0,0.14)" }}
+      transition={{ duration: 0.25 }}
+      className="special-recognition-card"
+      style={{
+        background: "white",
+        borderRadius: "1rem",
+        overflow: "hidden",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.09)",
+        borderTop: "4px solid var(--red)",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        gap: "2rem",
+        padding: "2rem 2rem 2rem 2.5rem",
+      }}
+    >
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <h2 style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", marginBottom: "0.25rem" }}>
+          {person.name}
+        </h2>
+        {person.quote && (
+          <p style={{
+            fontSize: "0.8rem",
+            fontStyle: "italic",
+            color: "var(--gold)",
+            fontFamily: "var(--font-body)",
+            margin: "0 0 0.85rem",
+            lineHeight: 1.5,
+            opacity: 0.9,
+          }}>
+            "{person.quote}"
+          </p>
+        )}
+        <div style={{ height: "1.5px", background: "rgba(218,160,109,0.35)", margin: "0.75rem 0 1rem" }} />
+        <p style={{
+          fontSize: "clamp(0.88rem, 1.8vw, 1rem)",
+          lineHeight: "1.75",
+          color: "var(--dark)",
+          fontFamily: "var(--font-body)",
+          margin: 0,
+          opacity: 0.85,
+        }}>
+          {person.description}
+        </p>
+      </div>
+
+      {/* Flip photo */}
+      <div
+        onMouseEnter={() => setIsFlipped(true)}
+        onMouseLeave={() => setIsFlipped(false)}
+        className="special-recognition-photo"
+        style={{
+          position: "relative",
+          width: "min(18rem, 38vw)",
+          height: "min(18rem, 38vw)",
+          flexShrink: 0,
+          perspective: "1000px",
+          cursor: "pointer",
+        }}
+      >
+        <motion.div
+          animate={{ rotateY: isFlipped ? 180 : 0 }}
+          transition={{ duration: 0.55 }}
+          style={{
+            position: "absolute", width: "100%", height: "100%",
+            backfaceVisibility: "hidden",
+            borderRadius: "0.75rem",
+            overflow: "hidden",
+            background: photo1Error ? "var(--gold)" : "transparent",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
+          }}
+        >
+          <img
+            src={person.photo}
+            alt={person.name}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            onError={() => setPhoto1Error(true)}
+          />
+        </motion.div>
+
+        <motion.div
+          animate={{ rotateY: isFlipped ? 0 : -180 }}
+          transition={{ duration: 0.55 }}
+          style={{
+            position: "absolute", width: "100%", height: "100%",
+            backfaceVisibility: "hidden",
+            borderRadius: "0.75rem",
+            overflow: "hidden",
+            transform: "rotateY(180deg)",
+            background: photo2Error ? "var(--gold)" : "transparent",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
+          }}
+        >
+          <img
+            src={person.photo2}
+            alt={person.name}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            onError={() => setPhoto2Error(true)}
+          />
+        </motion.div>
+
+        {/* Hover hint */}
+        <div style={{
+          position: "absolute",
+          bottom: "0.6rem",
+          right: "0.6rem",
+          background: "rgba(0,0,0,0.45)",
+          backdropFilter: "blur(4px)",
+          color: "white",
+          fontSize: "0.6rem",
+          fontWeight: "700",
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          padding: "0.2rem 0.55rem",
+          borderRadius: "999px",
+          fontFamily: "var(--font-display)",
+          pointerEvents: "none",
+        }}>
+          Hover to flip
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function AboutUs({ setActiveSection }) {
   const specialThanks = [
@@ -16,7 +148,7 @@ export default function AboutUs({ setActiveSection }) {
     {
       name: "Mathew Post",
       description: "Our previous TDC president, August Post, had a grandfather to handmake and donate our Sayaw Sa Bangko performance benches in 2022 to pay tribute to the passion and culture of this club. Mathew Post was a woodcarver for over 60 years and was such a big fan of all the work the club has been doing. He passed away at the beginning of 2025. We thank him for helping the Tinikling Dance Club to continue performing and sharing the culture of Sayaw Sa Bangko after so many years.",
-      quote: "to my amazing officers that i've been priveleged to work alongside with, to the members both new and returning that i've been honored to lead, to my second home and found family: thank you. it's been a wonderful four years, and an honor to be your president <3",
+      quote: "",
       photo: "/assets/Special/MATHEW.png",
       photo2: "/assets/Special/MATHEWBUILD.png",
     }
@@ -299,138 +431,9 @@ export default function AboutUs({ setActiveSection }) {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-            {specialThanks.map((person, index) => {
-              const [isFlipped, setIsFlipped] = React.useState(false);
-              const [photo1Error, setPhoto1Error] = React.useState(false);
-              const [photo2Error, setPhoto2Error] = React.useState(false);
-
-              return (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -5, boxShadow: "0 16px 48px rgba(0,0,0,0.14)" }}
-                  transition={{ duration: 0.25 }}
-                  className="special-recognition-card"
-                  style={{
-                    background: "white",
-                    borderRadius: "1rem",
-                    overflow: "hidden",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.09)",
-                    borderTop: "4px solid var(--red)",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "2rem",
-                    padding: "2rem 2rem 2rem 2.5rem",
-                  }}
-                >
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <h2 style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", marginBottom: "0.25rem" }}>
-                      {person.name}
-                    </h2>
-                    {person.quote && (
-                      <p style={{
-                        fontSize: "0.8rem",
-                        fontStyle: "italic",
-                        color: "var(--gold)",
-                        fontFamily: "var(--font-body)",
-                        margin: "0 0 0.85rem",
-                        lineHeight: 1.5,
-                        opacity: 0.9,
-                      }}>
-                        "{person.quote}"
-                      </p>
-                    )}
-                    <div style={{ height: "1.5px", background: "rgba(218,160,109,0.35)", margin: "0.75rem 0 1rem" }} />
-                    <p style={{
-                      fontSize: "clamp(0.88rem, 1.8vw, 1rem)",
-                      lineHeight: "1.75",
-                      color: "var(--dark)",
-                      fontFamily: "var(--font-body)",
-                      margin: 0,
-                      opacity: 0.85,
-                    }}>
-                      {person.description}
-                    </p>
-                  </div>
-
-                  {/* Flip photo */}
-                  <div
-                    onMouseEnter={() => setIsFlipped(true)}
-                    onMouseLeave={() => setIsFlipped(false)}
-                    className="special-recognition-photo"
-                    style={{
-                      position: "relative",
-                      width: "min(18rem, 38vw)",
-                      height: "min(18rem, 38vw)",
-                      flexShrink: 0,
-                      perspective: "1000px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <motion.div
-                      animate={{ rotateY: isFlipped ? 180 : 0 }}
-                      transition={{ duration: 0.55 }}
-                      style={{
-                        position: "absolute", width: "100%", height: "100%",
-                        backfaceVisibility: "hidden",
-                        borderRadius: "0.75rem",
-                        overflow: "hidden",
-                        background: photo1Error ? "var(--gold)" : "transparent",
-                        boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
-                      }}
-                    >
-                      <img
-                        src={person.photo}
-                        alt={person.name}
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                        onError={() => setPhoto1Error(true)}
-                      />
-                    </motion.div>
-
-                    <motion.div
-                      animate={{ rotateY: isFlipped ? 0 : -180 }}
-                      transition={{ duration: 0.55 }}
-                      style={{
-                        position: "absolute", width: "100%", height: "100%",
-                        backfaceVisibility: "hidden",
-                        borderRadius: "0.75rem",
-                        overflow: "hidden",
-                        transform: "rotateY(180deg)",
-                        background: photo2Error ? "var(--gold)" : "transparent",
-                        boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
-                      }}
-                    >
-                      <img
-                        src={person.photo2}
-                        alt={person.name}
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                        onError={() => setPhoto2Error(true)}
-                      />
-                    </motion.div>
-
-                    {/* Hover hint */}
-                    <div style={{
-                      position: "absolute",
-                      bottom: "0.6rem",
-                      right: "0.6rem",
-                      background: "rgba(0,0,0,0.45)",
-                      backdropFilter: "blur(4px)",
-                      color: "white",
-                      fontSize: "0.6rem",
-                      fontWeight: "700",
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      padding: "0.2rem 0.55rem",
-                      borderRadius: "999px",
-                      fontFamily: "var(--font-display)",
-                      pointerEvents: "none",
-                    }}>
-                      Hover to flip
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+            {specialThanks.map((person, index) => (
+              <SpecialThanksCard key={index} person={person} />
+            ))}
           </div>
         </section>
       </Reveal>

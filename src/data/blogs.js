@@ -1,7 +1,7 @@
 export const blogs = [
     {
         id: 1,
-        title: "Starting the New Tinikling Dnance Company Website",
+        title: "Starting the New Tinikling Dance Company Website",
         date: "December 31, 2025",
         content: "So I finally got started with the new website, problem is that I have not been provided a proper design for it, so I am just going off the example provided by Kaleb. Going well though!"
     },

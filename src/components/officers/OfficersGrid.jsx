@@ -36,7 +36,9 @@ function NavButton({ onClick, disabled, children }) {
 
 export default function OfficersGrid() {
   const [showAlumni, setShowAlumni] = useState(false);
-  const [currentYearIndex, setCurrentYearIndex] = useState(4);
+  const [currentYearIndex, setCurrentYearIndex] = useState(
+    () => Math.max(0, alumniYears.findIndex(y => y.endsWith(`-${new Date().getFullYear() + 1}`)))
+  );
 
   const currentYear = alumniYears[currentYearIndex];
   const currentData = alumniData[currentYear];
