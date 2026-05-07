@@ -35,8 +35,8 @@ export const officers = [
   {
     name: "Aidan Santo Domingo",
     role: "Cultural Advisor",
-    image: "/assets/officers/aidanplaceholder.jpeg",
-    center_amount: 0,
+    image: "/assets/officers/aidan.png",
+    center_amount: 50,
     grade: "Senior",
     pronouns: "He/Him",
     hobbies: "Swimming, Water Polo, Gaming, DoomScrolling",
