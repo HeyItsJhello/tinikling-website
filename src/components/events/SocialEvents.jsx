@@ -9,7 +9,7 @@ const PARTNER_CLUBS = [
   "Laguna Creek Bayanihan",
   "Florin Kapit Bisig",
   "Pleasant Grove FAYA",
-  "Poly", "Haka", "Pasifika United", "Red Cross",
+  "Poly", "Haka", "Pasifika United",
 ];
 
 function SplitCard({ image, imagePosition = "left", objectPosition = "center", title, children, extra }) {
@@ -70,35 +70,6 @@ export default function SocialEvents({ setActiveSection }) {
         </p>
       </section>
 
-      {/* Partner clubs */}
-      <section style={{ maxWidth: "860px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem) 3rem" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.25rem" }}>
-          <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
-          <span style={{
-            fontSize: "0.6rem", fontWeight: "800", letterSpacing: "0.18em",
-            textTransform: "uppercase", color: "var(--red)",
-            fontFamily: "var(--font-display)", whiteSpace: "nowrap",
-          }}>
-            Partner Clubs
-          </span>
-          <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
-        </div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.45rem", justifyContent: "center" }}>
-          {PARTNER_CLUBS.map((club) => (
-            <span key={club} style={{
-              padding: "0.32rem 0.85rem",
-              background: "white",
-              border: "1.5px solid rgba(218,160,109,0.5)",
-              borderRadius: "999px",
-              fontSize: "0.82rem",
-              color: "var(--dark)",
-              fontFamily: "var(--font-body)",
-            }}>
-              {club}
-            </span>
-          ))}
-        </div>
-      </section>
 
       {/* Events */}
       <section style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem) 5rem" }}>
