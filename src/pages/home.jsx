@@ -18,8 +18,6 @@ import { dances } from "../data/dances";
 import { learnConfig } from "../data/learn";
 import LearnPage from "../components/learn/LearnPage";
 import { motion, AnimatePresence } from "framer-motion";
-import ScrollProgress from "../components/common/ScrollProgress";
-
 export default function Home() {
   const [activeSection, setActiveSection] = useState('welcome');
   const [mounted, setMounted] = useState(false);
@@ -46,7 +44,6 @@ export default function Home() {
 
   return (
     <>
-      <ScrollProgress />
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
       
       <AnimatePresence mode="wait">
@@ -85,7 +82,30 @@ export default function Home() {
                     zIndex: 9
                   }}
                 />
-                <br />
+
+                {/* Section label */}
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  padding: "3rem clamp(2rem, 6vw, 5rem) 0",
+                }}>
+                  <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+                  <span style={{
+                    fontSize: "0.6rem",
+                    fontWeight: "800",
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "var(--red)",
+                    fontFamily: "var(--font-display)",
+                    whiteSpace: "nowrap",
+                  }}>
+                    Franklin High School · Est. 2008
+                  </span>
+                  <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+                </div>
+
+                {/* Who are we + collage */}
                 <div
                   style={{
                     display: "flex",
@@ -93,7 +113,9 @@ export default function Home() {
                     alignItems: "center",
                     justifyContent: "center",
                     gap: "clamp(1rem, 3vw, 2rem)",
-                    width: "100%"
+                    width: "100%",
+                    padding: "0 clamp(1rem, 4vw, 4rem)",
+                    boxSizing: "border-box",
                   }}
                 >
                   <section
@@ -101,8 +123,6 @@ export default function Home() {
                       flex: "2 1 5%",
                       minWidth: "min(100%, 35rem)",
                       padding: "clamp(1rem, 3vw, 2rem)",
-                      margin: "0 auto",
-                      marginLeft: "clamp(0rem, 5vw, 5rem)",
                       boxSizing: "border-box",
                       textAlign: "center"
                     }}
@@ -113,12 +133,55 @@ export default function Home() {
                         width: "100%",
                         lineHeight: "1.8",
                         textAlign: "center",
-                        fontSize: "clamp(1rem, 2vw, 1.2rem)",
+                        fontSize: "clamp(1rem, 2vw, 1.15rem)",
                         margin: "0 auto",
-                        maxWidth: "100%"
+                        maxWidth: "42rem",
+                        color: "var(--dark)",
+                        opacity: 0.85,
                       }}>
-                        Franklin High School's Tinikling Dance Company is a cultural dance group that specializes in traditional Philippine Folk Dance. Established in 2008, our club continues to share the beauty of Filipino culture through our dance. We take on various performance opportunities, hoping to honor Philippine tradition through our fulfilling and energizing dances. Towards the end of our school year, we host our annual Make A Change that that gives all of its proceeds to charities that directly help Filipino communities in crisis.
+                        Franklin High School's Tinikling Dance Company is a cultural dance group that specializes in traditional Philippine Folk Dance. Established in 2008, our club continues to share the beauty of Filipino culture through our dance. We take on various performance opportunities, hoping to honor Philippine tradition through our fulfilling and energizing dances. Towards the end of our school year, we host our annual Make A Change that gives all of its proceeds to charities that directly help Filipino communities in crisis.
                       </p>
+                      <div style={{ marginTop: "2rem", display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+                        <motion.button
+                          onClick={() => setActiveSection("about")}
+                          whileHover={{ scale: 1.04 }}
+                          whileTap={{ scale: 0.96 }}
+                          style={{
+                            background: "var(--red)",
+                            color: "white",
+                            border: "none",
+                            borderRadius: "0.55rem",
+                            padding: "0.7rem 1.75rem",
+                            fontSize: "0.9rem",
+                            fontWeight: "700",
+                            fontFamily: "var(--font-display)",
+                            cursor: "pointer",
+                            letterSpacing: "0.03em",
+                            boxShadow: "0 4px 14px rgba(208,49,45,0.25)",
+                          }}
+                        >
+                          About Us →
+                        </motion.button>
+                        <motion.button
+                          onClick={() => setActiveSection("dances")}
+                          whileHover={{ scale: 1.04 }}
+                          whileTap={{ scale: 0.96 }}
+                          style={{
+                            background: "transparent",
+                            color: "var(--red)",
+                            border: "2px solid var(--red)",
+                            borderRadius: "0.55rem",
+                            padding: "0.7rem 1.75rem",
+                            fontSize: "0.9rem",
+                            fontWeight: "700",
+                            fontFamily: "var(--font-display)",
+                            cursor: "pointer",
+                            letterSpacing: "0.03em",
+                          }}
+                        >
+                          Our Dances
+                        </motion.button>
+                      </div>
                     </Reveal>
                   </section>
 
@@ -129,35 +192,29 @@ export default function Home() {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      padding: "clamp(0.5rem, 2vw, 0.5rem)",
+                      padding: "clamp(0.5rem, 2vw, 1rem)",
                       boxSizing: "border-box"
                     }}
                   >
                     <Reveal>
-                      <motion.div whileHover={{ scale: 1.05 }}>
-                        <div className="collage-container" style={{
-                          width: "100%",
-                          maxWidth: "900px",
-                          aspectRatio: "4/3",
-                          position: "relative"
-                        }}>
-                          <img
-                            src={"/assets/dances/collage/Tinikling-Collage.png"}
-                            className="collage"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain"
-                            }}
-                          />
-                        </div>
-                      </motion.div>
-
+                      <div style={{ width: "100%", maxWidth: "900px", aspectRatio: "4/3" }}>
+                        <img
+                          src={"/assets/dances/collage/Tinikling-Collage.png"}
+                          className="collage"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "contain",
+                            display: "block",
+                          }}
+                        />
+                      </div>
                     </Reveal>
                   </section>
-                <MakeAChange setActiveSection={setActiveSection} />
                 </div>
-                
+
+                {/* Make A Change */}
+                <MakeAChange setActiveSection={setActiveSection} />
               </main>
             </>
           )}

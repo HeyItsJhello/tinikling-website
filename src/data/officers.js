@@ -35,7 +35,7 @@ export const officers = [
   {
     name: "Aidan Santo Domingo",
     role: "Cultural Advisor",
-    image: "/assets/placeholder.png",
+    image: "/assets/officers/aidanplaceholder.jpeg",
     center_amount: 0,
     grade: "Senior",
     pronouns: "He/Him",

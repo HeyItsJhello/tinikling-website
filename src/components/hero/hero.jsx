@@ -11,7 +11,7 @@ export default function Hero() {
         height: "clamp(40vh, 50vh, 60vh)",
         minHeight: "400px",
         overflow: "hidden",
-        width: "100vw",
+        width: "100%",
         margin: 0,
         padding: 0,
         zIndex: 1,

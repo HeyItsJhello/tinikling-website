@@ -5,34 +5,27 @@ import Reveal from "../common/reveal";
 import StatCounter from "./StatCounter";
 
 export default function AboutUs({ setActiveSection }) {
-  // Placeholder data for special thanks - you can customize these
   const specialThanks = [
     {
       name: "Celi Corpuz",
       description: "Celi Corpuz is a University of California, Davis graduate and is a part of NCPASA, Mga Kapatid, and Kabataan Alliance. Celi has been helping us learn new traditional dances and has helped us with numerous fundraisers since 2023.",
       quote: "",
-      photo: "/assets/Special/Celi.png", // Replace with actual photo path
-      photo2: "/assets/Special/CeliGroup.png", // Replace with actual photo path
+      photo: "/assets/Special/Celi.png",
+      photo2: "/assets/Special/CeliGroup.png",
     },
     {
       name: "Mathew Post",
       description: "Our previous TDC president, August Post, had a grandfather to handmake and donate our Sayaw Sa Bangko performance benches in 2022 to pay tribute to the passion and culture of this club. Mathew Post was a woodcarver for over 60 years and was such a big fan of all the work the club has been doing. He passed away at the beginning of 2025. We thank him for helping the Tinikling Dance Club to continue performing and sharing the culture of Sayaw Sa Bangko after so many years.",
       quote: "to my amazing officers that i've been priveleged to work alongside with, to the members both new and returning that i've been honored to lead, to my second home and found family: thank you. it's been a wonderful four years, and an honor to be your president <3",
-      photo: "/assets/Special/MATHEW.png", // Replace with actual photo path
-      photo2: "/assets/Special/MATHEWBUILD.png", // Replace with actual photo path
+      photo: "/assets/Special/MATHEW.png",
+      photo2: "/assets/Special/MATHEWBUILD.png",
     }
   ];
 
   return (
-    <main
-      style={{
-        background: "var(--cream)",
-        minHeight: "100vh",
-        overflow: "hidden",
-        width: "100%"
-      }}
-    >
-      {/* Hero Section */}
+    <main style={{ background: "var(--cream)", minHeight: "100vh", overflow: "hidden", width: "100%" }}>
+
+      {/* Hero */}
       <section
         className="about-hero"
         style={{
@@ -43,152 +36,119 @@ export default function AboutUs({ setActiveSection }) {
           width: "100%",
           margin: 0,
           padding: 0,
-          boxShadow: "0 12px 24px rgba(0, 0, 0, 0.3)"
+          boxShadow: "0 12px 24px rgba(0,0,0,0.3)",
         }}
       >
-        {/* Background image layer */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundImage: `url(${aboutUsHERO})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center 50%",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-
-        {/* Dark overlay */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(43, 43, 43, 0.8)"
-          }}
-        />
-
-        {/* Gradient transition to cream background */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            width: "100%",
-            height: "30%",
-            background: "linear-gradient(to bottom, transparent, rgba(139, 115, 85, 0.4), rgba(139, 115, 85, 0.7))",
-            pointerEvents: "none",
-          }}
-        />
-
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            color: "var(--cream)",
-            padding: "0 1rem"
-          }}
-        >
+        <div style={{
+          position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+          backgroundImage: `url(${aboutUsHERO})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center 50%",
+          backgroundRepeat: "no-repeat",
+        }} />
+        <div style={{
+          position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+          background: "rgba(20,15,10,0.72)",
+        }} />
+        <div style={{
+          position: "absolute", bottom: 0, left: 0, width: "100%", height: "30%",
+          background: "linear-gradient(to bottom, transparent, rgba(255,255,224,0.15))",
+          pointerEvents: "none",
+        }} />
+        <div style={{
+          position: "relative", zIndex: 1,
+          height: "100%", display: "flex", alignItems: "center",
+          justifyContent: "center", textAlign: "center",
+          padding: "0 1rem",
+        }}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            style={{ width: "100%" }}
+            transition={{ duration: 0.9 }}
           >
-            <h1 className="about-hero-title" style={{
+            <p style={{
+              fontSize: "0.65rem",
+              fontWeight: "800",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "var(--gold)",
+              fontFamily: "var(--font-display)",
+              margin: "0 0 1rem",
+              opacity: 0.8,
+            }}>
+              Tinikling Dance Club · 2024
+            </p>
+            <h1 style={{
               fontSize: "clamp(1.5rem, 5vw, 3.5rem)",
-              margin: "0 0 1rem 0",
+              margin: 0,
               fontStyle: "italic",
-              lineHeight: "1.3"
+              lineHeight: "1.3",
+              color: "var(--cream)",
             }}>
               Our mission is to share the beauty of Filipino culture through our dance
             </h1>
-            <p style={{ fontSize: "clamp(1rem, 3vw, 1.5rem)", margin: 0 }}>
-              - Tinikling Dance Club 2024
-            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* About Us Content Section */}
+      {/* About Us section */}
       <Reveal>
-        <section
-          style={{
-            padding: "5rem 2rem",
-            maxWidth: "1200px",
-            margin: "0 auto"
-          }}
-        >
-          <h1 style={{
-            fontSize: "4rem",
-            textAlign: "center",
-            marginBottom: "3rem",
-            color: "var(--red)"
-          }}>
-            About Us
-          </h1>
+        <section style={{ padding: "5rem 2rem 3rem", maxWidth: "1100px", margin: "0 auto" }}>
+
+          {/* Section label */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "3rem" }}>
+            <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+            <span style={{
+              fontSize: "0.6rem", fontWeight: "800", letterSpacing: "0.18em",
+              textTransform: "uppercase", color: "var(--red)",
+              fontFamily: "var(--font-display)", whiteSpace: "nowrap",
+            }}>
+              Who We Are
+            </span>
+            <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+          </div>
+
+          <h1 style={{ textAlign: "center", marginBottom: "2.5rem" }}>About Us</h1>
 
           <div style={{
             display: "flex",
             flexDirection: "column",
-            gap: "2rem",
-            fontSize: "1.2rem",
-            lineHeight: "1.8",
+            gap: "1.5rem",
+            fontSize: "clamp(1rem, 2vw, 1.1rem)",
+            lineHeight: "1.85",
             textAlign: "center",
-            padding: "0 3rem"
+            color: "var(--dark)",
+            maxWidth: "780px",
+            margin: "0 auto",
+            opacity: 0.88,
           }}>
-            <p>
-              Franklin's Tinikling Dance Club (TDC) is a student led cultural dance group that specializes in traditional Philippine Folk Dance. Establish in 2008, our club continues to share the beauty of Filipino culture through dance. We take on various performance opportunities, hoping to honor Philippine tradition through our fuilfilling and energizing dances.
+            <p style={{ margin: 0, color: "var(--dark)", fontFamily: "var(--font-body)" }}>
+              Franklin's Tinikling Dance Club (TDC) is a student led cultural dance group that specializes in traditional Philippine Folk Dance. Established in 2008, our club continues to share the beauty of Filipino culture through dance. We take on various performance opportunities, hoping to honor Philippine tradition through our fulfilling and energizing dances.
             </p>
-            <p>
+            <p style={{ margin: 0, color: "var(--dark)", fontFamily: "var(--font-body)" }}>
               Towards the end of our school year, we host our annual{" "}
               <span
-                onClick={() => setActiveSection('events')}
-                style={{
-                  color: "var(--blue)",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  textDecoration: "underline"
-                }}
+                onClick={() => setActiveSection("events")}
+                style={{ color: "var(--red)", fontWeight: "700", cursor: "pointer", textDecoration: "underline", textUnderlineOffset: "3px" }}
               >
                 Make A Change
-              </span>. All of the proceeds from our event are donated to a charity of our choice with the intnet of aiding those in need. During our event our members showcase the many dances they have worked on throughout the school year.
+              </span>. All proceeds are donated to a charity of our choice with the intent of aiding those in need. During our event, members showcase the many dances they have worked on throughout the school year.
             </p>
-            <p>
-              Our intricate choreography showcases the culturally diverse population of the Philippines. To keep our traditions alive, we perform these{" "}
+            <p style={{ margin: 0, color: "var(--dark)", fontFamily: "var(--font-body)" }}>
+              Our intricate choreography showcases the culturally diverse population of the Philippines. Originating from the regions of Luzon, Visayas, and Mindanao, each region has developed{" "}
               <span
-                onClick={() => setActiveSection('dances')}
-                style={{
-                  color: "var(--blue)",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  textDecoration: "underline"
-                }}
+                onClick={() => setActiveSection("dances")}
+                style={{ color: "var(--red)", fontWeight: "700", cursor: "pointer", textDecoration: "underline", textUnderlineOffset: "3px" }}
               >
                 dances
               </span>{" "}
-              with great attention to detail. Originative from the regions of Luzon, Visaya, and Mindanao, each region has developed difference dances that reflect their cultures and values.
+              that reflect their unique cultures and values.
             </p>
-            <p>
+            <p style={{ margin: 0, color: "var(--dark)", fontFamily: "var(--font-body)" }}>
               We also host numerous{" "}
               <span
-                onClick={() => setActiveSection('socialevents')}
-                style={{
-                  color: "var(--blue)",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  textDecoration: "underline"
-                }}
+                onClick={() => setActiveSection("socialevents")}
+                style={{ color: "var(--red)", fontWeight: "700", cursor: "pointer", textDecoration: "underline", textUnderlineOffset: "3px" }}
               >
                 social events
               </span>{" "}
@@ -197,56 +157,52 @@ export default function AboutUs({ setActiveSection }) {
           </div>
 
           {/* Action Buttons */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "2rem",
-              marginTop: "4rem",
-              flexWrap: "wrap"
-            }}
-          >
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "1rem",
+            marginTop: "3rem",
+            flexWrap: "wrap",
+          }}>
             <motion.button
-              onClick={() => setActiveSection('becomemember')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              onClick={() => setActiveSection("becomemember")}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
               style={{
-                backgroundColor: "var(--gold)",
-                color: "var(--dark)",
-                font: "var(--font-display)",
-                fontSize: "1.3rem",
-                fontWeight: "bold",
-                padding: "1.2rem 2.5rem",
+                background: "var(--red)",
+                color: "white",
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
+                fontWeight: "700",
+                padding: "0.8rem 2rem",
                 border: "none",
-                borderRadius: "0.5rem",
+                borderRadius: "0.55rem",
                 cursor: "pointer",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
-                transition: "all 0.3s ease"
+                letterSpacing: "0.03em",
+                boxShadow: "0 4px 14px rgba(208,49,45,0.25)",
               }}
             >
               How do I join
             </motion.button>
-
             <motion.button
-              onClick={() => setActiveSection('officerpositions')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              onClick={() => setActiveSection("officerpositions")}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
               style={{
-                backgroundColor: "var(--gold)",
-                color: "var(--dark)",
-                font: "var(--font-display)",
-                fontSize: "1.3rem",
-                fontWeight: "bold",
-                padding: "1.2rem 2.5rem",
-                border: "none",
-                borderRadius: "0.5rem",
+                background: "transparent",
+                color: "var(--red)",
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
+                fontWeight: "700",
+                padding: "0.8rem 2rem",
+                border: "2px solid var(--red)",
+                borderRadius: "0.55rem",
                 cursor: "pointer",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
-                transition: "all 0.3s ease"
+                letterSpacing: "0.03em",
               }}
             >
-              Applying for Officer / Positions
+              Officer Positions
             </motion.button>
           </div>
         </section>
@@ -255,100 +211,94 @@ export default function AboutUs({ setActiveSection }) {
       {/* Stat Counter */}
       <StatCounter />
 
-      {/* Affiliations and Special Thanks Bar */}
+      {/* Affiliations & Founded — dark callout stripe */}
       <Reveal>
-        <div
-          style={{
-            width: "100%",
-            backgroundColor: "var(--red)",
-            padding: "4rem 0",
-            marginTop: "3rem",
-            color: "var(--cream)",
+        <div style={{
+          width: "100%",
+          background: "var(--red)",
+          padding: "3.5rem clamp(2rem, 6vw, 5rem)",
+          marginTop: "1rem",
+          boxSizing: "border-box",
+        }}>
+          <div style={{
             display: "flex",
+            flexWrap: "wrap",
             justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "clamp(2rem, 4vw, 4rem)",
-              padding: "0 2rem"
-            }}
-          >
-            {/* Affiliations Section */}
+            alignItems: "center",
+            gap: "clamp(2rem, 6vw, 6rem)",
+            maxWidth: "760px",
+            margin: "0 auto",
+          }}>
             <div style={{ textAlign: "center" }}>
-              <h2 style={{
-                fontSize: "2.5rem",
-                marginBottom: "1.5rem",
-                color: "var(--gold)",
-                margin: "0 0 1.5rem 0"
+              <p style={{
+                fontSize: "0.6rem",
+                fontWeight: "800",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,224,0.55)",
+                fontFamily: "var(--font-display)",
+                margin: "0 0 0.75rem",
               }}>
                 Affiliations
-              </h2>
-              <div style={{ fontSize: "1.5rem", lineHeight: "2" }}>
-                <p style={{ margin: "0.5rem 0", color: "var(--gold)" }}>NCPASA</p>
-                <p style={{ margin: "0.5rem 0", color: "var(--gold)" }}>Kabataan Alliance</p>
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+                {["NCPASA", "Kabataan Alliance"].map(a => (
+                  <span key={a} style={{
+                    fontSize: "clamp(1rem, 3vw, 1.35rem)",
+                    fontFamily: "var(--font-display)",
+                    color: "var(--gold)",
+                    display: "block",
+                  }}>{a}</span>
+                ))}
               </div>
             </div>
 
-            {/* Divider */}
-            <div style={{
-              width: "0.125rem",
-              height: "8rem",
-              backgroundColor: "var(--gold)",
-              flexShrink: 0
-            }} />
+            <div style={{ width: "1px", height: "5rem", background: "rgba(218,160,109,0.35)", flexShrink: 0 }} />
 
-            {/* Special Thanks Section */}
             <div style={{ textAlign: "center" }}>
-              <h2 style={{
-                fontSize: "2.5rem",
-                marginBottom: "1.5rem",
-                color: "var(--gold)",
-                margin: "0 0 1.5rem 0"
+              <p style={{
+                fontSize: "0.6rem",
+                fontWeight: "800",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,224,0.55)",
+                fontFamily: "var(--font-display)",
+                margin: "0 0 0.75rem",
               }}>
                 Founded
-              </h2>
-              <div style={{ fontSize: "1.3rem", lineHeight: "2"}}>
-                <p style={{ margin: "0.5rem 0", color: "var(--gold)" }}>2008 Aug</p>
-                <p style={{ margin: "0.5rem 0", color: "var(--gold)" }}>Edith Montemayor</p>
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+                {["2008", "Edith Montemayor"].map(f => (
+                  <span key={f} style={{
+                    fontSize: "clamp(1rem, 3vw, 1.35rem)",
+                    fontFamily: "var(--font-display)",
+                    color: "var(--gold)",
+                    display: "block",
+                  }}>{f}</span>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </Reveal>
 
-      {/* Special Thanks Cards */}
+      {/* Special Recognition */}
       <Reveal>
-        <section
-          style={{
-            padding: "5rem 2rem",
-            maxWidth: "1400px",
-            margin: "0 auto"
-          }}
-        >
-          <h1 style={{
-            fontSize: "3rem",
-            textAlign: "center",
-            marginBottom: "3rem",
-            color: "var(--blue)"
-          }}>
-            Special Recognition
-          </h1>
+        <section style={{ padding: "5rem 2rem 4rem", maxWidth: "1000px", margin: "0 auto" }}>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "3rem",
-              padding: "0 1rem",
-              maxWidth: "1000px",
-              margin: "0 auto"
-            }}
-          >
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "3rem" }}>
+            <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+            <span style={{
+              fontSize: "0.6rem", fontWeight: "800", letterSpacing: "0.18em",
+              textTransform: "uppercase", color: "var(--red)",
+              fontFamily: "var(--font-display)", whiteSpace: "nowrap",
+            }}>
+              Special Recognition
+            </span>
+            <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
             {specialThanks.map((person, index) => {
               const [isFlipped, setIsFlipped] = React.useState(false);
               const [photo1Error, setPhoto1Error] = React.useState(false);
@@ -357,113 +307,126 @@ export default function AboutUs({ setActiveSection }) {
               return (
                 <motion.div
                   key={index}
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ y: -5, boxShadow: "0 16px 48px rgba(0,0,0,0.14)" }}
+                  transition={{ duration: 0.25 }}
                   className="special-recognition-card"
                   style={{
-                    backgroundColor: "white",
+                    background: "white",
                     borderRadius: "1rem",
                     overflow: "hidden",
-                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-                    transition: "all 0.3s ease",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.09)",
+                    borderTop: "4px solid var(--red)",
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     gap: "2rem",
-                    padding: "2rem"
+                    padding: "2rem 2rem 2rem 2.5rem",
                   }}
                 >
-                  <div style={{ flex: "1", padding: "1rem" }}>
-                    <h1 style={{
-                      fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
-                      marginBottom: "1rem",
-                      color: "var(--blue)"
-                    }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <h2 style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", marginBottom: "0.25rem" }}>
                       {person.name}
-                    </h1>
+                    </h2>
+                    {person.quote && (
+                      <p style={{
+                        fontSize: "0.8rem",
+                        fontStyle: "italic",
+                        color: "var(--gold)",
+                        fontFamily: "var(--font-body)",
+                        margin: "0 0 0.85rem",
+                        lineHeight: 1.5,
+                        opacity: 0.9,
+                      }}>
+                        "{person.quote}"
+                      </p>
+                    )}
+                    <div style={{ height: "1.5px", background: "rgba(218,160,109,0.35)", margin: "0.75rem 0 1rem" }} />
                     <p style={{
-                      fontSize: "clamp(0.9rem, 2vw, 1rem)",
-                      lineHeight: "1.6",
-                      color: "var(--dark)"
+                      fontSize: "clamp(0.88rem, 1.8vw, 1rem)",
+                      lineHeight: "1.75",
+                      color: "var(--dark)",
+                      fontFamily: "var(--font-body)",
+                      margin: 0,
+                      opacity: 0.85,
                     }}>
                       {person.description}
                     </p>
-
                   </div>
+
+                  {/* Flip photo */}
                   <div
                     onMouseEnter={() => setIsFlipped(true)}
                     onMouseLeave={() => setIsFlipped(false)}
                     className="special-recognition-photo"
                     style={{
                       position: "relative",
-                      width: "min(20rem, 40vw)",
-                      height: "min(20rem, 40vw)",
+                      width: "min(18rem, 38vw)",
+                      height: "min(18rem, 38vw)",
                       flexShrink: 0,
                       perspective: "1000px",
-                      cursor: "pointer"
+                      cursor: "pointer",
                     }}
                   >
-                    {/* First photo - front */}
                     <motion.div
                       animate={{ rotateY: isFlipped ? 180 : 0 }}
-                      transition={{ duration: 0.6 }}
+                      transition={{ duration: 0.55 }}
                       style={{
-                        position: "absolute",
-                        width: "100%",
-                        height: "100%",
+                        position: "absolute", width: "100%", height: "100%",
                         backfaceVisibility: "hidden",
-                        borderRadius: "0.5rem",
-                        border: "0.5rem solid white",
+                        borderRadius: "0.75rem",
                         overflow: "hidden",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: photo1Error ? "var(--gold)" : "transparent"
+                        background: photo1Error ? "var(--gold)" : "transparent",
+                        boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
                       }}
                     >
-
-                        <img
-                          src={person.photo}
-                          alt={person.name}
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover"
-                          }}
-                          onError={() => setPhoto1Error(true)}
-                        />
-
+                      <img
+                        src={person.photo}
+                        alt={person.name}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                        onError={() => setPhoto1Error(true)}
+                      />
                     </motion.div>
 
-                    {/* Second photo - back */}
                     <motion.div
                       animate={{ rotateY: isFlipped ? 0 : -180 }}
-                      transition={{ duration: 0.6 }}
+                      transition={{ duration: 0.55 }}
                       style={{
-                        position: "absolute",
-                        width: "100%",
-                        height: "100%",
+                        position: "absolute", width: "100%", height: "100%",
                         backfaceVisibility: "hidden",
-                        borderRadius: "0.5rem",
-                        border: "0.5rem solid white",
+                        borderRadius: "0.75rem",
                         overflow: "hidden",
                         transform: "rotateY(180deg)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: photo2Error ? "var(--gold)" : "transparent"
+                        background: photo2Error ? "var(--gold)" : "transparent",
+                        boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
                       }}
                     >
-                        <img
-                          src={person.photo2}
-                          alt={person.name}
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover"
-                          }}
-                          onError={() => setPhoto2Error(true)}
-                        />
+                      <img
+                        src={person.photo2}
+                        alt={person.name}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                        onError={() => setPhoto2Error(true)}
+                      />
                     </motion.div>
+
+                    {/* Hover hint */}
+                    <div style={{
+                      position: "absolute",
+                      bottom: "0.6rem",
+                      right: "0.6rem",
+                      background: "rgba(0,0,0,0.45)",
+                      backdropFilter: "blur(4px)",
+                      color: "white",
+                      fontSize: "0.6rem",
+                      fontWeight: "700",
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      padding: "0.2rem 0.55rem",
+                      borderRadius: "999px",
+                      fontFamily: "var(--font-display)",
+                      pointerEvents: "none",
+                    }}>
+                      Hover to flip
+                    </div>
                   </div>
                 </motion.div>
               );
@@ -472,44 +435,61 @@ export default function AboutUs({ setActiveSection }) {
         </section>
       </Reveal>
 
-      {/* Get Involved Button */}
+      {/* Get Involved CTA */}
       <Reveal>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "3rem 2rem 5rem 2rem",
-            gap: "1rem"
-          }}
-        >
-          <h3 style={{
-            fontSize: "1.8rem",
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "2rem 2rem 6rem",
+          gap: "1.25rem",
+          textAlign: "center",
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", width: "100%", maxWidth: "400px" }}>
+            <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+            <span style={{
+              fontSize: "0.6rem", fontWeight: "800", letterSpacing: "0.18em",
+              textTransform: "uppercase", color: "var(--red)",
+              fontFamily: "var(--font-display)", whiteSpace: "nowrap",
+            }}>
+              Want to help?
+            </span>
+            <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+          </div>
+          <h2 style={{ margin: 0, fontSize: "clamp(1.5rem, 4vw, 2.5rem)" }}>
+            Get Involved
+          </h2>
+          <p style={{
+            margin: 0,
+            fontSize: "clamp(0.9rem, 2vw, 1rem)",
             color: "var(--dark)",
-            margin: 0
+            opacity: 0.7,
+            fontFamily: "var(--font-body)",
+            maxWidth: "36rem",
+            lineHeight: 1.7,
           }}>
-            Want to help?
-          </h3>
+            There are many ways to support TDC — from volunteering at events to joining the club or applying for an officer position.
+          </p>
           <motion.button
-            onClick={() => setActiveSection('gettinginvolved')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            onClick={() => setActiveSection("gettinginvolved")}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
             style={{
-              backgroundColor: "var(--red)",
-              color: "var(--cream)",
-              font: "var(--font-display)",
-              fontSize: "2rem",
-              fontWeight: "bold",
-              padding: "1.5rem 4rem",
+              background: "var(--red)",
+              color: "white",
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
+              fontWeight: "700",
+              padding: "0.9rem 3rem",
               border: "none",
-              borderRadius: "0.5rem",
+              borderRadius: "0.55rem",
               cursor: "pointer",
-              boxShadow: "0 6px 12px rgba(0, 0, 0, 0.3)",
-              transition: "all 0.3s ease"
+              letterSpacing: "0.04em",
+              boxShadow: "0 6px 20px rgba(208,49,45,0.3)",
+              marginTop: "0.5rem",
             }}
           >
-            Get Involved
+            Get Involved →
           </motion.button>
         </div>
       </Reveal>

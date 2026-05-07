@@ -3,118 +3,112 @@ import { pastOfficersData, pastOfficersYears } from "../../data/members";
 
 export default function PastOfficers() {
   return (
-    <section style={{ marginTop: "4rem" }}>
-      <h1 style={{ 
-        fontSize: "3rem", 
-        color: "var(--red)", 
-        textAlign: "center",
-        marginBottom: "3rem"
+    <section style={{ marginTop: "2rem", paddingTop: "3rem" }}>
+      {/* Section divider */}
+      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "3rem", padding: "0 clamp(1rem, 4vw, 2rem)" }}>
+        <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+        <span style={{
+          fontSize: "0.6rem", fontWeight: "800", letterSpacing: "0.18em",
+          textTransform: "uppercase", color: "var(--red)",
+          fontFamily: "var(--font-display)", whiteSpace: "nowrap",
+        }}>
+          Past Officers
+        </span>
+        <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
+      </div>
+
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 17rem), 1fr))",
+        gap: "2rem",
+        padding: "0 clamp(1rem, 4vw, 2rem) 5rem",
       }}>
-        Past Officers
-      </h1>
-      
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(18.75rem, 1fr))",
-          gap: "2rem",
-          padding: "0 2rem"
-        }}
-      >
         {pastOfficersYears.map((year, index) => {
           const yearData = pastOfficersData[year];
-          // Convert year format from "2023-2024" to "23-24"
           const shortYear = year.split("-").map(y => y.slice(2)).join("-");
           const imagePath = `/assets/officers/groupphotos/${shortYear}Officers.png`;
-          
+
           return (
             <motion.div
               key={index}
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.3 }}
+              whileHover={{ y: -6, boxShadow: "0 16px 40px rgba(0,0,0,0.15)" }}
+              transition={{ duration: 0.25 }}
               style={{
                 background: "white",
-                padding: "2rem",
-                border: "0.125rem solid var(--gold)",
-                borderRadius: "0.5rem",
-                boxShadow: "0 0.25rem 0.375rem rgba(0, 0, 0, 0.1)"
+                borderRadius: "0.85rem",
+                overflow: "hidden",
+                boxShadow: "0 4px 16px rgba(0,0,0,0.09)",
+                display: "flex",
+                flexDirection: "column",
+                borderTop: "4px solid var(--red)",
               }}
             >
-              {/* Year Header */}
-              <h2
-                style={{
-                  fontSize: "1.5rem",
-                  color: "var(--red)",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  marginBottom: "1.5rem",
-                  borderBottom: "0.125rem solid var(--gold)",
-                  paddingBottom: "0.5rem"
-                }}
-              >
-                {year}
-              </h2>
-
-              {/* Officers Photo */}
-              <div
-                style={{
-                  width: "100%",
-                  height: "12.5rem",
-                  backgroundColor: "var(--cream)",
-                  borderRadius: "0.5rem",
-                  marginBottom: "1.5rem",
-                  overflow: "hidden"
-                }}
-              >
+              {/* Photo — fills top */}
+              <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", background: "#2b2b2b", flexShrink: 0 }}>
                 <img
                   src={imagePath}
                   alt={`${year} Officers`}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover"
-                  }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                   onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.style.display = 'flex';
-                    e.target.parentElement.style.alignItems = 'center';
-                    e.target.parentElement.style.justifyContent = 'center';
-                    e.target.parentElement.innerHTML = '<span style="color: var(--dark); font-size: 0.9rem; font-style: italic;">Officers Photo</span>';
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.display = "flex";
+                    parent.style.alignItems = "center";
+                    parent.style.justifyContent = "center";
+                    parent.innerHTML = `<span style="color:rgba(255,255,255,0.35);font-size:0.85rem;font-style:italic">No Photo</span>`;
                   }}
                 />
+                {/* Year badge */}
+                <div style={{
+                  position: "absolute",
+                  top: "0.75rem",
+                  left: "0.75rem",
+                  background: "var(--red)",
+                  color: "white",
+                  padding: "0.22rem 0.72rem",
+                  borderRadius: "999px",
+                  fontSize: "0.68rem",
+                  fontWeight: "800",
+                  letterSpacing: "0.07em",
+                  fontFamily: "var(--font-display)",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
+                }}>
+                  {shortYear}
+                </div>
               </div>
 
-              {/* Officers List */}
-              <div>
-                <h3
-                  style={{
-                    fontSize: "1.2rem",
-                    color: "var(--dark)",
-                    fontWeight: "bold",
-                    marginBottom: "1rem"
-                  }}
-                >
-                  Officers:
-                </h3>
-                <ul
-                  style={{
-                    listStyle: "disc",
-                    paddingLeft: "1.5rem",
-                    color: "var(--dark)"
-                  }}
-                >
+              {/* Officers list */}
+              <div style={{ padding: "1.25rem 1.5rem 1.5rem", flex: 1 }}>
+                <div style={{ display: "flex", flexDirection: "column" }}>
                   {Object.entries(yearData).map(([role, name], idx) => (
-                    <li
-                      key={idx}
-                      style={{
-                        marginBottom: "0.5rem",
-                        lineHeight: "1.6"
-                      }}
-                    >
-                      <strong style={{ color: "var(--red)" }}>{role}:</strong> {name}
-                    </li>
+                    <div key={idx}>
+                      {idx > 0 && (
+                        <div style={{ height: "1px", background: "rgba(218,160,109,0.3)", margin: "0.6rem 0" }} />
+                      )}
+                      <div style={{ display: "flex", flexDirection: "column", gap: "0.08rem" }}>
+                        <span style={{
+                          fontSize: "0.58rem",
+                          fontWeight: "800",
+                          letterSpacing: "0.14em",
+                          textTransform: "uppercase",
+                          color: "var(--gold)",
+                          fontFamily: "var(--font-display)",
+                        }}>
+                          {role}
+                        </span>
+                        <span style={{
+                          fontSize: "0.92rem",
+                          fontWeight: "600",
+                          color: "var(--dark)",
+                          fontFamily: "var(--font-body)",
+                          lineHeight: 1.3,
+                        }}>
+                          {name}
+                        </span>
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </motion.div>
           );

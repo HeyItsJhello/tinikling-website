@@ -121,7 +121,7 @@ export default function Navbar({ activeSection, setActiveSection }) {
           ref={navListRef}
           className="desktop-nav"
           style={{
-            display: 'flex', gap: 'clamp(0rem, 0.5vw, 0.25rem)',
+            display: 'flex', gap: 'clamp(0.25rem, 1.5vw, 1.25rem)',
             listStyle: 'none', margin: 0, padding: 0,
             alignItems: 'center', position: 'relative',
           }}
@@ -138,7 +138,7 @@ export default function Navbar({ activeSection, setActiveSection }) {
                       background: 'none', border: 'none',
                       color: isEventsActive ? 'var(--red)' : textColor,
                       fontFamily: 'var(--font-display)',
-                      fontSize: 'clamp(0.85rem, 1.4vw, 1rem)',
+                      fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
                       fontWeight: isEventsActive ? '600' : '400',
                       cursor: 'pointer',
                       padding: '0.5rem clamp(0.4rem, 1vw, 0.85rem)',
@@ -237,7 +237,7 @@ export default function Navbar({ activeSection, setActiveSection }) {
                     background: 'none', border: 'none',
                     color: activeSection === item.id ? 'var(--red)' : textColor,
                     fontFamily: 'var(--font-display)',
-                    fontSize: 'clamp(0.85rem, 1.4vw, 1rem)',
+                    fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
                     fontWeight: activeSection === item.id ? '600' : '400',
                     cursor: 'pointer',
                     padding: '0.5rem clamp(0.4rem, 1vw, 0.85rem)',
