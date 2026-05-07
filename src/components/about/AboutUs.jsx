@@ -476,7 +476,7 @@ export default function AboutUs({ setActiveSection }) {
             maxWidth: "36rem",
             lineHeight: 1.7,
           }}>
-            There are many ways to support TDC — from volunteering at events to joining the club or applying for an officer position.
+            There are many ways to support TDC | From volunteering at events to joining the club or applying for an officer position.
           </p>
           <motion.button
             onClick={() => setActiveSection("gettinginvolved")}
