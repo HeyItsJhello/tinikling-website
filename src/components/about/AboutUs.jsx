@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import aboutUsHERO from "/assets/AboutUsHERO.png";
 import Reveal from "../common/reveal";
 import StatCounter from "./StatCounter";
+import PhilippinesMap from "./PhilippinesMap";
 
 function SpecialThanksCard({ person }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -412,6 +413,10 @@ export default function AboutUs({ setActiveSection }) {
             </div>
           </div>
         </div>
+      </Reveal>
+
+      <Reveal>
+        <PhilippinesMap />
       </Reveal>
 
       {/* Special Recognition */}

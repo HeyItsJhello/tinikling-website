@@ -42,7 +42,7 @@ export const dances = [
     video: "https://youtu.be/_5bRlr97n-Q?si=2d7j3gbIEu5pjMnE",
     steps: [],
     descriptions: [
-      "KAPAG From the Maranao tribes of Mindanao, Kapag Apir is a traditional dance showcasing the grace and poise of dancers. Dancers work with fans to create beautiful images symbolizing royalty of princesses.",
+      "From the Maranao tribes of Mindanao, Kapag Apir is a traditional dance showcasing the grace and poise of dancers. Dancers work with fans to create beautiful images symbolizing royalty of princesses.",
     ],
     image: "/assets/dances/kapagapir.jpeg",
     images: ["/assets/dances/kapagapir.jpeg"],
@@ -75,7 +75,7 @@ export const dances = [
     video: "",
     steps: [],
     descriptions: [
-      "Originating from Cantilan of the Surigao province, Itik Itik showcases energetic & captivating steps in order to mimic the movement of ducks.",
+      "Originating from Cantilan, Surigao del Sur, Itik Itik showcases energetic & captivating steps in order to mimic the movement of ducks.",
     ],
     image: "/assets/dances/itikitik.jpeg",
     images: ["/assets/dances/itikitik.jpeg"],
@@ -86,7 +86,7 @@ export const dances = [
     video: "",
     steps: [],
     descriptions: [
-      'Known as the dance of love, the Filipino folk dance "Cariñosa" originated from the regions of Bicol, Panay, and Visayas during the Spanish colonial period of the Philippines. The dance symbolizes Filipino courtship and warmth, and involves graceful, flowing movements to represent Cariñosa\'s romantic nature.',
+      'Known as the dance of love, the Filipino folk dance "Cariñosa" originated from Panay Island in the Visayas during the Spanish colonial period of the Philippines. The dance symbolizes Filipino courtship and warmth, and involves graceful, flowing movements to represent Cariñosa\'s romantic nature.',
     ],
     image: "/assets/dances/carinosa.jpeg",
     images: ["/assets/dances/carinosa.jpeg"],
@@ -119,7 +119,7 @@ export const dances = [
     video: "",
     steps: [],
     descriptions: [
-      "Originating from Biñan of the Laguna Province, Maglalatin portrays the battle between Christian & Muslim Filipinos. This masculine dance hits coconut shells together to create rhythmic sounds. It's divided into four parts: the palipasan and the baligtaran, which portray warfare, while the paseo and escaramuza portray reconciliation.",
+      "Originating from Biñan of the Laguna Province, Maglalatik portrays the battle between Christian & Muslim Filipinos. This masculine dance hits coconut shells together to create rhythmic sounds. It's divided into four parts: the palipasan and the baligtaran, which portray warfare, while the paseo and escaramuza portray reconciliation.",
     ],
     image: "/assets/dances/maglalatik.JPG",
     images: ["/assets/dances/maglalatik.JPG"],

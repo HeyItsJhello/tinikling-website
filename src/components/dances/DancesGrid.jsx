@@ -146,7 +146,7 @@ export default function DancesGrid({ dances, title, setActiveSection }) {
           margin: "0 auto",
           maxWidth: "36rem",
         }}>
-          Scroll to explore the dances we perform — click any card to learn more.
+          Scroll to explore the dances we perform, click any card to learn more
         </p>
       </div>
 

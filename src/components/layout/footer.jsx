@@ -11,7 +11,7 @@ const navLinks = [
 
 export default function Footer({ setActiveSection }) {
   return (
-    <footer style={{ background: "var(--dark)", color: "var(--cream)", position: "relative" }}>
+    <footer style={{ background: "var(--dark)", color: "var(--cream)", position: "relative", zIndex: 3 }}>
       {/* Wave divider */}
       <div style={{ lineHeight: 0, overflow: "hidden" }}>
         <svg
