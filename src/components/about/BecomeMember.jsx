@@ -30,6 +30,26 @@ const ACTIVITIES = [
   "Holiday Hangouts",
 ];
 
+function SectionDivider({ label }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: "1rem", margin: "3rem 0 2rem" }}>
+      <div style={{ flex: 1, height: "1px", background: "linear-gradient(to right, transparent, rgba(218,160,109,0.5))" }} />
+      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+        <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "var(--gold)" }} />
+        <span style={{
+          fontSize: "0.6rem", fontWeight: "800", letterSpacing: "0.18em",
+          textTransform: "uppercase", color: "var(--red)",
+          fontFamily: "var(--font-display)", whiteSpace: "nowrap",
+        }}>
+          {label}
+        </span>
+        <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "var(--gold)" }} />
+      </div>
+      <div style={{ flex: 1, height: "1px", background: "linear-gradient(to left, transparent, rgba(218,160,109,0.5))" }} />
+    </div>
+  );
+}
+
 export default function BecomeMember({ setActiveSection }) {
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -43,29 +63,38 @@ export default function BecomeMember({ setActiveSection }) {
         </p>
       </section>
 
-      {/* How to Join cards */}
-      <section style={{ maxWidth: "860px", margin: "0 auto", padding: "2rem clamp(1rem, 4vw, 2rem) 2rem" }}>
+      {/* How to Join */}
+      <section style={{ maxWidth: "860px", margin: "0 auto", padding: "2rem clamp(1rem, 4vw, 2rem) 0" }}>
+        <SectionDivider label="How to Join" />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "1.25rem" }}>
-          <div style={{
-            background: "white", borderRadius: "1.25rem",
-            padding: "1.75rem", boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
-            borderTop: "4px solid var(--red)",
-          }}>
-            <h3 style={{ margin: "0 0 0.75rem", fontSize: "1.1rem" }}>Come Visit Our Meetings</h3>
-            <p style={{ fontSize: "0.92rem", lineHeight: "1.8", color: "var(--dark)", margin: 0, fontFamily: "var(--font-body)" }}>
-              Open to Franklin High School students, held at least once a month on Fridays in Mr. Alovera's room HG7. We explore Filipino traditions, current events, and dances through workshops — with regular practice sessions for performance opportunities throughout the year.
-            </p>
-          </div>
-          <div style={{
-            background: "white", borderRadius: "1.25rem",
-            padding: "1.75rem", boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
-            borderTop: "4px solid var(--gold)",
-          }}>
-            <h3 style={{ margin: "0 0 0.75rem", fontSize: "1.1rem" }}>Stay Connected</h3>
-            <p style={{ fontSize: "0.92rem", lineHeight: "1.8", color: "var(--dark)", margin: 0, fontFamily: "var(--font-body)" }}>
-              Join our GroupMe for live updates. Follow <strong>@fhs_tdc</strong> on Instagram and our other social channels for event announcements, performance opportunities, and reminders throughout the year.
-            </p>
-          </div>
+          {[
+            {
+              title: "Come Visit Our Meetings",
+              body: "Open to Franklin High School students, held at least once a month on Fridays in Mr. Alovera's room HG7. We explore Filipino traditions, current events, and dances through workshops — with regular practice sessions for performance opportunities throughout the year.",
+            },
+            {
+              title: "Stay Connected",
+              body: "Join our GroupMe for live updates. Follow @fhs_tdc on Instagram and our other social channels for event announcements, performance opportunities, and reminders throughout the year.",
+            },
+          ].map(({ title, body }) => (
+            <motion.div
+              key={title}
+              whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(218,160,109,0.25), 0 2px 8px rgba(0,0,0,0.08)" }}
+              transition={{ duration: 0.25 }}
+              style={{
+                background: "white",
+                borderRadius: "1.25rem",
+                padding: "1.75rem",
+                boxShadow: "0 4px 16px rgba(218,160,109,0.18), 0 1px 4px rgba(0,0,0,0.06)",
+                borderTop: "4px solid var(--red)",
+              }}
+            >
+              <h3 style={{ margin: "0 0 0.75rem", fontSize: "1.1rem" }}>{title}</h3>
+              <p style={{ fontSize: "0.92rem", lineHeight: "1.8", color: "var(--dark)", margin: 0, fontFamily: "var(--font-body)" }}>
+                {body}
+              </p>
+            </motion.div>
+          ))}
         </div>
         <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
           <motion.button
@@ -78,6 +107,7 @@ export default function BecomeMember({ setActiveSection }) {
               padding: "0.8rem 2.25rem", fontSize: "0.95rem",
               fontWeight: "700", fontFamily: "var(--font-display)",
               cursor: "pointer", letterSpacing: "0.03em",
+              boxShadow: "0 4px 14px rgba(208,49,45,0.28)",
             }}
           >
             Contact Us / Social Media
@@ -86,9 +116,9 @@ export default function BecomeMember({ setActiveSection }) {
       </section>
 
       {/* Activities */}
-      <section style={{ maxWidth: "860px", margin: "0 auto", padding: "1rem clamp(1rem, 4vw, 2rem) 3rem" }}>
-        <h2 style={{ textAlign: "center", marginBottom: "0.4rem" }}>2025–26 Activities</h2>
-        <p style={{ textAlign: "center", fontSize: "0.85rem", color: "var(--dark)", opacity: 0.5, margin: "0 0 1.5rem", fontFamily: "var(--font-body)" }}>
+      <section style={{ maxWidth: "860px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem) 0" }}>
+        <SectionDivider label="2025–26 Activities" />
+        <p style={{ textAlign: "center", fontSize: "0.85rem", color: "var(--dark)", opacity: 0.5, margin: "-1rem 0 1.5rem", fontFamily: "var(--font-body)" }}>
           What we're doing this school year
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", justifyContent: "center" }}>
@@ -110,14 +140,16 @@ export default function BecomeMember({ setActiveSection }) {
 
       {/* FAQ */}
       <section style={{ maxWidth: "720px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem) 5rem" }}>
-        <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>
-          Frequently Asked Questions
-        </h2>
+        <SectionDivider label="Frequently Asked Questions" />
         <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
           {FAQ_ITEMS.map((item, i) => (
             <div key={i} style={{
-              background: "white", borderRadius: "0.85rem",
-              overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+              background: "white",
+              borderRadius: "0.85rem",
+              overflow: "hidden",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+              borderLeft: openFaq === i ? "3px solid var(--red)" : "3px solid transparent",
+              transition: "border-color 0.2s ease",
             }}>
               <button
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
@@ -133,8 +165,7 @@ export default function BecomeMember({ setActiveSection }) {
                 </span>
                 <span style={{
                   color: "var(--red)", fontSize: "1.4rem", fontWeight: "400",
-                  flexShrink: 0, lineHeight: 1,
-                  display: "inline-block",
+                  flexShrink: 0, lineHeight: 1, display: "inline-block",
                   transform: openFaq === i ? "rotate(45deg)" : "rotate(0deg)",
                   transition: "transform 0.2s ease",
                 }}>

@@ -105,6 +105,7 @@ export default function Home() {
                   <div style={{ flex: 1, height: "1px", background: "rgba(218,160,109,0.4)" }} />
                 </div>
 
+
                 {/* Who are we + collage */}
                 <div
                   style={{

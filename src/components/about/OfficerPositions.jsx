@@ -1,17 +1,66 @@
-import React from "react";
 import { motion } from "framer-motion";
+
+function SectionDivider({ label }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: "1rem", margin: "3rem 0 2rem" }}>
+      <div style={{ flex: 1, height: "1px", background: "linear-gradient(to right, transparent, rgba(218,160,109,0.5))" }} />
+      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+        <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "var(--gold)" }} />
+        <span style={{
+          fontSize: "0.6rem", fontWeight: "800", letterSpacing: "0.18em",
+          textTransform: "uppercase", color: "var(--red)",
+          fontFamily: "var(--font-display)", whiteSpace: "nowrap",
+        }}>
+          {label}
+        </span>
+        <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "var(--gold)" }} />
+      </div>
+      <div style={{ flex: 1, height: "1px", background: "linear-gradient(to left, transparent, rgba(218,160,109,0.5))" }} />
+    </div>
+  );
+}
+
+function PastSection({ title, names }) {
+  return (
+    <div style={{ marginTop: "2rem", paddingTop: "1.5rem", borderTop: "1.5px solid rgba(218,160,109,0.4)" }}>
+      <span style={{
+        display: "block", fontSize: "0.62rem", fontWeight: "800",
+        letterSpacing: "0.18em", textTransform: "uppercase",
+        textAlign: "center", marginBottom: "1rem",
+        color: "var(--red)", fontFamily: "var(--font-display)",
+      }}>
+        {title}
+      </span>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", justifyContent: "center" }}>
+        {names.split(", ").map(name => (
+          <span key={name} style={{
+            padding: "0.28rem 0.8rem",
+            background: "rgba(218,160,109,0.07)",
+            border: "1.5px solid rgba(218,160,109,0.38)",
+            borderRadius: "999px",
+            fontSize: "0.82rem",
+            color: "var(--dark)",
+            fontFamily: "var(--font-body)",
+          }}>
+            {name}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function PositionCard({ title, description, children, pastTitle, pastNames }) {
   return (
     <div style={{
       background: "white", borderRadius: "1.25rem",
-      boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+      boxShadow: "0 4px 20px rgba(218,160,109,0.15), 0 1px 4px rgba(0,0,0,0.06)",
       overflow: "hidden",
     }}>
       <div style={{ borderTop: "4px solid var(--red)", padding: "clamp(1.25rem, 3vw, 2rem)" }}>
         <h2 style={{
           fontSize: "clamp(1.4rem, 3.5vw, 2rem)",
-          color: "var(--blue)", textAlign: "center",
+          textAlign: "center",
           marginBottom: "1rem", marginTop: 0,
         }}>
           {title}
@@ -24,22 +73,9 @@ function PositionCard({ title, description, children, pastTitle, pastNames }) {
         }}>
           {description}
         </p>
-
         {children}
-
         {pastTitle && pastNames && (
-          <div style={{ marginTop: "2rem", paddingTop: "1.5rem", borderTop: "1.5px solid rgba(218,160,109,0.45)" }}>
-            <h3 style={{ fontSize: "1.15rem", textAlign: "center", marginBottom: "0.75rem", color: "var(--dark)" }}>
-              {pastTitle}
-            </h3>
-            <p style={{
-              fontSize: "0.95rem", textAlign: "center",
-              color: "var(--dark)", margin: 0, lineHeight: "1.75",
-              fontFamily: "var(--font-body)",
-            }}>
-              {pastNames}
-            </p>
-          </div>
+          <PastSection title={pastTitle} names={pastNames} />
         )}
       </div>
     </div>
@@ -51,7 +87,7 @@ export default function OfficerPositions({ setActiveSection }) {
     <main style={{ background: "var(--cream)", minHeight: "100vh", paddingTop: "8rem" }}>
 
       {/* Header */}
-      <section style={{ padding: "3rem 2rem 2rem", textAlign: "center", maxWidth: "780px", margin: "0 auto" }}>
+      <section style={{ padding: "3rem 2rem 1.5rem", textAlign: "center", maxWidth: "780px", margin: "0 auto" }}>
         <h1>Officer Positions</h1>
         <p style={{
           fontSize: "clamp(0.95rem, 2vw, 1.05rem)", lineHeight: "1.8",
@@ -62,8 +98,10 @@ export default function OfficerPositions({ setActiveSection }) {
         </p>
       </section>
 
-      {/* Executive Positions */}
-      <section style={{ maxWidth: "900px", margin: "0 auto", padding: "1rem clamp(1rem, 4vw, 2rem) 3rem" }}>
+      <section style={{ maxWidth: "900px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem) 3rem" }}>
+
+        <SectionDivider label="Executive Positions" />
+
         <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
           <PositionCard
             title="President"
@@ -84,18 +122,19 @@ export default function OfficerPositions({ setActiveSection }) {
             pastNames="Carmelia Hayamizu, Jerome Kekoa Cabrera, Yumilka Wagas, August Post, Ayanna Navarro, Khrizza Manalastas, Ari Herrera, Jaethan Lazardibal, Myles Flores, Gensen Danipog, Donna Barron, Nathalie Agustin, Ayah Lababedy, Tina Tran, Vanessa Alindogan, Melissa Blaine, Moniq Barron, Monica Montemayor, Janet Montemayor"
           />
         </div>
-      </section>
 
-      {/* Advertising Officer */}
-      <section style={{ maxWidth: "900px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem) 3rem" }}>
+        <SectionDivider label="Specialized Roles" />
+
+        {/* Advertising Officer */}
         <div style={{
           background: "white", borderRadius: "1.25rem",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+          boxShadow: "0 4px 20px rgba(218,160,109,0.15), 0 1px 4px rgba(0,0,0,0.06)",
           borderTop: "4px solid var(--red)",
           overflow: "hidden",
+          marginBottom: "1.5rem",
         }}>
           <div style={{ padding: "clamp(1.25rem, 3vw, 2rem)" }}>
-            <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", color: "var(--blue)", textAlign: "center", marginBottom: "1rem", marginTop: 0 }}>
+            <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", textAlign: "center", marginBottom: "1rem", marginTop: 0 }}>
               Advertising Officer
             </h2>
             <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.1rem)", lineHeight: "1.8", color: "var(--dark)", textAlign: "center", margin: "0 0 2rem", fontFamily: "var(--font-body)" }}>
@@ -123,7 +162,7 @@ export default function OfficerPositions({ setActiveSection }) {
                 gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
                 gap: "2rem", margin: "0 auto 2rem",
                 paddingTop: "1.5rem",
-                borderTop: "1.5px solid rgba(218,160,109,0.45)",
+                borderTop: "1.5px solid rgba(218,160,109,0.4)",
               }}
             >
               <div style={{ borderRadius: "1rem", overflow: "hidden", minHeight: "20rem" }}>
@@ -138,8 +177,8 @@ export default function OfficerPositions({ setActiveSection }) {
                 fontStyle: "italic", color: "var(--dark)",
                 textAlign: "center", margin: 0,
                 padding: "clamp(1rem, 3vw, 1.75rem)",
-                borderLeft: "4px solid var(--blue)",
-                background: "var(--cream)", borderRadius: "0.5rem",
+                borderLeft: "4px solid var(--gold)",
+                background: "rgba(218,160,109,0.06)", borderRadius: "0.5rem",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 lineHeight: "1.8", fontFamily: "var(--font-body)",
               }}>
@@ -147,29 +186,23 @@ export default function OfficerPositions({ setActiveSection }) {
               </blockquote>
             </div>
 
-            {/* Past Advertising Officers */}
-            <div style={{ paddingTop: "1.5rem", borderTop: "1.5px solid rgba(218,160,109,0.45)" }}>
-              <h3 style={{ fontSize: "1.15rem", textAlign: "center", marginBottom: "0.75rem", color: "var(--dark)" }}>
-                Past Advertising Officers
-              </h3>
-              <p style={{ fontSize: "0.95rem", textAlign: "center", color: "var(--dark)", margin: 0, lineHeight: "1.75", fontFamily: "var(--font-body)" }}>
-                Kaleb Espinoza, Quinn Manapat, Hannah Hufana, Jerome Kekoa Cabrera, Evan Chau, Hunter Vong, Keilin Tankiamco, Jericho Mata, Molly Barron, Venus Villadelgado, Roxanne Devera, Justin Vallesteros
-              </p>
-            </div>
+            <PastSection
+              title="Past Advertising Officers"
+              names="Kaleb Espinoza, Quinn Manapat, Hannah Hufana, Jerome Kekoa Cabrera, Evan Chau, Hunter Vong, Keilin Tankiamco, Jericho Mata, Molly Barron, Venus Villadelgado, Roxanne Devera, Justin Vallesteros"
+            />
           </div>
         </div>
-      </section>
 
-      {/* Event Coordinator */}
-      <section style={{ maxWidth: "900px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem) 3rem" }}>
+        {/* Event Coordinator */}
         <div style={{
           background: "white", borderRadius: "1.25rem",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+          boxShadow: "0 4px 20px rgba(218,160,109,0.15), 0 1px 4px rgba(0,0,0,0.06)",
           borderTop: "4px solid var(--red)",
           overflow: "hidden",
+          marginBottom: "1.5rem",
         }}>
           <div style={{ padding: "clamp(1.25rem, 3vw, 2rem)" }}>
-            <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", color: "var(--blue)", textAlign: "center", marginBottom: "1.5rem", marginTop: 0 }}>
+            <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", textAlign: "center", marginBottom: "1.5rem", marginTop: 0 }}>
               Event Coordinator
             </h2>
             <div
@@ -190,12 +223,13 @@ export default function OfficerPositions({ setActiveSection }) {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     style={{
-                      background: "var(--blue)", color: "white",
+                      background: "var(--red)", color: "white",
                       border: "none", borderRadius: "0.55rem",
                       padding: "0.75rem 2rem",
                       fontSize: "clamp(0.9rem, 2.5vw, 1rem)",
                       fontWeight: "700", fontFamily: "var(--font-display)",
                       cursor: "pointer", letterSpacing: "0.03em",
+                      boxShadow: "0 4px 14px rgba(208,49,45,0.28)",
                     }}
                   >
                     View Social Events
@@ -217,28 +251,23 @@ export default function OfficerPositions({ setActiveSection }) {
               </div>
             </div>
 
-            <div style={{ paddingTop: "1.5rem", borderTop: "1.5px solid rgba(218,160,109,0.45)" }}>
-              <h3 style={{ fontSize: "1.15rem", textAlign: "center", marginBottom: "0.75rem", color: "var(--dark)" }}>
-                Past Event Coordinators
-              </h3>
-              <p style={{ fontSize: "0.95rem", textAlign: "center", color: "var(--dark)", margin: 0, lineHeight: "1.75", fontFamily: "var(--font-body)" }}>
-                Marlee Gerlach, Maliyah Manalastas, Adora Bosano, Phoebe Bayudan-Soto, Jeanie Le, Rhian Advincula, Kathlyne Nikki Ducusin
-              </p>
-            </div>
+            <PastSection
+              title="Past Event Coordinators"
+              names="Marlee Gerlach, Maliyah Manalastas, Adora Bosano, Phoebe Bayudan-Soto, Jeanie Le, Rhian Advincula, Kathlyne Nikki Ducusin"
+            />
           </div>
         </div>
-      </section>
 
-      {/* Cultural Advisor */}
-      <section style={{ maxWidth: "900px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem) 3rem" }}>
+        {/* Cultural Advisor */}
         <div style={{
           background: "white", borderRadius: "1.25rem",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+          boxShadow: "0 4px 20px rgba(218,160,109,0.15), 0 1px 4px rgba(0,0,0,0.06)",
           borderTop: "4px solid var(--red)",
           overflow: "hidden",
+          marginBottom: "1.5rem",
         }}>
           <div style={{ padding: "clamp(1.25rem, 3vw, 2rem)" }}>
-            <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", color: "var(--blue)", textAlign: "center", marginBottom: "1rem", marginTop: 0 }}>
+            <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", textAlign: "center", marginBottom: "1rem", marginTop: 0 }}>
               Cultural Advisor
             </h2>
             <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.1rem)", lineHeight: "1.8", color: "var(--dark)", textAlign: "center", margin: "0 0 2rem", fontFamily: "var(--font-body)" }}>
@@ -258,42 +287,33 @@ export default function OfficerPositions({ setActiveSection }) {
               </div>
             </div>
 
-            <div style={{ paddingTop: "1.5rem", borderTop: "1.5px solid rgba(218,160,109,0.45)" }}>
-              <h3 style={{ fontSize: "1.15rem", textAlign: "center", marginBottom: "0.75rem", color: "var(--dark)" }}>
-                Past Cultural Advisors
-              </h3>
-              <p style={{ fontSize: "0.95rem", textAlign: "center", color: "var(--dark)", margin: 0, lineHeight: "1.75", fontFamily: "var(--font-body)" }}>
-                Caleb Pascua, Quinn Manapat, Carmelia Hayamizu, Maliyah Manalastas, Rylan Silvestre, Gamiel Ortigoza, Mylene Asuncion, Christopher Viquiera, Gensen Danipog, Jaeo Jubinal, Emmanuel Perez
-              </p>
-            </div>
+            <PastSection
+              title="Past Cultural Advisors"
+              names="Caleb Pascua, Quinn Manapat, Carmelia Hayamizu, Maliyah Manalastas, Rylan Silvestre, Gamiel Ortigoza, Mylene Asuncion, Christopher Viquiera, Gensen Danipog, Jaeo Jubinal, Emmanuel Perez"
+            />
           </div>
         </div>
-      </section>
 
-      {/* Member Outreach */}
-      <section style={{ maxWidth: "900px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem) 5rem" }}>
+        {/* Member Outreach */}
         <div style={{
           background: "white", borderRadius: "1.25rem",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+          boxShadow: "0 4px 20px rgba(218,160,109,0.15), 0 1px 4px rgba(0,0,0,0.06)",
           borderTop: "4px solid var(--red)",
           overflow: "hidden",
+          marginBottom: "3rem",
         }}>
           <div style={{ padding: "clamp(1.25rem, 3vw, 2rem)" }}>
-            <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", color: "var(--blue)", textAlign: "center", marginBottom: "1rem", marginTop: 0 }}>
+            <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", textAlign: "center", marginBottom: "1rem", marginTop: 0 }}>
               Member Outreach
             </h2>
             <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.1rem)", lineHeight: "1.8", color: "var(--dark)", textAlign: "center", margin: "0 0 2rem", fontFamily: "var(--font-body)" }}>
               Member outreach officers — also known as our Titos, Titas, and Ninang — ensure a safe space for every member, always welcoming them with open arms. With a no-tolerance policy, the club stays inclusive and gets to know each member throughout the year through different families.
             </p>
 
-            <div style={{ paddingTop: "1.5rem", borderTop: "1.5px solid rgba(218,160,109,0.45)" }}>
-              <h3 style={{ fontSize: "1.15rem", textAlign: "center", marginBottom: "0.75rem", color: "var(--dark)" }}>
-                Past Member Outreach
-              </h3>
-              <p style={{ fontSize: "0.95rem", textAlign: "center", color: "var(--dark)", margin: 0, lineHeight: "1.75", fontFamily: "var(--font-body)" }}>
-                Caleb Pascua, Lynn Ly, Kai Tapiador, Hyacinth Cheung, Madon Lou-Dizon, Gabriel Asilo, Gamiel Ortigoza, Mylene Asuncion, Emily Xiong, Raven Stinson, Corey Chan, Norbert Nguyen
-              </p>
-            </div>
+            <PastSection
+              title="Past Member Outreach"
+              names="Caleb Pascua, Lynn Ly, Kai Tapiador, Hyacinth Cheung, Madon Lou-Dizon, Gabriel Asilo, Gamiel Ortigoza, Mylene Asuncion, Emily Xiong, Raven Stinson, Corey Chan, Norbert Nguyen"
+            />
           </div>
         </div>
       </section>
