@@ -57,6 +57,7 @@ function SplitCard({ image, imagePosition = "left", objectPosition = "center", t
       }}>
         <img
           src={image} alt={title}
+          loading="lazy"
           style={{ width: "100%", height: "100%", minHeight: "18rem", objectFit: "cover", objectPosition, display: "block" }}
         />
       </div>
@@ -121,6 +122,7 @@ export default function SocialEvents({ setActiveSection }) {
               <img
                 src="/assets/events/SOCIAL/WINTER.png"
                 alt="Winter Hangout"
+                loading="lazy"
                 style={{ width: "100%", height: "10rem", objectFit: "cover", display: "block" }}
               />
             </div>
@@ -143,6 +145,7 @@ export default function SocialEvents({ setActiveSection }) {
                 <img
                   src="/assets/events/SOCIAL/BELOWLEFTANDMORE.png"
                   alt="More events"
+                  loading="lazy"
                   style={{ width: "100%", height: "8rem", objectFit: "cover", display: "block" }}
                 />
               </div>
@@ -150,6 +153,7 @@ export default function SocialEvents({ setActiveSection }) {
                 <img
                   src="/assets/events/SOCIAL/BELOWRIGHTANDMORE.png"
                   alt="More events"
+                  loading="lazy"
                   style={{ width: "100%", height: "8rem", objectFit: "cover", display: "block" }}
                 />
               </div>

@@ -1,16 +1,31 @@
 import { motion } from "framer-motion";
 
-export default function OfficerCard({ officer, index = 0 }) {
+const cardVariants = {
+  rest: { y: 0, boxShadow: "0 4px 16px rgba(218,160,109,0.3), 0 1px 4px rgba(0,0,0,0.06)" },
+  hovered: { y: -10, boxShadow: "0 18px 40px rgba(218,160,109,0.45), 0 2px 12px rgba(0,0,0,0.1)" },
+};
+
+const frameVariants = {
+  rest: { background: "rgba(218,160,109,0.55)" },
+  hovered: { background: "rgba(208,49,45,0.75)" },
+};
+
+const overlayVariants = {
+  rest: { opacity: 0 },
+  hovered: { opacity: 1 },
+};
+
+const cardTransition = { duration: 0.28 };
+const overlayTransition = { duration: 0.25 };
+
+export default function OfficerCard({ officer }) {
   return (
     <motion.div
       initial="rest"
       animate="rest"
       whileHover="hovered"
-      variants={{
-        rest: { y: 0, boxShadow: "0 4px 16px rgba(218,160,109,0.3), 0 1px 4px rgba(0,0,0,0.06)" },
-        hovered: { y: -10, boxShadow: "0 18px 40px rgba(218,160,109,0.45), 0 2px 12px rgba(0,0,0,0.1)" },
-      }}
-      transition={{ duration: 0.28 }}
+      variants={cardVariants}
+      transition={cardTransition}
       style={{
         background: "white",
         padding: "1.5rem 1.5rem 1.75rem",
@@ -39,13 +54,9 @@ export default function OfficerCard({ officer, index = 0 }) {
 
       {officer.image && (
         <div style={{ position: "relative", marginBottom: "1rem", zIndex: 1 }}>
-          {/* Frame: gold at rest → red on hover */}
           <motion.div
-            variants={{
-              rest: { background: "rgba(218,160,109,0.55)" },
-              hovered: { background: "rgba(208,49,45,0.75)" },
-            }}
-            transition={{ duration: 0.28 }}
+            variants={frameVariants}
+            transition={cardTransition}
             style={{ padding: "3px", borderRadius: "0.55rem", lineHeight: 0 }}
           >
             <div style={{ borderRadius: "0.35rem", overflow: "hidden", lineHeight: 0, position: "relative" }}>
@@ -61,8 +72,8 @@ export default function OfficerCard({ officer, index = 0 }) {
                 }}
               />
               <motion.div
-                variants={{ rest: { opacity: 0 }, hovered: { opacity: 1 } }}
-                transition={{ duration: 0.25 }}
+                variants={overlayVariants}
+                transition={overlayTransition}
                 style={{
                   position: "absolute",
                   inset: 0,
@@ -87,9 +98,6 @@ export default function OfficerCard({ officer, index = 0 }) {
         <div style={{ flex: 1, height: "1px", background: "linear-gradient(to left, transparent, rgba(218,160,109,0.6))" }} />
       </div>
 
-      {/* Text section: flex:1 makes all cards in the same row equal height.
-          space-between pins name to top and role to bottom so both align
-          at the same vertical position across every card in the row. */}
       <div style={{
         flex: 1,
         display: "flex",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import aboutUsHERO from "/assets/AboutUsHERO.png";
 import Reveal from "../common/reveal";
@@ -87,6 +87,7 @@ function SpecialThanksCard({ person }) {
           <img
             src={person.photo}
             alt={person.name}
+            loading="lazy"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
             onError={() => setPhoto1Error(true)}
           />
@@ -108,6 +109,7 @@ function SpecialThanksCard({ person }) {
           <img
             src={person.photo2}
             alt={person.name}
+            loading="lazy"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
             onError={() => setPhoto2Error(true)}
           />
@@ -137,23 +139,24 @@ function SpecialThanksCard({ person }) {
   );
 }
 
+const specialThanks = [
+  {
+    name: "Celi Corpuz",
+    description: "Celi Corpuz is a University of California, Davis graduate and is a part of NCPASA, Mga Kapatid, and Kabataan Alliance. Celi has been helping us learn new traditional dances and has helped us with numerous fundraisers since 2023.",
+    quote: "",
+    photo: "/assets/Special/Celi.png",
+    photo2: "/assets/Special/CeliGroup.png",
+  },
+  {
+    name: "Mathew Post",
+    description: "Our previous TDC president, August Post, had a grandfather to handmake and donate our Sayaw Sa Bangko performance benches in 2022 to pay tribute to the passion and culture of this club. Mathew Post was a woodcarver for over 60 years and was such a big fan of all the work the club has been doing. He passed away at the beginning of 2025. We thank him for helping the Tinikling Dance Club to continue performing and sharing the culture of Sayaw Sa Bangko after so many years.",
+    quote: "",
+    photo: "/assets/Special/MATHEW.png",
+    photo2: "/assets/Special/MATHEWBUILD.png",
+  }
+];
+
 export default function AboutUs({ setActiveSection }) {
-  const specialThanks = [
-    {
-      name: "Celi Corpuz",
-      description: "Celi Corpuz is a University of California, Davis graduate and is a part of NCPASA, Mga Kapatid, and Kabataan Alliance. Celi has been helping us learn new traditional dances and has helped us with numerous fundraisers since 2023.",
-      quote: "",
-      photo: "/assets/Special/Celi.png",
-      photo2: "/assets/Special/CeliGroup.png",
-    },
-    {
-      name: "Mathew Post",
-      description: "Our previous TDC president, August Post, had a grandfather to handmake and donate our Sayaw Sa Bangko performance benches in 2022 to pay tribute to the passion and culture of this club. Mathew Post was a woodcarver for over 60 years and was such a big fan of all the work the club has been doing. He passed away at the beginning of 2025. We thank him for helping the Tinikling Dance Club to continue performing and sharing the culture of Sayaw Sa Bangko after so many years.",
-      quote: "",
-      photo: "/assets/Special/MATHEW.png",
-      photo2: "/assets/Special/MATHEWBUILD.png",
-    }
-  ];
 
   return (
     <main style={{ background: "var(--cream)", minHeight: "100vh", overflow: "hidden", width: "100%" }}>

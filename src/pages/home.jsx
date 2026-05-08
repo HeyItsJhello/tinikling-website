@@ -18,29 +18,19 @@ import { dances } from "../data/dances";
 import { learnConfig } from "../data/learn";
 import LearnPage from "../components/learn/LearnPage";
 import { motion, AnimatePresence } from "framer-motion";
+
+const fadeVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+
 export default function Home() {
   const [activeSection, setActiveSection] = useState('welcome');
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Ensure component is fully mounted
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    // Scroll to top whenever section changes
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [activeSection]);
-
-  if (!mounted) {
-    return null; // Or a loading spinner
-  }
-
-  const fadeVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 }
-  };
 
   return (
     <>
@@ -248,7 +238,7 @@ export default function Home() {
               }}
             >
               <Reveal>
-                {mounted && <DancesGrid key={`dances-${activeSection}`} title="Our Dances" dances={dances} setActiveSection={setActiveSection} />}
+                <DancesGrid key={`dances-${activeSection}`} title="Our Dances" dances={dances} setActiveSection={setActiveSection} />
               </Reveal>
             </main>
           )}

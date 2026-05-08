@@ -71,6 +71,7 @@ export default function GettingInvolved({ setActiveSection }) {
               <img
                 src="/assets/involvement/KABATAAN.png"
                 alt="Kabataan Alliance"
+                loading="lazy"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
             </motion.div>
@@ -185,6 +186,7 @@ export default function GettingInvolved({ setActiveSection }) {
               <img
                 src="/assets/involvement/KAPIT.png"
                 alt="Kapit Bisig"
+                loading="lazy"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
             </motion.div>

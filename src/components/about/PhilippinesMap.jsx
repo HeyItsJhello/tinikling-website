@@ -100,6 +100,7 @@ export default function PhilippinesMap() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
+              animate={{ boxShadow: isActive ? "0 16px 48px rgba(0,0,0,0.14)" : "0 4px 20px rgba(0,0,0,0.07)" }}
               whileHover={{ y: -6, boxShadow: "0 20px 50px rgba(0,0,0,0.13)" }}
               onClick={() => setActiveId(isActive ? null : region.id)}
               style={{
@@ -109,11 +110,8 @@ export default function PhilippinesMap() {
                 cursor: "pointer",
                 position: "relative",
                 overflow: "hidden",
-                boxShadow: isActive
-                  ? "0 16px 48px rgba(0,0,0,0.14)"
-                  : "0 4px 20px rgba(0,0,0,0.07)",
                 border: `2px solid ${isActive ? region.accent : "rgba(218,160,109,0.2)"}`,
-                transition: "border-color 0.3s, box-shadow 0.3s",
+                transition: "border-color 0.3s",
                 userSelect: "none",
               }}
             >

@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "../common/reveal";
 import OfficerCard from "./OfficerCard";
 import { quotes, alumniData, alumniYears } from "../../data/members";
 import { officers } from "../../data/officers";
 import PastOfficers from "./PastOfficers";
+
+const navBtnTransition = { duration: 0.15 };
 
 function NavButton({ onClick, disabled, children }) {
   if (disabled) return <div style={{ width: "2.75rem" }} />;
@@ -13,7 +15,7 @@ function NavButton({ onClick, disabled, children }) {
       whileHover={{ scale: 1.1, background: "var(--red)", color: "white" }}
       whileTap={{ scale: 0.93 }}
       onClick={onClick}
-      transition={{ duration: 0.15 }}
+      transition={navBtnTransition}
       style={{
         width: "2.75rem",
         height: "2.75rem",
@@ -44,12 +46,12 @@ export default function OfficersGrid() {
   const currentData = alumniData[currentYear];
   const isAlumni = parseInt(currentYear.split("-")[1]) < 2026;
 
-  const goToPreviousYear = () => {
-    if (currentYearIndex > 0) setCurrentYearIndex(currentYearIndex - 1);
-  };
-  const goToNextYear = () => {
-    if (currentYearIndex < alumniYears.length - 1) setCurrentYearIndex(currentYearIndex + 1);
-  };
+  const goToPreviousYear = useCallback(() => {
+    setCurrentYearIndex(i => Math.max(0, i - 1));
+  }, []);
+  const goToNextYear = useCallback(() => {
+    setCurrentYearIndex(i => Math.min(alumniYears.length - 1, i + 1));
+  }, []);
 
   return (
     <section>
@@ -260,6 +262,7 @@ export default function OfficersGrid() {
                   <img
                     src={officer.image}
                     alt={officer.name}
+                    loading="lazy"
                     style={{
                       width: "100%",
                       height: "100%",

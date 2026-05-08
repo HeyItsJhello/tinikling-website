@@ -3,6 +3,11 @@ import { motion, useInView, animate } from "framer-motion";
 import { events } from "../../data/events";
 import { newYearStarted } from "../../data/config";
 
+const PAST_MACS = events
+  .filter(e => e.isMakeAChange && e.year !== "upcoming" && e.date !== "TBD")
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+const UPCOMING_MAC = events.find(e => e.year === "upcoming" && e.isMakeAChange);
+
 export default function MakeAChange({ setActiveSection }) {
   const [countdown, setCountdown] = useState({ type: null, days: null, direction: null });
   const [displayDays, setDisplayDays] = useState(0);
@@ -12,17 +17,13 @@ export default function MakeAChange({ setActiveSection }) {
   useEffect(() => {
     const calculate = () => {
       if (!newYearStarted) {
-        const pastMACs = events
-          .filter(e => e.isMakeAChange && e.year !== "upcoming" && e.date !== "TBD")
-          .sort((a, b) => new Date(b.date) - new Date(a.date));
-        const last = pastMACs[0];
+        const last = PAST_MACS[0];
         if (last) {
           const days = Math.floor((new Date() - new Date(last.date)) / (1000 * 60 * 60 * 24));
           setCountdown({ type: "number", days, direction: "since" });
         }
       } else {
-        const upcoming = events.find(e => e.year === "upcoming" && e.isMakeAChange);
-        const dateStr = upcoming?.date;
+        const dateStr = UPCOMING_MAC?.date;
         if (!dateStr || dateStr === "TBD") {
           setCountdown({ type: "tbd", days: null, direction: null });
         } else {
@@ -307,29 +308,84 @@ export default function MakeAChange({ setActiveSection }) {
           </div>
         </div>
 
-        {/* Button centered below the whole row */}
-        <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
+        {/* Performance Inquiries CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          style={{
+            background: "linear-gradient(135deg, #1e1b17 0%, #2a2118 100%)",
+            borderRadius: "1.25rem",
+            padding: "clamp(2.5rem, 5vw, 4rem) 2rem",
+            textAlign: "center",
+            marginTop: "2.5rem",
+            position: "relative",
+            overflow: "hidden",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.28)",
+          }}
+        >
+          {/* Concentric rings */}
+          {[28, 20, 13].map((size, i) => (
+            <div key={i} style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: `${size}rem`,
+              height: `${size}rem`,
+              borderRadius: "50%",
+              border: `1px solid rgba(218,160,109,${0.06 - i * 0.015})`,
+              pointerEvents: "none",
+            }} />
+          ))}
+
+          <div style={{
+            fontSize: "0.58rem",
+            fontWeight: "800",
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "rgba(218,160,109,0.45)",
+            fontFamily: "var(--font-display)",
+            marginBottom: "0.75rem",
+            position: "relative",
+          }}>
+            Book Us
+          </div>
+
+          <h2 style={{
+            color: "white",
+            fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
+            margin: "0 0 1.5rem",
+            lineHeight: 1.2,
+            position: "relative",
+          }}>
+            Bring TDC to your debut or event
+          </h2>
+
           <motion.button
-            onClick={() => setActiveSection("contact")}
-            whileHover={{ scale: 1.04 }}
+            whileHover={{ scale: 1.04, background: "var(--red)" }}
             whileTap={{ scale: 0.96 }}
+            onClick={() => setActiveSection("contact")}
+            transition={{ duration: 0.15 }}
             style={{
-              background: "var(--red)",
-              color: "white",
+              background: "rgba(208,49,45,0.85)",
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(0.88rem, 2vw, 1rem)",
-              fontWeight: "700",
-              padding: "0.75rem 2rem",
+              color: "white",
+              padding: "0.9rem 2.75rem",
+              fontSize: "1rem",
+              fontWeight: "bold",
               border: "none",
               borderRadius: "0.55rem",
               cursor: "pointer",
-              letterSpacing: "0.03em",
-              boxShadow: "0 4px 14px rgba(208,49,45,0.25)",
+              letterSpacing: "0.06em",
+              boxShadow: "0 6px 24px rgba(208,49,45,0.4)",
+              position: "relative",
             }}
           >
             Performance Inquiries →
           </motion.button>
-        </div>
+        </motion.div>
       </div>
     </>
   );

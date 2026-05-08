@@ -58,6 +58,7 @@ export default function DanceCard({ dance, isActive, isAnyHovered, onHoverStart,
                     <img
                         src={dance.image}
                         alt={dance.name}
+                        loading="lazy"
                         style={{
                             width: "100%",
                             height: "100%",

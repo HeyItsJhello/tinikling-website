@@ -1,5 +1,7 @@
 import { learnConfig } from "../../data/learn";
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 const navLinks = [
   { label: "About Us", id: "about" },
   { label: "Events", id: "events" },
@@ -179,7 +181,7 @@ export default function Footer({ setActiveSection }) {
         }}
       >
         <p style={{ margin: 0, fontSize: "0.8rem", opacity: 0.45, color: "var(--cream)" }}>
-          © {new Date().getFullYear()} Tinikling Dance Company. All rights reserved.
+          © {CURRENT_YEAR} Tinikling Dance Company. All rights reserved.
         </p>
       </div>
 

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useLayoutEffect, useState } from "react";
 import Reveal from "../common/reveal";
 import DanceCard from "./DanceCard";
 
@@ -11,13 +11,8 @@ export default function DancesGrid({ dances, title, setActiveSection }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openModalIndex, setOpenModalIndex] = useState(null);
 
-  useEffect(() => {
-    // Wait for DOM to be fully ready
-    const timer = setTimeout(() => {
-      setIsReady(true);
-    }, 50);
-
-    return () => clearTimeout(timer);
+  useLayoutEffect(() => {
+    setIsReady(true);
   }, []);
 
   useEffect(() => {
@@ -219,11 +214,6 @@ export default function DancesGrid({ dances, title, setActiveSection }) {
           </div>
         ))}
       </div>
-      <style jsx>{`
-        .scroll-arrow.flipped {
-          transform: translate(-50%, -50%) scaleX(-1) !important;
-        }
-      `}</style>
     </section>
   );
 }

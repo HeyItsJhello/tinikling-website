@@ -1,6 +1,7 @@
 @font-face {
     font-family: "Obra Letra";
-    src: url(/assets/fonts/ObraLetra.woff) format("woff2");
+    src: url(/assets/fonts/ObraLetra.woff) format("woff");
+    font-display: swap;
 }
 
 :root {
@@ -280,7 +281,7 @@ button, a {
 }
 
 .scroll-arrow.flipped {
-  transform: rotate(180deg);
+  transform: translate(-50%, -50%) scaleX(-1) !important;
 }
 
 /* Dance card hover effect */

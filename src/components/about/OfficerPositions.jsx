@@ -169,6 +169,7 @@ export default function OfficerPositions({ setActiveSection }) {
                 <img
                   src="/assets/involvement/ADVERTISEMENT.png"
                   alt="Advertising Officer"
+                  loading="lazy"
                   style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
                 />
               </div>
@@ -245,6 +246,7 @@ export default function OfficerPositions({ setActiveSection }) {
                   <img
                     src="/assets/involvement/EVENTSCOORD.png"
                     alt="Event Coordinator"
+                    loading="lazy"
                     style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
                   />
                 </div>
@@ -282,6 +284,7 @@ export default function OfficerPositions({ setActiveSection }) {
                 <img
                   src="/assets/involvement/OFFICERS3.png"
                   alt="Cultural Advisor"
+                  loading="lazy"
                   style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
                 />
               </div>

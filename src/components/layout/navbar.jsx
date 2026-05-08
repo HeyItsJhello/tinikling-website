@@ -2,6 +2,16 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { learnConfig } from '../../data/learn';
 
+const navItems = [
+  { label: 'Welcome',    id: 'welcome'  },
+  { label: 'About Us',   id: 'about'    },
+  { label: 'Events',     id: 'events'   },
+  { label: 'Dances',     id: 'dances'   },
+  { label: 'Officers',   id: 'officers' },
+  ...(learnConfig.enabled ? [{ label: 'Learn', id: 'learn' }] : []),
+  { label: 'Contact Us', id: 'contact'  },
+];
+
 export default function Navbar({ activeSection, setActiveSection }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
@@ -40,16 +50,6 @@ export default function Navbar({ activeSection, setActiveSection }) {
 
   const isTransparent = (activeSection === 'welcome' || activeSection === 'about') && !isScrolled;
   const textColor = isTransparent ? 'var(--red)' : 'var(--dark)';
-
-  const navItems = [
-    { label: 'Welcome',    id: 'welcome'  },
-    { label: 'About Us',   id: 'about'    },
-    { label: 'Events',     id: 'events'   },
-    { label: 'Dances',     id: 'dances'   },
-    { label: 'Officers',   id: 'officers' },
-    ...(learnConfig.enabled ? [{ label: 'Learn', id: 'learn' }] : []),
-    { label: 'Contact Us', id: 'contact'  },
-  ];
 
   const handleNavClick = (id) => {
     setActiveSection(id);
