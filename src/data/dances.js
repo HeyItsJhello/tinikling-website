@@ -1,68 +1,167 @@
-export const dances = [
-    {
-        name: "Tinikling",
-        description: "Tinikling is a traditional Filipino dance that originates from the Visayan region of the Philippines. Tinikling involves clicking bamboo sticks, rhythmic taps, and graceful movements.",
-        image: "/assets/dances/tinikling.png"
-    },
-    {
-        name: "Pandanggo sa Ilaw",
-        description: "Originating from the Lubang Island in Mindoro, Pandanggo Sa Ilaw roughly translates to 'dance of the lights' or 'towards the light.' The dance consists of dancers balancing candles on their hands and heads, symbolizing the bountiful catches of fishermen.",
-        image: "/assets/dances/pandanggosailaw2.png"
-    },
-    {
-        name: "Kapag Apir",
-        description: "KAPAG From the Maranao tribes of Mindanao, Kapag Apir is a traditional dance showcasing the grace and poise of dancers. Dancers work with fans to create beautiful images symbolizing royalty of princesses.",
-        image: "/assets/dances/kapagapir.jpeg"
-    },
-    {
-        name: "Binasuan",
-        description: "Originating from the province of Pangasinan, Binasuan roughly translates to “with the use of a drinking glass.” Binasuan is a lively performance involving dancers balancing drinking glasses filled with liquid on their hands and head.",
-        image: "/assets/dances/binasuan.JPG"
-    },
-    {
-        name: "Sayaw Sa Bangko",
-        description: "Sayaw Sa Bangko is a Filipino folk dance with dancers jumping off and on a series of benches. These benches can even be stacked on top of each other to show off incredible acrobatic skills. Sayaw Sa Bangko commonly presents a story to the audience and is a cheerful, energetic dance. So lots of smiling, engaging with the audience, facial expressions, and more.",
-        image: "/assets/dances/sayawsabangko.jpeg"
-    },
-    {
-        name: "Itik Itik",
-        description: "Originating from Cantilan of the Surigao province, Itik Itik showcases energetic & captivating steps in order to mimic the movement of ducks.",
-        image: "/assets/dances/itikitik.jpeg"
-    },
-    {
-        name: "Cariñosa",
-        description: "Known as the dance of love, the Filipino folk dance “Cariñosa” originated from the regions of Bicol, Panay, and Visayas during the Spanish colonial period of the Philippines. The dance symbolizes Filipino courtship and warmth, and involves graceful, flowing movements to represent Cariñosa’s romantic nature.",
-        image: "/assets/dances/carinosa.jpeg"
-    },
-    {
-        name: "Kini Kini",
-        description: "Kini Kini is a Filipino folk dance that showcases the elegance of the Maranao women through the use of scarves or handkerchiefs. The movements and shape of their walk are very articulated and their scarves or handkerchiefs represent their fluidity and grace. As Kini means “Royal Walk,” this dance also represents social upbringing and beauty.",
-        image: "/assets/dances/kinikini.jpeg"
-    },
-    {
-        name: "Pangalay",
-        description: "A fingernail dance originating from the Tausug people of the Sulu Archipelago, Pangalay mimics the ocean waves and flow of water. As dancers bend their fingers in intricate ways, they tell a story of a goddess that controls the ocean around her with elegant, but powerful movements.",
-        image: "/assets/dances/pangalay.jpeg"
-    },
-    {
-        name: "Maglalatik",
-        description: "Originating from Biñan of the Laguna Province, Maglalatin portrays the battle between Christian & Muslim Filipinos. This masculine dance hits coconut shells together to create rhythmic sounds. It’s divided into four parts: the palipasan and the baligtaran, which portray warfare, while the paseo and escaramuza portray reconciliation.",
-        image: "/assets/dances/maglalatik.JPG"
-    },
-    {
-        name: "Pandanggo Oasiwas",
-        description: "Pandanggo Oasiwas originates from the fish town of Lingayen in Pangasinan where fishermen would celebrate bountiful catches by swinging and circling lit candles. The name Oasiwas comes from the local word for swinging with the lights symbolizing the fish they catch.",
-        image: "/assets/dances/pandanggohangycups.JPG"
-    },
-    {
-        name: "Kappa Malong-Malong",
-        description: "Kappa Malong-Malong is a traditional Filipino folk dance from the Maranao people of Mindanao that showcases the versatility of the malong, a large, colorful tubular cloth used as a skirt, shawl, headpiece, or blanket, highlighting its many uses and cultural significance through dance steps and movements.",
-        image: "/assets/dances/malongmalong.png"
-    },
-    {
-        name: "Bulaklakan",
-        description: "Bulaklakan is a traditional Filipino dance that originates from the province of Bulacan, named for its abundance of flowers. This dance dedicates itself to the Virgin Mary performed usually during May as part of celebration for Holy week. The dance mimics the act of making and presenting floral garlands — a common practice during religious festivals. Handcrafted by the members and leading officers of this dance, the arches displayed are a vibrant testament to tradition, unity, and the shared artistry that brings the celebration to life.",
-        image: "/assets/dances/bulaklakan.jpeg"
-    }
-]
+// video: YouTube embed URL (https://www.youtube.com/embed/VIDEO_ID) — fill in when ready
+// steps: array of step strings — fill in when ready
+// region: Philippine region of origin
 
+export const dances = [
+  {
+    name: "Tinikling",
+    region: "Visayas",
+    video: "https://www.youtube.com/watch?v=UrSgRKhzjJ8&t=5s",
+    steps: [],
+    descriptions: [
+      "Tinikling is a traditional Filipino dance that originates from the Visayan region of the Philippines. Tinikling involves clicking bamboo sticks, rhythmic taps, and graceful movements.",
+    ],
+    image: "/assets/dances/tinikling.png",
+    images: [
+      "/assets/dances/tinikling.png",
+      "/assets/events/NONMAC/2026POLY.png",
+      "/assets/events/NONMAC/2018FUSION.png",
+      "/assets/events/NONMAC/2023MULTI.png",
+      "/assets/events/NONMAC/2024POLY.png",
+      "/assets/events/NONMAC/2025SARI.png",
+    ],
+  },
+  {
+    name: "Pandanggo sa Ilaw",
+    region: "Mindoro",
+    video: "https://youtu.be/14YxW3ROBA4?si=rSXnXl_cKUnDg_eu",
+    steps: [],
+    descriptions: [
+      "Originating from the Lubang Island in Mindoro, Pandanggo Sa Ilaw roughly translates to 'dance of the lights' or 'towards the light.' The dance consists of dancers balancing candles on their hands and heads, symbolizing the bountiful catches of fishermen.",
+    ],
+    image: "/assets/dances/pandanggosailaw2.png",
+    images: ["/assets/dances/pandanggosailaw2.png"],
+  },
+  {
+    name: "Kapag Apir",
+    region: "Mindanao",
+    video: "https://youtu.be/_5bRlr97n-Q?si=2d7j3gbIEu5pjMnE",
+    steps: [],
+    descriptions: [
+      "From the Maranao tribes of Mindanao, Kapag Apir is a traditional dance showcasing the grace and poise of dancers. Dancers work with fans to create beautiful images symbolizing royalty of princesses.",
+    ],
+    image: "/assets/dances/kapagapir.jpeg",
+    images: ["/assets/dances/kapagapir.jpeg"],
+  },
+  {
+    name: "Binasuan",
+    region: "Pangasinan",
+    video: "https://youtu.be/S94Hri03-_w?si=z9lz2lsCbtFJ0Fgz",
+    steps: [],
+    descriptions: [
+      'Originating from the province of Pangasinan, Binasuan roughly translates to "with the use of a drinking glass." Binasuan is a lively performance involving dancers balancing drinking glasses filled with liquid on their hands and head.',
+    ],
+    image: "/assets/dances/binasuan.png",
+    images: ["/assets/dances/binasuan.png"],
+  },
+  {
+    name: "Sayaw Sa Bangko",
+    region: "Pangasinan",
+    video: "",
+    steps: [],
+    descriptions: [
+      "Sayaw Sa Bangko is a Filipino folk dance with dancers jumping off and on a series of benches. These benches can even be stacked on top of each other to show off incredible acrobatic skills. Sayaw Sa Bangko commonly presents a story to the audience and is a cheerful, energetic dance. So lots of smiling, engaging with the audience, facial expressions, and more.",
+    ],
+    image: "/assets/dances/sayawsabangko.jpeg",
+    images: ["/assets/dances/sayawsabangko.jpeg"],
+  },
+  {
+    name: "Itik Itik",
+    region: "Surigao del Sur",
+    video: "",
+    steps: [],
+    descriptions: [
+      "Originating from Cantilan, Surigao del Sur, Itik Itik showcases energetic & captivating steps in order to mimic the movement of ducks.",
+    ],
+    image: "/assets/dances/itikitik.jpeg",
+    images: ["/assets/dances/itikitik.jpeg"],
+  },
+  {
+    name: "Cariñosa",
+    region: "Visayas",
+    video: "",
+    steps: [],
+    descriptions: [
+      'Known as the dance of love, the Filipino folk dance "Cariñosa" originated from Panay Island in the Visayas during the Spanish colonial period of the Philippines. The dance symbolizes Filipino courtship and warmth, and involves graceful, flowing movements to represent Cariñosa\'s romantic nature.',
+    ],
+    image: "/assets/dances/carinosa.jpeg",
+    images: ["/assets/dances/carinosa.jpeg"],
+  },
+  {
+    name: "Kini Kini",
+    region: "Mindanao",
+    video: "",
+    steps: [],
+    descriptions: [
+      'Kini Kini is a Filipino folk dance that showcases the elegance of the Maranao women through the use of scarves or handkerchiefs. The movements and shape of their walk are very articulated and their scarves or handkerchiefs represent their fluidity and grace. As Kini means "Royal Walk," this dance also represents social upbringing and beauty.',
+    ],
+    image: "/assets/dances/kinikini.jpeg",
+    images: ["/assets/dances/kinikini.jpeg"],
+  },
+  {
+    name: "Pangalay",
+    region: "Sulu",
+    video: "",
+    steps: [],
+    descriptions: [
+      "A fingernail dance originating from the Tausug people of the Sulu Archipelago, Pangalay mimics the ocean waves and flow of water. As dancers bend their fingers in intricate ways, they tell a story of a goddess that controls the ocean around her with elegant, but powerful movements.",
+    ],
+    image: "/assets/dances/pangalay.jpeg",
+    images: ["/assets/dances/pangalay.jpeg"],
+  },
+  {
+    name: "Maglalatik",
+    region: "Laguna",
+    video: "",
+    steps: [],
+    descriptions: [
+      "Originating from Biñan of the Laguna Province, Maglalatik portrays the battle between Christian & Muslim Filipinos. This masculine dance hits coconut shells together to create rhythmic sounds. It's divided into four parts: the palipasan and the baligtaran, which portray warfare, while the paseo and escaramuza portray reconciliation.",
+    ],
+    image: "/assets/dances/maglalatik.JPG",
+    images: ["/assets/dances/maglalatik.JPG"],
+  },
+  {
+    name: "Pandanggo Oasiwas",
+    region: "Pangasinan",
+    video: "",
+    steps: [],
+    descriptions: [
+      "Pandanggo Oasiwas originates from the fish town of Lingayen in Pangasinan where fishermen would celebrate bountiful catches by swinging and circling lit candles. The name Oasiwas comes from the local word for swinging with the lights symbolizing the fish they catch.",
+    ],
+    image: "/assets/dances/pandanggohangycups.JPG",
+    images: ["/assets/dances/pandanggohangycups.JPG"],
+  },
+  {
+    name: "Kappa Malong-Malong",
+    region: "Mindanao",
+    video: "",
+    steps: [],
+    descriptions: [
+      "Kappa Malong-Malong is a traditional Filipino folk dance from the Maranao people of Mindanao that showcases the versatility of the malong, a large, colorful tubular cloth used as a skirt, shawl, headpiece, or blanket, highlighting its many uses and cultural significance through dance steps and movements.",
+    ],
+    image: "/assets/dances/malongmalong.png",
+    images: ["/assets/dances/malongmalong.png"],
+  },
+  {
+    name: "Bulaklakan",
+    region: "Bulacan",
+    video: "",
+    steps: [],
+    descriptions: [
+      "Bulaklakan is a traditional Filipino dance that originates from the province of Bulacan, named for its abundance of flowers. This dance dedicates itself to the Virgin Mary performed usually during May as part of celebration for Holy week. The dance mimics the act of making and presenting floral garlands — a common practice during religious festivals. Handcrafted by the members and leading officers of this dance, the arches displayed are a vibrant testament to tradition, unity, and the shared artistry that brings the celebration to life.",
+    ],
+    image: "/assets/dances/bulaklakan.jpeg",
+    images: ["/assets/dances/bulaklakan.jpeg"],
+  },
+  {
+    name: "Kuntaw",
+    region: "",
+    video: "",
+    steps: [],
+    descriptions: [
+      "Kuntaw is an ancient Filipino martial art that represents one of the oldest and most sophisticated fighting systems in the Philippines. This comprehensive fighting art combines hard and soft techniques, integrating both armed and unarmed combat methods that have been preserved and refined over centuries. The art is characterized by its open-hand striking techniques, foot sweeps, joint locks, and weapons training, making it a complete self-defense system.",
+    ],
+    image: "/assets/dances/kuntaw.png",
+    images: ["/assets/dances/kuntaw.png"],
+  },
+];

@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
+import useScrollLock from "../common/useScrollLock";
 
 export default function ProgramModal({ isOpen, onClose, program, eventTitle }) {
+  useScrollLock(isOpen);
   if (!isOpen || !program) return null;
 
   return (

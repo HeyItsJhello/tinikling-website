@@ -1,6 +1,155 @@
-import React from "react";
 import { motion } from "framer-motion";
-import Reveal from "../common/reveal";
+
+function SectionDivider({ label }) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "1rem",
+        margin: "3rem 0 2rem",
+      }}
+    >
+      <div
+        style={{
+          flex: 1,
+          height: "1px",
+          background:
+            "linear-gradient(to right, transparent, rgba(218,160,109,0.5))",
+        }}
+      />
+      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+        <div
+          style={{
+            width: "4px",
+            height: "4px",
+            borderRadius: "50%",
+            background: "var(--gold)",
+          }}
+        />
+        <span
+          style={{
+            fontSize: "0.6rem",
+            fontWeight: "800",
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "var(--red)",
+            fontFamily: "var(--font-display)",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {label}
+        </span>
+        <div
+          style={{
+            width: "4px",
+            height: "4px",
+            borderRadius: "50%",
+            background: "var(--gold)",
+          }}
+        />
+      </div>
+      <div
+        style={{
+          flex: 1,
+          height: "1px",
+          background:
+            "linear-gradient(to left, transparent, rgba(218,160,109,0.5))",
+        }}
+      />
+    </div>
+  );
+}
+
+function SplitCard({
+  image,
+  imagePosition = "left",
+  objectPosition = "center",
+  title,
+  children,
+  extra,
+}) {
+  return (
+    <motion.div
+      initial="rest"
+      animate="rest"
+      whileHover="hovered"
+      variants={{
+        rest: {
+          y: 0,
+          boxShadow:
+            "0 4px 24px rgba(218,160,109,0.14), 0 1px 4px rgba(0,0,0,0.06)",
+        },
+        hovered: {
+          y: -5,
+          boxShadow:
+            "0 14px 40px rgba(218,160,109,0.28), 0 2px 10px rgba(0,0,0,0.09)",
+        },
+      }}
+      transition={{ duration: 0.25 }}
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        background: "white",
+        borderRadius: "1.25rem",
+        overflow: "hidden",
+        borderTop: "4px solid var(--red)",
+        marginBottom: "2rem",
+      }}
+    >
+      <div
+        style={{
+          flex: "1 1 300px",
+          minWidth: "min(300px, 100%)",
+          order: imagePosition === "right" ? 2 : 1,
+          minHeight: "18rem",
+        }}
+      >
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          style={{
+            width: "100%",
+            height: "100%",
+            minHeight: "18rem",
+            objectFit: "cover",
+            objectPosition,
+            display: "block",
+          }}
+        />
+      </div>
+      <div
+        style={{
+          flex: "1 1 300px",
+          minWidth: "min(300px, 100%)",
+          padding: "clamp(1.75rem, 4vw, 2.5rem)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          order: imagePosition === "right" ? 1 : 2,
+        }}
+      >
+        <h3
+          style={{ margin: "0 0 1rem", fontSize: "clamp(1.2rem, 3vw, 1.6rem)" }}
+        >
+          {title}
+        </h3>
+        <div
+          style={{
+            fontSize: "clamp(0.92rem, 2vw, 1rem)",
+            lineHeight: "1.85",
+            color: "var(--dark)",
+            fontFamily: "var(--font-body)",
+          }}
+        >
+          {children}
+        </div>
+        {extra && <div style={{ marginTop: "1.5rem" }}>{extra}</div>}
+      </div>
+    </motion.div>
+  );
+}
 
 export default function SocialEvents({ setActiveSection }) {
   return (
@@ -8,358 +157,188 @@ export default function SocialEvents({ setActiveSection }) {
       style={{
         background: "var(--cream)",
         minHeight: "100vh",
-        width: "100%",
-        paddingTop: "8rem"
+        paddingTop: "8rem",
       }}
     >
       {/* Header */}
       <section
         style={{
-          padding: "3rem 2rem",
-          maxWidth: "1200px",
-          margin: "0 auto"
+          padding: "3rem 2rem 1.5rem",
+          textAlign: "center",
+          maxWidth: "720px",
+          margin: "0 auto",
         }}
       >
-        <Reveal>
-          <h1 style={{
-            fontSize: "4rem",
-            textAlign: "center",
-            marginBottom: "2rem",
-            color: "var(--red)"
-          }}>
-            Social Events
-          </h1>
-        </Reveal>
-      </section>
-
-      {/* What are Social Events? */}
-      <section
-        style={{
-          padding: "2rem 2rem 4rem 2rem",
-          maxWidth: "1200px",
-          margin: "0 auto"
-        }}
-      >
-        <Reveal>
-          <h2 style={{
-            fontSize: "2.5rem",
-            color: "var(--blue)",
-            marginBottom: "1.5rem",
-            textAlign: "center"
-          }}>
-            What are Social Events?
-          </h2>
-          <p style={{
-            fontSize: "1.2rem",
+        <h1>Social Events</h1>
+        <p
+          style={{
+            fontSize: "1.05rem",
             lineHeight: "1.8",
             color: "var(--dark)",
-            textAlign: "center",
-            padding: "0 2rem"
-          }}>
-            TDC host various social events throughout the year. These events are great ways to meet other TDC members and members of other Filipino clubs throughout Elk Grove. Our officers and event coordinator work hard to organize events with other EGUSD clubs, including Franklin's Filipino-American Honors Society, Cosumnes Oaks's Tinikling Dance Club, Monterey Trail's Filipino Club, Sheldon High School's Filipino Pamayanan Club, Laguna Creek's Bayanihan Club, Florin's Kapit Bisig Club, and Pleasant Grove's Filipino-American Youth Association. We also work alongside our school's Poly, Haka, Pasifika United, and Red Cross.
-          </p>
-        </Reveal>
+            opacity: 0.72,
+            margin: "0.5rem auto 0",
+            fontFamily: "var(--font-body)",
+          }}
+        >
+          TDC hosts events throughout the year — great ways to connect with
+          members and partner clubs across Elk Grove.
+        </p>
       </section>
 
-      {/* Some of our events! */}
       <section
         style={{
-          padding: "2rem 2rem",
-          maxWidth: "1400px",
-          margin: "0 auto"
+          maxWidth: "1100px",
+          margin: "0 auto",
+          padding: "0 clamp(1rem, 4vw, 2rem) 5rem",
         }}
       >
-        <Reveal>
-          <h2 style={{
-            fontSize: "3rem",
-            color: "var(--red)",
-            marginBottom: "3rem",
-            textAlign: "center"
-          }}>
-            Some of our events!
-          </h2>
+        <SectionDivider label="Some of our events" />
 
-          {/* Kapit Bisig Interclub Fundraiser & Karaoke Night */}
-          <div style={{
-            backgroundColor: "white",
-            padding: "2rem",
-            borderRadius: "1rem",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-            marginBottom: "3rem"
-          }}>
-            {/* Picture */}
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: "2rem"
-            }}>
-              <div style={{
-                width: "100%",
-                maxWidth: "50rem",
-                height: "25rem",
-                backgroundColor: "var(--gold)",
-                borderRadius: "1rem",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "var(--dark)",
-                fontSize: "1.5rem",
-                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
-              }}>
-                <img 
-                  style={{ 
-                    width: "100%", 
-                    height: "100%", 
-                    objectFit: "cover",
-                    borderRadius: "1rem",
-                    objectPosition: ""
-                  }}
-                  src="/assets/events/NONMAC/2025KAPIT.png" 
-                  alt="Event Photo" 
-                />
-              </div>
-            </div>
-
-            <h3 style={{
-              fontSize: "2rem",
-              color: "var(--blue)",
-              marginBottom: "1rem",
-              textAlign: "center"
-            }}>
-              Kapit Bisig Interclub Fundraiser & Karaoke Night
-            </h3>
-            <p style={{
-              fontSize: "1.2rem",
-              lineHeight: "1.8",
+        {/* Kapit Bisig Fundraiser */}
+        <SplitCard
+          image="/assets/events/NONMAC/2025KAPIT.png"
+          imagePosition="left"
+          objectPosition="center"
+          title="Kapit Bisig Interclub Fundraiser & Karaoke Night"
+        >
+          <p
+            style={{
+              margin: 0,
               color: "var(--dark)",
-              textAlign: "center"
-            }}>
-              On December 5th, TDC met with Franklin's FAHS, Monterey Trail's Filipino Club, and Sheldon's Filipino Pamayanan Club to raise funds for those impacted by the typhoons that had just his the Philippines. Celi, a guest speaker from Kabataan Alliance came to inform members of how to create an impact in their community!
-            </p>
-          </div>
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            On December 5th, TDC met with Franklin's FAHS, Monterey Trail's
+            Filipino Club, and Sheldon's Filipino Pamayanan Club to raise funds
+            for those impacted by the typhoons that had just hit the
+            Philippines. Celi, a guest speaker from Kabataan Alliance, came to
+            inform members of how to create an impact in their community.
+          </p>
+        </SplitCard>
 
-          {/* Divider */}
-          <div style={{
-            width: "80%",
-            height: "2px",
-            backgroundColor: "var(--gold)",
-            margin: "3rem auto"
-          }} />
-
-          {/* TDC Hangouts */}
-          <div style={{
-            backgroundColor: "white",
-            padding: "2rem",
-            borderRadius: "1rem",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-            marginBottom: "3rem"
-          }}>
-            {/* Picture */}
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: "2rem"
-            }}>
-              <div style={{
-                width: "100%",
-                maxWidth: "50rem",
-                height: "25rem",
-                backgroundColor: "var(--gold)",
-                borderRadius: "1rem",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "var(--dark)",
-                fontSize: "1.5rem",
-                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
-              }}>
-              <img 
-                  style={{ 
-                    width: "100%", 
-                    height: "100%", 
-                    objectFit: "cover",
-                    borderRadius: "1rem",
-                    objectPosition: "center 35%"
-                  }}
-                  src="/assets/events/SOCIAL/THANKSGIVING.png" 
-                  alt="Event Photo" 
-                />
-              </div>
-            </div>
-
-            <h3 style={{
-              fontSize: "2rem",
-              color: "var(--blue)",
-              marginBottom: "1rem",
-              textAlign: "center"
-            }}>
-              TDC Hangouts
-            </h3>
-            <p style={{
-              fontSize: "1.2rem",
-              lineHeight: "1.8",
-              color: "var(--dark)",
-              textAlign: "center",
-              marginBottom: "-1rem"
-            }}>
-              Tinikling Dance Club has a Thanksgiving, Winter, Spring, and Summer Hangout, 
-              
-            </p>
-
-            <p style={{
-              fontSize: "1.2rem",
-              lineHeight: "1.8",
-              color: "var(--dark)",
-              textAlign: "center",
-              marginBottom: "2rem"
-            }}>
-              filled with food, games, karaoke, and fire alarm!
-            </p>
-            {/* Additional Picture */}
-            <div style={{
-              display: "flex",
-              justifyContent: "center"
-            }}>
-              <div style={{
-                width: "100%",
-                maxWidth: "50rem",
-                height: "25rem",
-                backgroundColor: "var(--gold)",
-                borderRadius: "1rem",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "var(--dark)",
-                fontSize: "1.5rem",
-                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
-              }}>
-                <img 
-                  style={{ 
-                    width: "100%", 
-                    height: "100%", 
-                    objectFit: "cover",
-                    borderRadius: "1rem",
-                    objectPosition: "center "
-                  }}
-                  src="/assets/events/SOCIAL/WINTER.png" 
-                  alt="Event Photo" 
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div style={{
-            width: "80%",
-            height: "2px",
-            backgroundColor: "var(--gold)",
-            margin: "3rem auto"
-          }} />
-
-          {/* And more! */}
-          <div style={{
-            backgroundColor: "white",
-            padding: "2rem",
-            borderRadius: "1rem",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-            marginBottom: "3rem"
-          }}>
-            {/* Picture */}
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: "2rem"
-            }}>
-              <div style={{
-                width: "100%",
-                maxWidth: "50rem",
-                height: "25rem",
-                backgroundColor: "var(--gold)",
-                borderRadius: "1rem",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "var(--dark)",
-                fontSize: "1.5rem",
-                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
-              }}>
-                <img 
-                  style={{ 
-                    width: "100%", 
-                    height: "100%", 
-                    objectFit: "cover",
-                    borderRadius: "1rem",
-                    objectPosition: "center 35%"
-                  }}
-                  src="/assets/events/SOCIAL/ABOVEANDMORE.png" 
-                  alt="Event Photo" 
-                />
-
-              </div>
-            </div>
-
-            <h3 style={{
-              fontSize: "2rem",
-              color: "var(--blue)",
-              marginBottom: "1rem",
-              textAlign: "center"
-            }}>
-              And more!
-            </h3>
-            <p style={{
-              fontSize: "1.2rem",
-              lineHeight: "1.8",
-              color: "var(--dark)",
-              textAlign: "center",
-              marginBottom: "-1rem"
-            }}>
-              We have many other events throughout the year. Be on the lookout for
-            </p>
-            <p style={{
-              fontSize: "1.2rem",
-              lineHeight: "1.8",
-              color: "var(--dark)",
-              textAlign: "center",
-              marginBottom: "2rem"
-            }}>
-              announcements at our general meetings!
-            </p>
-            {/* Two pictures side by side */}
-            <div style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "2rem",
-              justifyContent: "center"
-            }}>
+        {/* TDC Hangouts */}
+        <SplitCard
+          image="/assets/events/SOCIAL/THANKSGIVING.png"
+          imagePosition="right"
+          objectPosition="center 35%"
+          title="TDC Hangouts"
+          extra={
+            <div
+              style={{
+                borderRadius: "0.85rem",
+                overflow: "hidden",
+                boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
+              }}
+            >
               <img
-                src="/assets/events/SOCIAL/BELOWLEFTANDMORE.png"
-                alt="Event Photo"
+                src="/assets/events/SOCIAL/WINTER.png"
+                alt="Winter Hangout"
+                loading="lazy"
                 style={{
-                  flex: "1 1 20rem",
-                  minWidth: "20rem",
-                  maxWidth: "25rem",
-                  height: "20rem",
+                  width: "100%",
+                  height: "10rem",
                   objectFit: "cover",
-                  borderRadius: "1rem",
-                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
-                }}
-              />
-              <img
-                src="/assets/events/SOCIAL/BELOWRIGHTANDMORE.png"
-                alt="Event Video"
-                style={{
-                  flex: "1 1 20rem",
-                  minWidth: "20rem",
-                  maxWidth: "25rem",
-                  height: "20rem",
-                  objectFit: "cover",
-                  borderRadius: "1rem",
-                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
+                  display: "block",
                 }}
               />
             </div>
-          </div>
-        </Reveal>
+          }
+        >
+          <p
+            style={{
+              margin: 0,
+              color: "var(--dark)",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            Tinikling Dance Club hosts a Thanksgiving, Winter, Spring, and
+            Summer Hangout — filled with food, games, karaoke, and the
+            occasional fire alarm.
+          </p>
+        </SplitCard>
+
+        {/* And more */}
+        <SplitCard
+          image="/assets/events/SOCIAL/ABOVEANDMORE.png"
+          imagePosition="left"
+          objectPosition="center 35%"
+          title="And More!"
+          extra={
+            <div style={{ display: "flex", gap: "0.75rem" }}>
+              <div
+                style={{
+                  flex: 1,
+                  borderRadius: "0.85rem",
+                  overflow: "hidden",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
+                }}
+              >
+                <img
+                  src="/assets/events/SOCIAL/BELOWLEFTANDMORE.png"
+                  alt="More events"
+                  loading="lazy"
+                  style={{
+                    width: "100%",
+                    height: "8rem",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                />
+              </div>
+              <div
+                style={{
+                  flex: 1,
+                  borderRadius: "0.85rem",
+                  overflow: "hidden",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
+                }}
+              >
+                <img
+                  src="/assets/events/SOCIAL/BELOWRIGHTANDMORE.png"
+                  alt="More events"
+                  loading="lazy"
+                  style={{
+                    width: "100%",
+                    height: "8rem",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                />
+              </div>
+            </div>
+          }
+        >
+          <p
+            style={{
+              margin: "0 0 1rem",
+              color: "var(--dark)",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            We have many other events throughout the year. Keep an eye out for
+            announcements at our general meetings!
+          </p>
+          <motion.button
+            onClick={() => setActiveSection("becomemember")}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            style={{
+              background: "var(--red)",
+              color: "white",
+              border: "none",
+              borderRadius: "0.55rem",
+              padding: "0.65rem 1.5rem",
+              fontSize: "0.88rem",
+              fontWeight: "700",
+              fontFamily: "var(--font-display)",
+              cursor: "pointer",
+              letterSpacing: "0.03em",
+              boxShadow: "0 4px 14px rgba(208,49,45,0.28)",
+            }}
+          >
+            Join Us →
+          </motion.button>
+        </SplitCard>
       </section>
     </main>
   );

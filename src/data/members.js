@@ -1,9 +1,17 @@
 export const pastOfficersData = {
+  "2025-2026": {
+    "Co-President and Advertising": "Kaleb Espinoza",
+    "Co-President": "Gracelynn Ly",
+    "Vice President": "Marlee Gerlach",
+    Assistant: "Carmelia Hayamizu",
+    "Advertising and Cultural Advisor": "Quinn Manapat",
+    "Cultural Advisor and Member Outreach": "Caleb Pascua"
+  },
   "2024-2025": {
     President: "Brielle Dam",
     "Vice President": "Kai Tapiador",
     Assistant: "Jerome Kekoa Cabrera",
-    "Member Outreach": "Lynn Ly",
+    "Member Outreach": "Gracelynn Ly",
     "Event Coordinator": "Marlee Gerlach",
     "Advertising Officer": "Kaleb Espinoza",
     "Cultural Advisor": "Carmelia Hayamizu",
@@ -329,6 +337,7 @@ export const quotes = {
 };
 
 export const alumniYears = [
+  "2029-2030",
   "2028-2029",
   "2027-2028",
   "2026-2027",
