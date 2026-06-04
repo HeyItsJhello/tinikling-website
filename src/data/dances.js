@@ -10,8 +10,6 @@ export const dances = [
     steps: [],
     descriptions: [
       "Tinikling is a traditional Filipino dance that originates from the Visayan region of the Philippines. Tinikling involves clicking bamboo sticks, rhythmic taps, and graceful movements.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     ],
     image: "/assets/dances/tinikling.png",
     images: [
@@ -30,8 +28,6 @@ export const dances = [
     steps: [],
     descriptions: [
       "Originating from the Lubang Island in Mindoro, Pandanggo Sa Ilaw roughly translates to 'dance of the lights' or 'towards the light.' The dance consists of dancers balancing candles on their hands and heads, symbolizing the bountiful catches of fishermen.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.",
-      "Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.",
     ],
     image: "/assets/dances/pandanggosailaw2.png",
     images: ["/assets/dances/pandanggosailaw2.png"],
@@ -162,7 +158,9 @@ export const dances = [
     region: "",
     video: "",
     steps: [],
-    descriptions: [],
+    descriptions: [
+      "Kuntaw is an ancient Filipino martial art that represents one of the oldest and most sophisticated fighting systems in the Philippines. This comprehensive fighting art combines hard and soft techniques, integrating both armed and unarmed combat methods that have been preserved and refined over centuries. The art is characterized by its open-hand striking techniques, foot sweeps, joint locks, and weapons training, making it a complete self-defense system.",
+    ],
     image: "/assets/dances/kuntaw.png",
     images: ["/assets/dances/kuntaw.png"],
   },

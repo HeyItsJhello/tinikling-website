@@ -18,7 +18,6 @@ export default function Hero() {
         boxShadow: "0 12px 32px rgba(0,0,0,0.35)",
       }}
     >
-      {/* Background image */}
       <div
         style={{
           position: "absolute",
@@ -30,18 +29,16 @@ export default function Hero() {
         }}
       />
 
-      {/* Dark overlay + diagonal pattern */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          backgroundColor: "rgba(12,8,5,0.58)",
+          backgroundColor: "rgba(12,8,5,0.45)",
           backgroundImage:
             "repeating-linear-gradient(135deg, rgba(208,49,45,0.04) 0px, rgba(208,49,45,0.04) 1px, transparent 1px, transparent 22px)",
         }}
       />
 
-      {/* Bottom fade to cream */}
       <div
         style={{
           position: "absolute",
@@ -49,12 +46,12 @@ export default function Hero() {
           left: 0,
           width: "100%",
           height: "45%",
-          background: "linear-gradient(to bottom, transparent, rgba(255,255,224,0.18), rgba(255,255,224,0.65))",
+          background:
+            "linear-gradient(to bottom, transparent, rgba(255,255,224,0.18), rgba(255,255,224,0.65))",
           pointerEvents: "none",
         }}
       />
 
-      {/* Content */}
       <div
         style={{
           position: "relative",
@@ -73,7 +70,6 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -86,20 +82,32 @@ export default function Hero() {
               marginBottom: "1.25rem",
             }}
           >
-            <div style={{ width: "2rem", height: "1px", background: "rgba(218,160,109,0.5)" }} />
-            <span style={{
-              fontSize: "0.52rem",
-              letterSpacing: "0.28em",
-              textTransform: "uppercase",
-              color: "rgba(218,160,109,0.75)",
-              fontFamily: "var(--font-display)",
-            }}>
+            <div
+              style={{
+                width: "2rem",
+                height: "1px",
+                background: "rgba(218,160,109,0.5)",
+              }}
+            />
+            <span
+              style={{
+                fontSize: "0.52rem",
+                letterSpacing: "0.28em",
+                textTransform: "uppercase",
+                color: "rgba(218,160,109,0.75)",
+                fontFamily: "var(--font-display)",
+              }}
+            >
               Franklin High School · Est. 2008
             </span>
-            <div style={{ width: "2rem", height: "1px", background: "rgba(218,160,109,0.5)" }} />
+            <div
+              style={{
+                width: "2rem",
+                height: "1px",
+                background: "rgba(218,160,109,0.5)",
+              }}
+            />
           </motion.div>
-
-          {/* Title */}
           <h1
             style={{
               fontSize: "clamp(2.5rem, 8vw, 6rem)",
@@ -112,21 +120,19 @@ export default function Hero() {
             <span style={{ color: "var(--blue)" }}>Company</span>
           </h1>
 
-          {/* Subtitle */}
           <p
             style={{
               fontSize: "clamp(0.92rem, 2.5vw, 1.4rem)",
               lineHeight: 1.5,
               maxWidth: "38rem",
               margin: "0 auto",
-              color: "rgba(255,255,224,0.72)",
+              color: "var(--gold)",
               letterSpacing: "0.02em",
             }}
           >
             A High School dance group performing cultural Filipino dances
           </p>
         </motion.div>
-
       </div>
     </section>
   );

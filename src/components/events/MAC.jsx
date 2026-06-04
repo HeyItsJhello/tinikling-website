@@ -4,12 +4,18 @@ import { events } from "../../data/events";
 import { newYearStarted } from "../../data/config";
 
 const PAST_MACS = events
-  .filter(e => e.isMakeAChange && e.year !== "upcoming" && e.date !== "TBD")
+  .filter((e) => e.isMakeAChange && e.year !== "upcoming" && e.date !== "TBD")
   .sort((a, b) => new Date(b.date) - new Date(a.date));
-const UPCOMING_MAC = events.find(e => e.year === "upcoming" && e.isMakeAChange);
+const UPCOMING_MAC = events.find(
+  (e) => e.year === "upcoming" && e.isMakeAChange,
+);
 
 export default function MakeAChange({ setActiveSection }) {
-  const [countdown, setCountdown] = useState({ type: null, days: null, direction: null });
+  const [countdown, setCountdown] = useState({
+    type: null,
+    days: null,
+    direction: null,
+  });
   const [displayDays, setDisplayDays] = useState(0);
   const bannerRef = useRef(null);
   const isInView = useInView(bannerRef, { once: true, margin: "-80px" });
@@ -19,7 +25,9 @@ export default function MakeAChange({ setActiveSection }) {
       if (!newYearStarted) {
         const last = PAST_MACS[0];
         if (last) {
-          const days = Math.floor((new Date() - new Date(last.date)) / (1000 * 60 * 60 * 24));
+          const days = Math.floor(
+            (new Date() - new Date(last.date)) / (1000 * 60 * 60 * 24),
+          );
           setCountdown({ type: "number", days, direction: "since" });
         }
       } else {
@@ -27,10 +35,13 @@ export default function MakeAChange({ setActiveSection }) {
         if (!dateStr || dateStr === "TBD") {
           setCountdown({ type: "tbd", days: null, direction: null });
         } else {
-          const days = Math.ceil((new Date(dateStr) - new Date()) / (1000 * 60 * 60 * 24));
-          setCountdown(days > 0
-            ? { type: "number", days, direction: "until" }
-            : { type: "tbd", days: null, direction: null }
+          const days = Math.ceil(
+            (new Date(dateStr) - new Date()) / (1000 * 60 * 60 * 24),
+          );
+          setCountdown(
+            days > 0
+              ? { type: "number", days, direction: "until" }
+              : { type: "tbd", days: null, direction: null },
           );
         }
       }
@@ -69,40 +80,46 @@ export default function MakeAChange({ setActiveSection }) {
         }}
       >
         {/* Ghost watermark */}
-        <div aria-hidden style={{
-          position: "absolute",
-          inset: 0,
-          overflow: "hidden",
-          pointerEvents: "none",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}>
-          <div style={{
-            fontSize: "13.5vw",
-            fontFamily: "var(--font-display)",
-            color: "rgba(0,0,0,0.07)",
-            lineHeight: 1,
-            userSelect: "none",
-            letterSpacing: "-0.02em",
-            whiteSpace: "nowrap",
-          }}>
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            overflow: "hidden",
+            pointerEvents: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "13.5vw",
+              fontFamily: "var(--font-display)",
+              color: "rgba(0,0,0,0.07)",
+              lineHeight: 1,
+              userSelect: "none",
+              letterSpacing: "-0.02em",
+              whiteSpace: "nowrap",
+            }}
+          >
             Make A Change
           </div>
         </div>
 
         {/* Content — fully centered */}
-        <div style={{
-          position: "relative",
-          zIndex: 1,
-          padding: "clamp(3rem, 7vw, 5rem) clamp(2rem, 6vw, 5rem)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          gap: "0",
-        }}>
-
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            padding: "clamp(3rem, 7vw, 5rem) clamp(2rem, 6vw, 5rem)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+            gap: "0",
+          }}
+        >
           {/* Eyebrow */}
           <motion.span
             initial={{ opacity: 0 }}
@@ -128,24 +145,28 @@ export default function MakeAChange({ setActiveSection }) {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.45 }}
             >
-              <div style={{
-                fontFamily: "var(--font-display)",
-                color: "var(--cream)",
-                fontSize: "clamp(3rem, 9vw, 6.5rem)",
-                lineHeight: 0.9,
-                letterSpacing: "-0.02em",
-              }}>
+              <div
+                style={{
+                  fontFamily: "var(--font-display)",
+                  color: "var(--cream)",
+                  fontSize: "clamp(3rem, 9vw, 6.5rem)",
+                  lineHeight: 0.9,
+                  letterSpacing: "-0.02em",
+                }}
+              >
                 Date TBD
               </div>
-              <div style={{
-                marginTop: "1rem",
-                fontSize: "0.6rem",
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: "rgba(218,160,109,0.65)",
-                fontFamily: "var(--font-display)",
-                fontStyle: "italic",
-              }}>
+              <div
+                style={{
+                  marginTop: "1rem",
+                  fontSize: "0.6rem",
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  color: "rgba(218,160,109,0.65)",
+                  fontFamily: "var(--font-display)",
+                  fontStyle: "italic",
+                }}
+              >
                 Announcement coming soon
               </div>
             </motion.div>
@@ -157,33 +178,51 @@ export default function MakeAChange({ setActiveSection }) {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.45 }}
             >
-              <div style={{
-                fontFamily: "var(--font-display)",
-                color: "var(--cream)",
-                fontSize: "clamp(5rem, 18vw, 13rem)",
-                lineHeight: 0.85,
-                letterSpacing: "-0.04em",
-              }}>
+              <div
+                style={{
+                  fontFamily: "var(--font-display)",
+                  color: "var(--cream)",
+                  fontSize: "clamp(5rem, 18vw, 13rem)",
+                  lineHeight: 0.85,
+                  letterSpacing: "-0.04em",
+                }}
+              >
                 {displayDays}
               </div>
-              <div style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "0.6rem",
-                marginTop: "0.5rem",
-              }}>
-                <div style={{ width: "1.5rem", height: "1px", background: "rgba(218,160,109,0.5)" }} />
-                <span style={{
-                  fontSize: "clamp(0.65rem, 1.8vw, 0.95rem)",
-                  letterSpacing: "0.26em",
-                  textTransform: "uppercase",
-                  color: "var(--gold)",
-                  fontFamily: "var(--font-display)",
-                }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "0.6rem",
+                  marginTop: "0.5rem",
+                }}
+              >
+                <div
+                  style={{
+                    width: "1.5rem",
+                    height: "1px",
+                    background: "rgba(218,160,109,0.5)",
+                  }}
+                />
+                <span
+                  style={{
+                    fontSize: "clamp(0.65rem, 1.8vw, 0.95rem)",
+                    letterSpacing: "0.26em",
+                    textTransform: "uppercase",
+                    color: "var(--gold)",
+                    fontFamily: "var(--font-display)",
+                  }}
+                >
                   Days {countdown.direction}
                 </span>
-                <div style={{ width: "1.5rem", height: "1px", background: "rgba(218,160,109,0.5)" }} />
+                <div
+                  style={{
+                    width: "1.5rem",
+                    height: "1px",
+                    background: "rgba(218,160,109,0.5)",
+                  }}
+                />
               </div>
             </motion.div>
           )}
@@ -194,7 +233,8 @@ export default function MakeAChange({ setActiveSection }) {
             animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
             transition={{ duration: 0.45, delay: 0.55, ease: "easeOut" }}
             style={{
-              width: "3rem", height: "2px",
+              width: "3rem",
+              height: "2px",
               background: "rgba(218,160,109,0.6)",
               borderRadius: "999px",
               margin: "1.5rem auto",
@@ -233,60 +273,83 @@ export default function MakeAChange({ setActiveSection }) {
           >
             Franklin High School · Tinikling Dance Company
           </motion.span>
-
         </div>
       </div>
 
       {/* ── Event Info ── */}
-      <div style={{
-        width: "100%",
-        boxSizing: "border-box",
-        padding: "clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)",
-      }}>
+      <div
+        style={{
+          width: "100%",
+          boxSizing: "border-box",
+          padding: "clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)",
+        }}
+      >
         {/* Image + text row */}
-        <div style={{
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          gap: "clamp(1rem, 3vw, 2rem)",
-        }}>
-          <div style={{
-            flex: "1 1 min(100%, 22rem)",
-            minWidth: "min(100%, 20rem)",
-            borderRadius: "1rem",
-            overflow: "hidden",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.14)",
-          }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            gap: "clamp(1rem, 3vw, 2rem)",
+          }}
+        >
+          <div
+            style={{
+              flex: "1 1 min(100%, 22rem)",
+              minWidth: "min(100%, 20rem)",
+              borderRadius: "1rem",
+              overflow: "hidden",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.14)",
+            }}
+          >
             <img
               src="/assets/hero.jpeg"
               alt="Make A Change Event"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                display: "block",
+              }}
               onError={(e) => {
                 e.target.style.display = "none";
-                e.target.parentElement.style.background = "rgba(218,160,109,0.12)";
+                e.target.parentElement.style.background =
+                  "rgba(218,160,109,0.12)";
                 e.target.parentElement.style.minHeight = "14rem";
               }}
             />
           </div>
 
-          <div style={{
-            flex: "1.5 1 min(100%, 22rem)",
-            minWidth: "min(100%, 20rem)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "1rem",
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-              <div style={{ width: "2.5rem", height: "1px", background: "rgba(218,160,109,0.4)" }} />
-              <span style={{
-                fontSize: "0.6rem",
-                fontWeight: "800",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "var(--red)",
-                fontFamily: "var(--font-display)",
-              }}>
+          <div
+            style={{
+              flex: "1.5 1 min(100%, 22rem)",
+              minWidth: "min(100%, 20rem)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "1rem",
+            }}
+          >
+            <div
+              style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
+            >
+              <div
+                style={{
+                  width: "2.5rem",
+                  height: "1px",
+                  background: "rgba(218,160,109,0.4)",
+                }}
+              />
+              <span
+                style={{
+                  fontSize: "0.6rem",
+                  fontWeight: "800",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "var(--red)",
+                  fontFamily: "var(--font-display)",
+                }}
+              >
                 About the event
               </span>
             </div>
@@ -295,15 +358,21 @@ export default function MakeAChange({ setActiveSection }) {
               Make A Change
             </h2>
 
-            <p style={{
-              fontSize: "clamp(0.92rem, 2vw, 1.05rem)",
-              lineHeight: "1.85",
-              color: "var(--dark)",
-              fontFamily: "var(--font-body)",
-              margin: 0,
-              opacity: 0.85,
-            }}>
-              Make A Change is an annual event at the end of the school year, showcasing various Filipino dances learned within Franklin High School's Tinikling Dance Club. In partnership with Kabataan Alliance and NCPASA, all proceeds are donated directly to charities supporting Filipino and Filipino-American communities.
+            <p
+              style={{
+                fontSize: "clamp(0.92rem, 2vw, 1.05rem)",
+                lineHeight: "1.85",
+                color: "var(--dark)",
+                fontFamily: "var(--font-body)",
+                margin: 0,
+                opacity: 0.85,
+              }}
+            >
+              Make A Change is an annual event at the end of the school year,
+              showcasing various Filipino dances learned within Franklin High
+              School's Tinikling Dance Club. In partnership with Kabataan
+              Alliance and NCPASA, all proceeds are donated directly to
+              charities supporting Filipino and Filipino-American communities.
             </p>
           </div>
         </div>
@@ -327,39 +396,46 @@ export default function MakeAChange({ setActiveSection }) {
         >
           {/* Concentric rings */}
           {[28, 20, 13].map((size, i) => (
-            <div key={i} style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              width: `${size}rem`,
-              height: `${size}rem`,
-              borderRadius: "50%",
-              border: `1px solid rgba(218,160,109,${0.06 - i * 0.015})`,
-              pointerEvents: "none",
-            }} />
+            <div
+              key={i}
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: `${size}rem`,
+                height: `${size}rem`,
+                borderRadius: "50%",
+                border: `1px solid rgba(218,160,109,${0.06 - i * 0.015})`,
+                pointerEvents: "none",
+              }}
+            />
           ))}
 
-          <div style={{
-            fontSize: "0.58rem",
-            fontWeight: "800",
-            letterSpacing: "0.22em",
-            textTransform: "uppercase",
-            color: "rgba(218,160,109,0.45)",
-            fontFamily: "var(--font-display)",
-            marginBottom: "0.75rem",
-            position: "relative",
-          }}>
+          <div
+            style={{
+              fontSize: "0.58rem",
+              fontWeight: "800",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "rgba(218,160,109,0.45)",
+              fontFamily: "var(--font-display)",
+              marginBottom: "0.75rem",
+              position: "relative",
+            }}
+          >
             Book Us
           </div>
 
-          <h2 style={{
-            color: "white",
-            fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
-            margin: "0 0 1.5rem",
-            lineHeight: 1.2,
-            position: "relative",
-          }}>
+          <h2
+            style={{
+              color: "white",
+              fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
+              margin: "0 0 1.5rem",
+              lineHeight: 1.2,
+              position: "relative",
+            }}
+          >
             Bring TDC to your debut or event
           </h2>
 

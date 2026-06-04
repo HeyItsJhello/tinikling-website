@@ -21,7 +21,7 @@ export const events = [
     year: "2025-26",
     description:
       "Our annual cultural showcase featuring traditional Filipino folk dances and guest performances.",
-    image: "",
+    image: "/assets/hero.jpeg",
     video: "",
     isMakeAChange: true,
     featured: true,
@@ -115,7 +115,7 @@ export const events = [
     year: "2024-25",
     description:
       "Our annual cultural showcase featuring traditional Filipino folk dances and guest performances.\nAll Proceeds went to the Kapit Bisig Relief program!",
-    image: "/assets/hero.jpeg",
+    image: "/assets/events/2025MAC.jpeg",
     video:
       "https://youtube.com/playlist?list=PLwIEA66EISxCVrXeAlC4x0I9mz5_XJKoW&si=h8ZUpr01KKsmOaSX",
     isMakeAChange: true,
