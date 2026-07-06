@@ -5,7 +5,7 @@ export const pastOfficersData = {
     "Vice President": "Marlee Gerlach",
     Assistant: "Carmelia Hayamizu",
     "Advertising and Cultural Advisor": "Quinn Manapat",
-    "Cultural Advisor and Member Outreach": "Caleb Pascua"
+    "Cultural Advisor and Member Outreach": "Caleb Pascua",
   },
   "2024-2025": {
     President: "Brielle Dam",
@@ -158,7 +158,7 @@ export const alumniData = {
     "Celeste Draffan",
     "Jacob Hemsworth",
     "KC Patacsil",
-    "Kiera Vi",
+    "Keira Vi",
     "Leah Tran",
     "Leon Ngo",
     "Madelynn Keilani Fong Somera",

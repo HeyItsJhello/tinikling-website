@@ -57,8 +57,8 @@ export const officers = [
   {
     name: "KC Patacsil",
     role: "Member Outreach and Advertising",
-    image: "/assets/officers/kc.PNG",
-    center_amount: 0,
+    image: "/assets/officers/kc2.png",
+    center_amount: 10,
     grade: "Junior",
     pronouns: "She/Her",
     hobbies: "Violin, Digital Art, Late Night Gaming",
