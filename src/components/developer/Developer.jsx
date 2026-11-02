@@ -84,7 +84,7 @@ export default function Developer() {
               }}
             >
               <img
-                src="/assets/developer/jhelson.png"
+                src="/assets/developer/jhelson.webp"
                 alt="Jhelson Gonzales"
                 style={{
                   width: "100%",

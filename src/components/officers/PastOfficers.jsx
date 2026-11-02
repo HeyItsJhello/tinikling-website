@@ -40,7 +40,7 @@ export default function PastOfficers() {
         {pastOfficersYears.map((year, index) => {
           const yearData = pastOfficersData[year];
           const shortYear = year.split("-").map(y => y.slice(2)).join("-");
-          const imagePath = `/assets/officers/groupphotos/${shortYear}Officers.png`;
+          const imagePath = `/assets/officers/groupphotos/${shortYear}Officers.webp`;
 
           return (
             <motion.div

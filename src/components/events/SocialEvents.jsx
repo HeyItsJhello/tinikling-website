@@ -196,7 +196,7 @@ export default function SocialEvents({ setActiveSection }) {
 
         {/* Kapit Bisig Fundraiser */}
         <SplitCard
-          image="/assets/events/NONMAC/2025KAPIT.png"
+          image="/assets/events/NONMAC/2025KAPIT.webp"
           imagePosition="left"
           objectPosition="center"
           title="Kapit Bisig Interclub Fundraiser & Karaoke Night"
@@ -218,7 +218,7 @@ export default function SocialEvents({ setActiveSection }) {
 
         {/* TDC Hangouts */}
         <SplitCard
-          image="/assets/events/SOCIAL/THANKSGIVING.png"
+          image="/assets/events/SOCIAL/THANKSGIVING.webp"
           imagePosition="right"
           objectPosition="center 35%"
           title="TDC Hangouts"
@@ -231,7 +231,7 @@ export default function SocialEvents({ setActiveSection }) {
               }}
             >
               <img
-                src="/assets/events/SOCIAL/WINTER.png"
+                src="/assets/events/SOCIAL/WINTER.webp"
                 alt="Winter Hangout"
                 loading="lazy"
                 style={{
@@ -259,7 +259,7 @@ export default function SocialEvents({ setActiveSection }) {
 
         {/* And more */}
         <SplitCard
-          image="/assets/events/SOCIAL/ABOVEANDMORE.png"
+          image="/assets/events/SOCIAL/ABOVEANDMORE.webp"
           imagePosition="left"
           objectPosition="center 35%"
           title="And More!"
@@ -274,7 +274,7 @@ export default function SocialEvents({ setActiveSection }) {
                 }}
               >
                 <img
-                  src="/assets/events/SOCIAL/BELOWLEFTANDMORE.png"
+                  src="/assets/events/SOCIAL/BELOWLEFTANDMORE.webp"
                   alt="More events"
                   loading="lazy"
                   style={{
@@ -294,7 +294,7 @@ export default function SocialEvents({ setActiveSection }) {
                 }}
               >
                 <img
-                  src="/assets/events/SOCIAL/BELOWRIGHTANDMORE.png"
+                  src="/assets/events/SOCIAL/BELOWRIGHTANDMORE.webp"
                   alt="More events"
                   loading="lazy"
                   style={{

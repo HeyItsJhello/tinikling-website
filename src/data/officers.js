@@ -2,7 +2,7 @@ export const officers = [
   {
     name: "Caleb Pascua",
     role: "President",
-    image: "/assets/officers/caleb2.png",
+    image: "/assets/officers/caleb2.webp",
     center_amount: 0,
     grade: "Senior",
     pronouns: "He/Him",
@@ -13,7 +13,7 @@ export const officers = [
   {
     name: "Carmelia Hayamizu",
     role: "Assistant",
-    image: "/assets/officers/carmelia.png",
+    image: "/assets/officers/carmelia.webp",
     center_amount: 25,
     grade: "Senior",
     pronouns: "She/Her",
@@ -24,7 +24,7 @@ export const officers = [
   {
     name: "Aidan Santo Domingo",
     role: "Cultural Advisor",
-    image: "/assets/officers/aidan.png",
+    image: "/assets/officers/aidan.webp",
     center_amount: 50,
     grade: "Senior",
     pronouns: "He/Him",
@@ -35,7 +35,7 @@ export const officers = [
   {
     name: "Madelynn Keilani Somera",
     role: "Event Coordinator",
-    image: "/assets/officers/mady.jpg",
+    image: "/assets/officers/mady.webp",
     center_amount: 80,
     grade: "Junior",
     pronouns: "She/Her",
@@ -46,7 +46,7 @@ export const officers = [
   {
     name: "KC Patacsil",
     role: "Member Outreach and Advertising",
-    image: "/assets/officers/kc2.png",
+    image: "/assets/officers/kc2.webp",
     center_amount: 10,
     grade: "Junior",
     pronouns: "She/Her",
@@ -57,7 +57,7 @@ export const officers = [
   {
     name: "Jhelson Gonzales",
     role: "Advertising",
-    image: "/assets/developer/jhelson.png",
+    image: "/assets/developer/jhelson.webp",
     center_amount: 0,
     grade: "Senior",
     pronouns: "He/Him",

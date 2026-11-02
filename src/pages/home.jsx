@@ -190,7 +190,7 @@ export default function Home() {
                     <Reveal>
                       <div style={{ width: "100%", maxWidth: "900px", aspectRatio: "4/3" }}>
                         <img
-                          src={"/assets/dances/collage/Tinikling-Collage.png"}
+                          src={"/assets/dances/collage/Tinikling-Collage.webp"}
                           className="collage"
                           style={{
                             width: "100%",

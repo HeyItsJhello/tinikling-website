@@ -69,7 +69,7 @@ export default function GettingInvolved({ setActiveSection }) {
               }}
             >
               <img
-                src="/assets/involvement/KABATAAN.png"
+                src="/assets/involvement/KABATAAN.webp"
                 alt="Kabataan Alliance"
                 loading="lazy"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
@@ -184,7 +184,7 @@ export default function GettingInvolved({ setActiveSection }) {
               }}
             >
               <img
-                src="/assets/involvement/KAPIT.png"
+                src="/assets/involvement/KAPIT.webp"
                 alt="Kapit Bisig"
                 loading="lazy"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}

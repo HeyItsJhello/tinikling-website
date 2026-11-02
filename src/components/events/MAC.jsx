@@ -293,7 +293,7 @@ export default function MakeAChange({ setActiveSection }) {
             }}
           >
             <img
-              src="/assets/hero.jpeg"
+              src="/assets/hero.webp"
               alt="Make A Change Event"
               style={{
                 width: "100%",

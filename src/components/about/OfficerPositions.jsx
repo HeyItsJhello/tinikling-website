@@ -167,7 +167,7 @@ export default function OfficerPositions({ setActiveSection }) {
             >
               <div style={{ borderRadius: "1rem", overflow: "hidden", minHeight: "20rem" }}>
                 <img
-                  src="/assets/involvement/ADVERTISEMENT.png"
+                  src="/assets/involvement/ADVERTISEMENT.webp"
                   alt="Advertising Officer"
                   loading="lazy"
                   style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
@@ -244,7 +244,7 @@ export default function OfficerPositions({ setActiveSection }) {
                   boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
                 }}>
                   <img
-                    src="/assets/involvement/EVENTSCOORD.png"
+                    src="/assets/involvement/EVENTSCOORD.webp"
                     alt="Event Coordinator"
                     loading="lazy"
                     style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
@@ -282,7 +282,7 @@ export default function OfficerPositions({ setActiveSection }) {
                 boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
               }}>
                 <img
-                  src="/assets/involvement/OFFICERS3.png"
+                  src="/assets/involvement/OFFICERS3.webp"
                   alt="Cultural Advisor"
                   loading="lazy"
                   style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
