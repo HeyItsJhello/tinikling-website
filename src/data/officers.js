@@ -1,15 +1,4 @@
 export const officers = [
-  /*{
-    name: "Kaleb Espinoza",
-    role: "Co-President and Advertising",
-    image: "/assets/officers/kaleb.png",
-    center_amount: 50,
-    grade: "Senior",
-    pronouns: "He/Him",
-    hobbies: "Photography, gaming, guitar, gardening, cardistry",
-    favoriteDance: "Kini Kini",
-    funFact: "I have a cat named Zachary",
-  },*/
   {
     name: "Caleb Pascua",
     role: "President",

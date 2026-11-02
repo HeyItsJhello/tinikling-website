@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CURRENT_GRAD_YEAR } from "../../data/schoolYear";
 
 const FAQ_ITEMS = [
   {
@@ -247,7 +248,7 @@ export default function BecomeMember({ setActiveSection }) {
             fontFamily: "var(--font-body)",
           }}
         >
-          What we've done before, stay tuned for the 2026-2027 schedule!
+          What we've done before, stay tuned for the {CURRENT_GRAD_YEAR - 1}-{CURRENT_GRAD_YEAR} schedule!
         </p>
         <div
           style={{

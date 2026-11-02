@@ -1,7 +1,3 @@
-// video: YouTube embed URL (https://www.youtube.com/embed/VIDEO_ID) — fill in when ready
-// steps: array of step strings — fill in when ready
-// region: Philippine region of origin
-
 export const dances = [
   {
     name: "Tinikling",

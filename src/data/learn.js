@@ -1,11 +1,9 @@
-// Master config for the Learn section.
-// Flip flags here — nothing else in the codebase needs to change.
 
 export const learnConfig = {
-  enabled: false, // shows/hides the Learn tab in the navbar + page
+  enabled: false,
 
-  showDanceVideos: false, // video embeds in DanceModal and LearnDanceCard
-  showSocialLinks: false, // social channel block on the Learn page
+  showDanceVideos: false,
+  showSocialLinks: false,
 
   social: {
     youtube: {

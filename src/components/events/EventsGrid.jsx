@@ -2,55 +2,36 @@ import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { events } from "../../data/events";
 import ProgramModal from "./ProgramModal";
+import { CURRENT_SCHOOL_YEAR, isUpcoming, parseEventDate } from "../../data/schoolYear";
 
 // ─── Precomputed at module load (runs once, never again) ──────────────────────
 
-function parseDate(dateStr) {
-  if (!dateStr) return new Date(0);
-  if (dateStr.includes(",")) return new Date(dateStr);
-  const parts = dateStr.split(" ");
-  if (parts.length === 2) return new Date(`${parts[0]} 1, ${parts[1]}`);
-  return new Date(dateStr);
-}
+const YEAR_SECTIONS = (() => {
+  const byYear = {};
+  for (const event of events) (byYear[event.year] ??= []).push(event);
+  byYear[CURRENT_SCHOOL_YEAR] ??= [];
 
-const YEAR_SECTIONS = [
-  { keys: ["upcoming", "2026-current"], title: "26-27" },
-  { keys: ["2025-26"], title: "25-26" },
-  { keys: ["2024-25"], title: "24-25" },
-  { keys: ["2023-24"], title: "23-24" },
-  { keys: ["2022-23"], title: "22-23" },
-  { keys: ["2021-22"], title: "21-22" },
-  { keys: ["2019-20"], title: "19-20" },
-  { keys: ["2018-19"], title: "18-19" },
-  { keys: ["2017-18"], title: "17-18" },
-  { keys: ["2016-17"], title: "16-17" },
-  { keys: ["2015-16"], title: "15-16" },
-  { keys: ["2014-15"], title: "14-15" },
-  { keys: ["2013-14"], title: "13-14" },
-  { keys: ["2012-13"], title: "12-13" },
-  { keys: ["2011-12"], title: "11-12" },
-  { keys: ["2010-11"], title: "10-11" },
-  { keys: ["2009-10"], title: "09-10" },
-];
+  const newestFirst = (a, b) =>
+    (parseEventDate(b.date) ?? Infinity) - (parseEventDate(a.date) ?? Infinity);
 
-const GROUPED_EVENTS = (() => {
-  const result = events.reduce((acc, event) => {
-    if (!acc[event.year]) acc[event.year] = [];
-    acc[event.year].push(event);
-    return acc;
-  }, {});
-  Object.keys(result).forEach(year => {
-    result[year].sort((a, b) => parseDate(b.date) - parseDate(a.date));
-  });
-  return result;
+  return Object.keys(byYear)
+    .sort()
+    .reverse()
+    .map(year => {
+      const yearEvents = byYear[year].sort(newestFirst);
+      return {
+        title: year.slice(2),
+        events: yearEvents,
+        upcoming: yearEvents.filter(e => isUpcoming(e)),
+        past: yearEvents.filter(e => !isUpcoming(e)),
+      };
+    });
 })();
 
-const SECTION_EVENTS = YEAR_SECTIONS.map(section =>
-  section.keys.flatMap(key => GROUPED_EVENTS[key] || [])
+const INITIAL_YEAR_INDEX = Math.max(
+  0,
+  YEAR_SECTIONS.findIndex(s => s.title === CURRENT_SCHOOL_YEAR.slice(2)),
 );
-
-const UPCOMING_EVENTS = GROUPED_EVENTS["upcoming"] || [];
-const CURRENT_EVENTS = GROUPED_EVENTS["2026-current"] || [];
 
 // ─── Sub-components (stable references, never re-created) ─────────────────────
 
@@ -198,7 +179,7 @@ function FeaturedCard({ event, onProgramOpen }) {
                 fontSize: "0.88rem", fontFamily: "var(--font-body)",
               }}
             >
-              2025 Show Program
+              {parseEventDate(event.date)?.getFullYear()} Show Program
             </motion.a>
           )}
           {event.program && (
@@ -322,12 +303,10 @@ function renderSection(eventsToRender, sectionTitle, onProgramOpen) {
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function EventsGrid() {
-  const [currentYearIndex, setCurrentYearIndex] = useState(0);
+  const [currentYearIndex, setCurrentYearIndex] = useState(INITIAL_YEAR_INDEX);
   const [modalState, setModalState] = useState({ isOpen: false, program: null, eventTitle: "" });
 
-  const sectionEvents = SECTION_EVENTS[currentYearIndex];
   const currentSection = YEAR_SECTIONS[currentYearIndex];
-  const isCurrentYear = currentYearIndex === 0;
 
   const closeModal = useCallback(() =>
     setModalState({ isOpen: false, program: null, eventTitle: "" }), []);
@@ -385,17 +364,17 @@ export default function EventsGrid() {
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.28 }}
           >
-            {sectionEvents.length === 0 ? (
+            {currentSection.events.length === 0 ? (
               <p style={{ textAlign: "center", color: "var(--dark)", fontSize: "1rem", opacity: 0.5, fontFamily: "var(--font-body)" }}>
                 No events recorded for this year.
               </p>
-            ) : isCurrentYear ? (
+            ) : currentSection.upcoming.length > 0 ? (
               <>
-                {UPCOMING_EVENTS.length > 0 && renderSection(UPCOMING_EVENTS, "Upcoming Events", openProgram)}
-                {CURRENT_EVENTS.length > 0 && renderSection(CURRENT_EVENTS, "Past Events", openProgram)}
+                {renderSection(currentSection.upcoming, "Upcoming Events", openProgram)}
+                {currentSection.past.length > 0 && renderSection(currentSection.past, "Past Events", openProgram)}
               </>
             ) : (
-              renderSection(sectionEvents, null, openProgram)
+              renderSection(currentSection.events, null, openProgram)
             )}
           </motion.div>
         </AnimatePresence>

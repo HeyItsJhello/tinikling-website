@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "../common/reveal";
 import OfficerCard from "./OfficerCard";
 import { quotes, alumniData, alumniYears } from "../../data/members";
+import { CURRENT_GRAD_YEAR } from "../../data/schoolYear";
 import { officers } from "../../data/officers";
 import PastOfficers from "./PastOfficers";
 
@@ -39,12 +40,12 @@ function NavButton({ onClick, disabled, children }) {
 export default function OfficersGrid() {
   const [showAlumni, setShowAlumni] = useState(false);
   const [currentYearIndex, setCurrentYearIndex] = useState(
-    () => Math.max(0, alumniYears.findIndex(y => y.endsWith(`-${new Date().getFullYear() + 1}`)))
+    () => Math.max(0, alumniYears.findIndex(y => y.endsWith(`-${CURRENT_GRAD_YEAR}`)))
   );
 
   const currentYear = alumniYears[currentYearIndex];
   const currentData = alumniData[currentYear];
-  const isAlumni = parseInt(currentYear.split("-")[1]) < 2026;
+  const isAlumni = parseInt(currentYear.split("-")[1]) < CURRENT_GRAD_YEAR;
 
   const goToPreviousYear = useCallback(() => {
     setCurrentYearIndex(i => Math.max(0, i - 1));

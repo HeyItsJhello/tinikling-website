@@ -1,11 +1,8 @@
-import { image } from "framer-motion/client";
-
 export const events = [
-  // Upcoming Events (future dates) — add next year's MAC here once date is confirmed
   {
     title: "Make A Change",
-    date: "TBD",
-    year: "upcoming",
+    date: "April 30, 2027",
+    year: "2026-27",
     description:
       "Our largest annual cultural production showcasing traditional Filipino dances.",
     image: "",
@@ -14,7 +11,6 @@ export const events = [
     featured: true,
   },
 
-  // 25-26 School Year
   {
     title: "Make A Change 2026",
     date: "April 17, 2026",
@@ -108,7 +104,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 24-25 School Year
   {
     title: "Make A Change 2025",
     date: "Apr 25, 2025",
@@ -196,7 +191,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 23-24 School Year
   {
     title: "Make A Change 2024",
     date: "Apr 2024",
@@ -306,7 +300,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 22-23 School Year
   {
     title: "Make A Change 2023",
     date: "Apr 2023",
@@ -387,7 +380,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 21-22 School Year
   {
     title: "Make A Change 2022",
     date: "Apr 2022",
@@ -435,7 +427,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 19-20 School Year
   {
     title: "Link Crew Lockdown",
     date: "Mar 2020",
@@ -474,7 +465,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 18-19 School Year
   {
     title: "Make A Change 2019",
     date: "Apr 2019",
@@ -558,7 +548,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 17-18 School Year
   {
     title: "Make A Change 2018",
     date: "May 2018",
@@ -615,7 +604,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 16-17 School Year
   {
     title: "Make A Change 2017",
     date: "Apr 2017",
@@ -655,7 +643,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 15-16 School Year
   {
     title: "Make A Change 2016",
     date: "Apr 2016",
@@ -704,7 +691,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 14-15 School Year
   {
     title: "Fusion MainStage",
     date: "Feb 2015",
@@ -724,7 +710,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 13-14 School Year
   {
     title: "Fusion MainStage",
     date: "Feb 2014",
@@ -745,7 +730,6 @@ export const events = [
     isMakeAChange: true,
   },
 
-  // 12-13 School Year
   {
     title: "Fusion MainStage",
     date: "Feb 2013",
@@ -765,7 +749,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 11-12 School Year
   {
     title: "Inspire4Lyfe",
     date: "Apr 2012",
@@ -803,7 +786,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 10-11 School Year
   {
     title: "Filipino Fiesta",
     date: "June 2011",
@@ -851,7 +833,6 @@ export const events = [
     isMakeAChange: false,
   },
 
-  // 09-10 School Year
   {
     title: "Senior Goodbye Rally",
     date: "May 2010",

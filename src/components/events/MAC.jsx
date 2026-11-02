@@ -1,14 +1,28 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView, animate } from "framer-motion";
 import { events } from "../../data/events";
-import { newYearStarted } from "../../data/config";
+import { isUpcoming, parseEventDate } from "../../data/schoolYear";
 
-const PAST_MACS = events
-  .filter((e) => e.isMakeAChange && e.year !== "upcoming" && e.date !== "TBD")
-  .sort((a, b) => new Date(b.date) - new Date(a.date));
-const UPCOMING_MAC = events.find(
-  (e) => e.year === "upcoming" && e.isMakeAChange,
-);
+const MACS = events.filter((e) => e.isMakeAChange);
+const DAY_MS = 1000 * 60 * 60 * 24;
+
+function getCountdown(now = new Date()) {
+  const upcoming = MACS.filter((e) => isUpcoming(e, now));
+  const dated = upcoming
+    .map((e) => parseEventDate(e.date))
+    .filter(Boolean)
+    .sort((a, b) => a - b);
+  if (dated.length > 0) {
+    return { type: "number", days: Math.ceil((dated[0] - now) / DAY_MS), direction: "until" };
+  }
+  if (upcoming.length > 0) return { type: "tbd", days: null, direction: null };
+
+  const last = MACS.map((e) => parseEventDate(e.date))
+    .filter(Boolean)
+    .sort((a, b) => b - a)[0];
+  if (!last) return { type: null, days: null, direction: null };
+  return { type: "number", days: Math.floor((now - last) / DAY_MS), direction: "since" };
+}
 
 export default function MakeAChange({ setActiveSection }) {
   const [countdown, setCountdown] = useState({
@@ -21,31 +35,7 @@ export default function MakeAChange({ setActiveSection }) {
   const isInView = useInView(bannerRef, { once: true, margin: "-80px" });
 
   useEffect(() => {
-    const calculate = () => {
-      if (!newYearStarted) {
-        const last = PAST_MACS[0];
-        if (last) {
-          const days = Math.floor(
-            (new Date() - new Date(last.date)) / (1000 * 60 * 60 * 24),
-          );
-          setCountdown({ type: "number", days, direction: "since" });
-        }
-      } else {
-        const dateStr = UPCOMING_MAC?.date;
-        if (!dateStr || dateStr === "TBD") {
-          setCountdown({ type: "tbd", days: null, direction: null });
-        } else {
-          const days = Math.ceil(
-            (new Date(dateStr) - new Date()) / (1000 * 60 * 60 * 24),
-          );
-          setCountdown(
-            days > 0
-              ? { type: "number", days, direction: "until" }
-              : { type: "tbd", days: null, direction: null },
-          );
-        }
-      }
-    };
+    const calculate = () => setCountdown(getCountdown());
     calculate();
     const interval = setInterval(calculate, 1000 * 60 * 60);
     return () => clearInterval(interval);

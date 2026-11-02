@@ -3,11 +3,12 @@ import { motion, useInView, animate } from "framer-motion";
 import { dances } from "../../data/dances";
 import { events } from "../../data/events";
 import { alumniData } from "../../data/members";
+import { isUpcoming } from "../../data/schoolYear";
 
 const yearsActive = new Date().getFullYear() - 2008;
 const danceCount = dances.length;
 const memberCount = Object.values(alumniData).flat().length;
-const macCount = events.filter(e => e.isMakeAChange && e.year !== "upcoming").length;
+const macCount = events.filter(e => e.isMakeAChange && !isUpcoming(e)).length;
 
 const STATS = [
   { value: yearsActive, label: "Years Active", suffix: "" },
